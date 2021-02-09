@@ -1,0 +1,53 @@
+\documentclass{homeworg}
+
+\title{ECON 5253: PS2}
+\author{William Lorton}
+
+\begin{document}
+
+\maketitle
+
+\section*{Data Scientist Tools List}
+
+\begin{enumerate}
+   \item Measurement
+   \begin{itemize}
+     \item Must know how to appropriately measure the components involved in your task.
+     \item Often involves giving a quantitative interpretation to a problem that began with only a qualitative dimension.
+     \item Leads to concrete policy creation.
+   \end{itemize}
+   \item Statistical programming languages
+   \begin{itemize}
+    \item Main DS languages are R, Python, and Julia.
+    \item Stata, SAS, SPSS, Matlab, and JavaScript are also used.
+    \item R and Python are the most popular currently (Julia is the relatively new up-and-comer).
+    \item Note the difference between scripted languages (e.g. those listed above) and faster compiled languages like C++, C, and FORTRAN.
+   \end{itemize}
+   \item Data visualization
+   \begin{itemize}
+    \item Communicate insights to those with and without intimate knowledge of the data.
+    \item Identify outliers, check for correctness, see data from new perspectives, etc.
+    \item R: ggplot2 package; Python: matplotlib package; Julia: Plots.jl package.
+    \item Lots of companies use interactive software like Tableau as well.
+   \end{itemize}
+   \item Big Data management software
+   \begin{itemize}
+       \item For when data is too large for your hard drive(s) and/or overloads your computer's memory when using R/Python/Julia/Matlab/etc.
+       \item Use Resilient Distributed Datasets (RDDs) via Hadoop or Spark; divides data into smaller bits and executes actions on it simultaneously via a cluster of computers.
+       \item Can do variety of typical commands: subsetting, merging, summary statistics generation, etc.
+       \item Also helpful to know SQL (a database management language) when dealing with very large datasets. 
+   \end{itemize}
+   \item Data collection tools
+   \begin{itemize}
+       \item For example, know how to web scrape (lift data off of public web pages very quickly).
+       \item  Use an Application Program Interface (API) if available and/or parse HTML file text.
+   \end{itemize}
+   \item Modeling
+   \begin{itemize}
+       \item Combine knowledge of statistics and statistical programming languages to test theories, predict outcomes, and establish causal relationships.
+       \item Of course, must have already collected, cleaned, and (usually) visualized the data.
+   \end{itemize}
+\end{enumerate}
+
+
+\end{document}
