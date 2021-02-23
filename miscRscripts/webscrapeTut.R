@@ -17,3 +17,21 @@ pre_iaaf = m100 %>% html_node("table:nth-child(8)") %>% html_table()
 class(pre_iaaf)
 pre_iaaf
 
+# 1912-1976 records
+iaaf_76 <- m100 %>% html_node("table:nth-child(14)") %>% html_table()
+
+# after 1976 records
+modern <- m100 %>% html_node("table:nth-child(19)") %>% html_table()
+
+# combine all the dfs
+# very dirty, but does what it says
+master <- bind_rows(pre_iaaf, iaaf_76, modern)
+
+# polite package for polite web scraping (essentially same as above)
+# takes longer and reads robots.txt to make sure it is allowed to take data
+library(polite)
+
+m100 <- scrape(bow("http://en.wikipedia.org/wiki/Men%27s_100_metres_world_record_progression"))
+pre_iaaf = m100 %>% html_node("table:nth-child(8)") %>% html_table()
+
+
