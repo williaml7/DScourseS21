@@ -1,0 +1,32 @@
+\documentclass{homeworg}
+
+\title{ECON 5253: PS4}
+\author{William Lorton}
+
+\begin{document}
+
+\maketitle
+
+\section{Data Sources for Scraping}
+
+\begin{itemize}
+    \item Financial news websites; perhaps search for mentions of EUR/USD, observe sentiment towards the cross, and see how this relates to its movement.
+    \item Search Twitter for mentions of Daft Punk and see how people are reacting to the news of their breakup after 28 years.
+    \item Search for statistics related to the balance (or lack thereof in some seasons) between OU football's defensive and offensive performances and see how this relates to each season's outcome.
+\end{itemize}
+
+\section{Answers for Question 6}
+
+\begin{itemize}
+    \item \textbf{Verify that the two dataframe are different types: type class(df1) and class(df). What is the class of each?} 
+    \begin{itemize}
+        \item df1 is a regular tibble (tbl df, tbl, data.frame)
+        \item df is a spark tibble (tbl spark, tbl sql, tbl lazy, tbl)
+    \end{itemize}
+    \item \textbf{Are the column names any different across the two objects? If so, why might that be?}
+        \begin{itemize}
+        \item Yes. df1 uses the period as a separator while df uses the underscore as a separator. Spark may not be able to use the period (or other special characters other than the underscore) when naming variables.
+    \end{itemize}
+\end{itemize}
+
+\end{document}
