@@ -1,6 +1,7 @@
 # ECON 5253: PS8 R script
 
 library(nloptr)
+library(modelsummary)
 
 ###############################################################################################
 
@@ -170,11 +171,65 @@ print(result.nelderMead)
 # Look fine again.
 beta.true
 
+# Do the Nelder-Mead and L-BFGS estimates differ?
+# They do, but only very slightly.
+result.nelderMead
+result.lbfgs
+
 ###############################################################################################
 
 # Compute maximum likelihood estimate (MLE) for beta via nloptr's L-BFGS algorithm.
 
+# Our objective function (maximize likelihood function or minimize its negative)
+objfun  <- function(theta,y,X) {
+  # need to slice our parameter vector into beta and sigma components
+  beta    <- theta[1:(length(theta)-1)]
+  sig     <- theta[length(theta)]
+  # write objective function as *negative* log likelihood (since NLOPT minimizes)
+  loglike <- -sum( -.5*(log(2*pi*(sig^2)) + ((y-X%*%beta)/sig)^2) ) 
+  return (loglike)
+}
 
+## Gradient of the objective function
+gradient <- function (theta,y,X) {
+  grad     <- as.vector(rep(0,length(theta)))
+  beta     <- theta [1:(length(theta)-1)]
+  sig      <- theta [length(theta)]
+  grad[1:(length(theta)-1)] <- -t(X)%*%(y - X%*%beta)/(sig^2)
+  grad[length(theta)]       <- dim(X)[1]/sig-crossprod(y-X%*%beta)/(sig^3)
+  return ( grad )
+}
+
+## read in the data
+y <- Y
+X <- X
+
+## initial values
+theta0 <- runif(dim(X)[2]+1) #start at uniform random numbers equal to number of coefficients
+
+## Algorithm parameters
+options <- list("algorithm"="NLOPT_LD_LBFGS", "xtol_rel"=1.0e-6, "maxeval"=1e4)
+
+## Optimize!
+result <- nloptr(x0=theta0, eval_f=objfun, eval_grad_f=gradient, opts=options, y=y, X=X)
+print(result)
+beta.lbfgsMLE  <- result$solution[1:(length(result$solution)-1)]
+beta.lbfgsMLE
+sigma.lbfgsMLE <- result$solution[length(result$solution)]
+sigma.lbfgsMLE
+
+###############################################################################################
+
+# Compute beta estimate using lm() function:
+beta.OLS <- lm(Y ~ X -1)
+summary(beta.OLS)
+# Note that we already found this in our closed-form solution earlier in the script.
+beta.hat
+# Similar to
+beta.true
+
+modelsummary(beta.OLS, output = "markdown")
+modelsummary(beta.OLS, output = "latex")
 
 
 

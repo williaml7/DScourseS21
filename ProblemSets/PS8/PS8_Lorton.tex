@@ -1,0 +1,60 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
+\title{ECON 5253: PS8}
+\author{William Lorton}
+\date{April 1, 2021}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\begin{document}
+
+\maketitle
+
+\section{Question 9: lm function estimates}
+
+The slope parameter estimates from the regression of the Y data vector onto the X matrix of covariate data is given in the table below. This was specifically performed by using the lm function in R. As was the case with the other methods that we used throughout the problem set, the lm method offers \(\hat{\beta}\) estimates that are quite close to those in the ``ground truth'' vector that we created. In other words, our methods appear to be working correctly in this case.
+
+\begin{table}
+\centering
+\begin{tabular}[t]{lc}
+\toprule
+  & Model 1\\
+\midrule
+X1 & 1.501\\
+ & (0.002)\\
+X2 & -0.991\\
+ & \vphantom{8} (0.003)\\
+X3 & -0.247\\
+ & \vphantom{7} (0.003)\\
+X4 & 0.744\\
+ & \vphantom{6} (0.003)\\
+X5 & 3.504\\
+ & \vphantom{5} (0.003)\\
+X6 & -1.999\\
+ & \vphantom{4} (0.003)\\
+X7 & 0.502\\
+ & \vphantom{3} (0.003)\\
+X8 & 0.997\\
+ & \vphantom{2} (0.003)\\
+X9 & 1.256\\
+ & \vphantom{1} (0.003)\\
+X10 & 1.999\\
+ & (0.003)\\
+\midrule
+Num.Obs. & 1e+05\\
+R2 & 0.971\\
+R2 Adj. & 0.971\\
+AIC & 144993.2\\
+BIC & 145097.9\\
+Log.Lik. & -72485.615\\
+F & 338240.012\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\end{document}
