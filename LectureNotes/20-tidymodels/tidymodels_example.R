@@ -1,10 +1,13 @@
 library(tidyverse)
 library(tidymodels)
 library(magrittr)
+library(glmnet)
 
 set.seed(123456)
 
+# read_table for white space delimited data read in
 housing <- read_table("http://archive.ics.uci.edu/ml/machine-learning-databases/housing/housing.data", col_names = FALSE)
+# add column names since they are missing
 names(housing) <- c("crim","zn","indus","chas","nox","rm","age","dis","rad","tax","ptratio","b","lstat","medv")
 
 # From UC Irvine's website (http://archive.ics.uci.edu/ml/machine-learning-databases/housing/housing.names)
@@ -24,11 +27,15 @@ names(housing) <- c("crim","zn","indus","chas","nox","rm","age","dis","rad","tax
 #    14. MEDV     Median value of owner-occupied homes in $1000's
 
 
+# divide into training and test sets (using rsample)
+# prop gives proportion of training data (80% of data)
 housing_split <- initial_split(housing, prop = 0.8)
+# training data
 housing_train <- training(housing_split)
+# testing data
 housing_test  <- testing(housing_split)
 
-
+# pre-process the data via a recipe
 housing_recipe <- recipe(medv ~ ., data = housing) %>%
   # convert outcome variable to logs
   step_log(all_outcomes()) %>%
@@ -39,26 +46,26 @@ housing_recipe <- recipe(medv ~ ., data = housing) %>%
   # create square terms of some continuous variables
   step_poly(dis,nox)
 
-
+# prep, juice, and bake the recipe
 housing_prep <- housing_recipe %>% prep(housing_train, retain = TRUE)
 housing_train_prepped <- housing_prep %>% juice
 housing_test_prepped  <- housing_prep %>% bake(new_data = housing_test)
 
-
+# train the model with OLS
 housing_train_x <- housing_train_prepped %>% select(-medv)
 housing_test_x  <- housing_test_prepped  %>% select(-medv)
 housing_train_y <- housing_train_prepped %>% select( medv)
 housing_test_y  <- housing_test_prepped  %>% select( medv)
 
-# Fit the regression model
+# Fit the regression model the normal way
 est.ols <- lm(housing_train_y$medv ~ ., data = housing_train_x)
 # Predict outcome for the test data
 ols_predicted <- predict(est.ols, newdata = housing_test_x)
-# Root mean-squared error
+# Root mean-squared error in test set (degrees of freedom unnormalized)
 sqrt(mean((housing_test_y$medv - ols_predicted)^2))
 
 
-# easy way
+# easy way (not using tidymodels at all); answer for RMSE is exact same as above.
 est.ols.easy <- lm(log(medv) ~ crim + zn + indus + as.factor(chas) + 
                      rm + age + rad + tax + ptratio + b + 
                      lstat + crim:nox + poly(dis,2) + poly(nox,2), 
@@ -69,6 +76,7 @@ ols_easy_predicted <- predict(est.ols.easy, newdata = housing_test)
 sqrt(mean((housing_test_y$medv - ols_easy_predicted)^2))
 
 
+# Using parsnip to train the models
 ols_spec <- linear_reg() %>%       # Specify a model
   set_engine("lm") %>%   # Specify an engine: lm, glmnet, stan, keras, spark
   set_mode("regression") # Declare a mode: regression or classification
@@ -95,7 +103,7 @@ ols_fit %>%
   bind_cols(housing_test_y) %>%
     metrics(truth = medv, estimate = .pred) %>% print
 # out-of-sample RMSE is 0.205
-# out-of-sample R2 is 0.802
+# out-of-sample R^2 is 0.802
 
 
 # in-sample prediction
@@ -106,10 +114,14 @@ ols_fit %>%
 # in-sample RMSE is 0.173
 # in-sample R2 is 0.808
 
+# in-sample R^2 should always be higher than out of sample
+# RMSE in-sample should probably be lower than out of sample
+# If in-sample R^2 high and out of sample very low, probably overfit.
+
 
 
 # now do lasso where we set the penalty
-lasso_spec <- linear_reg(penalty=0.5,mixture=1) %>%       # Specify a model
+lasso_spec <- linear_reg(penalty=0.5,mixture=1) %>%       # Specify a model; mixture=1 means Lasso regularization
   set_engine("glmnet") %>%   # Specify an engine: lm, glmnet, stan, keras, spark
   set_mode("regression") # Declare a mode: regression or classification
 
@@ -145,13 +157,13 @@ tune_spec <- linear_reg(
   set_engine("glmnet") %>%
   set_mode("regression")
 
-# define a grid over which to try different values of lambda
+# define a grid over which to try different values of lambda; how refined will lambda be (resolution of it)?
 lambda_grid <- grid_regular(penalty(), levels = 50)
 
-# 10-fold cross-validation
+# 10-fold cross-validation; re-sample within training data 10 different times; v should be 3 to 10.
 rec_folds <- vfold_cv(housing_train_x %>% bind_cols(tibble(medv = housing_train_y$medv)), v = 10)
 
-# Workflow
+# Workflow; uses tuning specification and formula
 rec_wf <- workflow() %>%
   add_model(tune_spec) %>%
   add_formula(medv ~ .)
