@@ -47,8 +47,11 @@ housing_recipe <- recipe(medv ~ ., data = housing) %>%
   step_poly(dis,nox)
 
 # prep, juice, and bake the recipe
+# prep recipe
 housing_prep <- housing_recipe %>% prep(housing_train, retain = TRUE)
+# apply prepped recipe to the training data via juice
 housing_train_prepped <- housing_prep %>% juice
+# apply prepped recipe to testing data via bake
 housing_test_prepped  <- housing_prep %>% bake(new_data = housing_test)
 
 # train the model with OLS
@@ -57,7 +60,7 @@ housing_test_x  <- housing_test_prepped  %>% select(-medv)
 housing_train_y <- housing_train_prepped %>% select( medv)
 housing_test_y  <- housing_test_prepped  %>% select( medv)
 
-# Fit the regression model the normal way
+# Fit the regression model
 est.ols <- lm(housing_train_y$medv ~ ., data = housing_train_x)
 # Predict outcome for the test data
 ols_predicted <- predict(est.ols, newdata = housing_test_x)
@@ -77,7 +80,7 @@ sqrt(mean((housing_test_y$medv - ols_easy_predicted)^2))
 
 
 # Using parsnip to train the models
-ols_spec <- linear_reg() %>%       # Specify a model
+ols_spec <- linear_reg() %>%   # Specify a model
   set_engine("lm") %>%   # Specify an engine: lm, glmnet, stan, keras, spark
   set_mode("regression") # Declare a mode: regression or classification
 
@@ -91,6 +94,9 @@ tidy(est.ols) %>% print
 # predict out of sample
 ols_parsnip_predicted <- predict(ols_fit, housing_test_x)
 
+# yardstick package allows us to measure model performance using certain metrics;
+# e.g. RMSE, MAE, RSQ, etc.
+# if y categorical, could use metrics like accuracy, precision, or recall (sensitivity)
 preds <- bind_cols(housing_test_y,ols_parsnip_predicted)
 rmse <- rmse(preds,medv,`.pred`)
 rsq <- rsq_trad(preds,medv,`.pred`)
@@ -116,13 +122,15 @@ ols_fit %>%
 
 # in-sample R^2 should always be higher than out of sample
 # RMSE in-sample should probably be lower than out of sample
-# If in-sample R^2 high and out of sample very low, probably overfit.
+# If in-sample R^2 high and out of sample very low, probably overfit (high variance).
 
 
 
-# now do lasso where we set the penalty
-lasso_spec <- linear_reg(penalty=0.5,mixture=1) %>%       # Specify a model; mixture=1 means Lasso regularization
-  set_engine("glmnet") %>%   # Specify an engine: lm, glmnet, stan, keras, spark
+# now train with LASSO (L1) regularization
+# want to use tune package to get the optimal value of lambda
+# Specify a model; mixture=1 means LASSO regularization; mixture=0 means RIDGE regularization
+lasso_spec <- linear_reg(penalty=0.5,mixture=1) %>% 
+  set_engine("glmnet") %>%  # Specify an engine: lm, glmnet, stan, keras, spark
   set_mode("regression") # Declare a mode: regression or classification
 
 lasso_fit <- lasso_spec %>%
@@ -160,10 +168,10 @@ tune_spec <- linear_reg(
 # define a grid over which to try different values of lambda; how refined will lambda be (resolution of it)?
 lambda_grid <- grid_regular(penalty(), levels = 50)
 
-# 10-fold cross-validation; re-sample within training data 10 different times; v should be 3 to 10.
+# 10-fold (k=10) cross-validation; re-sample within training data 10 different times; v (k) should be 3 to 10.
 rec_folds <- vfold_cv(housing_train_x %>% bind_cols(tibble(medv = housing_train_y$medv)), v = 10)
 
-# Workflow; uses tuning specification and formula
+# Workflow package to do k-fold cross-validation
 rec_wf <- workflow() %>%
   add_model(tune_spec) %>%
   add_formula(medv ~ .)
@@ -175,6 +183,7 @@ rec_res <- rec_wf %>%
     grid = lambda_grid
   )
 
+# optimal lambda value
 top_rmse  <- show_best(rec_res, metric = "rmse")
 best_rmse <- select_best(rec_res, metric = "rmse")
 
