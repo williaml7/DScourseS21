@@ -1,13 +1,10 @@
 library(tidyverse)
 library(tidymodels)
 library(magrittr)
-library(glmnet)
 
 set.seed(123456)
 
-# read_table for white space delimited data read in
 housing <- read_table("http://archive.ics.uci.edu/ml/machine-learning-databases/housing/housing.data", col_names = FALSE)
-# add column names since they are missing
 names(housing) <- c("crim","zn","indus","chas","nox","rm","age","dis","rad","tax","ptratio","b","lstat","medv")
 
 # From UC Irvine's website (http://archive.ics.uci.edu/ml/machine-learning-databases/housing/housing.names)
@@ -27,21 +24,12 @@ names(housing) <- c("crim","zn","indus","chas","nox","rm","age","dis","rad","tax
 #    14. MEDV     Median value of owner-occupied homes in $1000's
 
 
-# divide into training and test sets (using rsample)
-# prop gives proportion of training data (80% of data)
 housing_split <- initial_split(housing, prop = 0.8)
-# training data
 housing_train <- training(housing_split)
-# testing data
 housing_test  <- testing(housing_split)
 
-<<<<<<< HEAD
-# pre-process the data via a recipe
-housing_recipe <- recipe(medv ~ ., data = housing) %>%
-=======
 
 housing_recipe <- recipe(medv ~ ., data = housing_train) %>%
->>>>>>> upstream/master
   # convert outcome variable to logs
   step_log(all_outcomes()) %>%
   # convert 0/1 chas to a factor
@@ -52,21 +40,11 @@ housing_recipe <- recipe(medv ~ ., data = housing_train) %>%
   step_poly(dis,nox) %>%
   prep()
 
-<<<<<<< HEAD
-# prep, juice, and bake the recipe
-# prep recipe
-housing_prep <- housing_recipe %>% prep(housing_train, retain = TRUE)
-# apply prepped recipe to the training data via juice
-housing_train_prepped <- housing_prep %>% juice
-# apply prepped recipe to testing data via bake
-housing_test_prepped  <- housing_prep %>% bake(new_data = housing_test)
-=======
 
 housing_train_prepped <- housing_recipe %>% juice
 housing_test_prepped  <- housing_recipe %>% bake(new_data = housing_test)
->>>>>>> upstream/master
 
-# train the model with OLS
+
 housing_train_x <- housing_train_prepped %>% select(-medv)
 housing_test_x  <- housing_test_prepped  %>% select(-medv)
 housing_train_y <- housing_train_prepped %>% select( medv)
@@ -76,11 +54,11 @@ housing_test_y  <- housing_test_prepped  %>% select( medv)
 est.ols <- lm(housing_train_y$medv ~ ., data = housing_train_x)
 # Predict outcome for the test data
 ols_predicted <- predict(est.ols, newdata = housing_test_x)
-# Root mean-squared error in test set (degrees of freedom unnormalized)
+# Root mean-squared error
 sqrt(mean((housing_test_y$medv - ols_predicted)^2))
 
 
-# easy way (not using tidymodels at all); answer for RMSE is exact same as above.
+# easy way
 est.ols.easy <- lm(log(medv) ~ crim + zn + indus + as.factor(chas) + 
                      rm + age + rad + tax + ptratio + b + 
                      lstat + crim:nox + poly(dis,2) + poly(nox,2), 
@@ -91,120 +69,82 @@ ols_easy_predicted <- predict(est.ols.easy, newdata = housing_test)
 sqrt(mean((housing_test_y$medv - ols_easy_predicted)^2))
 
 
-# Using parsnip to train the models
-ols_spec <- linear_reg() %>%   # Specify a model
+ols_spec <- linear_reg() %>%       # Specify a model
   set_engine("lm") %>%   # Specify an engine: lm, glmnet, stan, keras, spark
   set_mode("regression") # Declare a mode: regression or classification
 
 #ols_fit <- ols_spec %>%
-  #fit_xy(x = housing_train_x, y = housing_train_y)
+#fit_xy(x = housing_train_x, y = housing_train_y)
 
 ols_fit <- ols_spec %>%
-          fit(medv ~ ., data=juice(housing_recipe))
+  fit(medv ~ ., data=juice(housing_recipe))
 
 # inspect coefficients
 tidy(ols_fit$fit$coefficients) %>% print
 tidy(est.ols) %>% print
 
-<<<<<<< HEAD
-# predict out of sample
-ols_parsnip_predicted <- predict(ols_fit, housing_test_x)
-
-# yardstick package allows us to measure model performance using certain metrics;
-# e.g. RMSE, MAE, RSQ, etc.
-# if y categorical, could use metrics like accuracy, precision, or recall (sensitivity)
-preds <- bind_cols(housing_test_y,ols_parsnip_predicted)
-rmse <- rmse(preds,medv,`.pred`)
-rsq <- rsq_trad(preds,medv,`.pred`)
-# in-sample R^2 was 0.814
-# out-of-sample R^2 is 0.764
-
-# out of sample prediction
-ols_fit %>%
-  predict(housing_test_x) %>%
-  bind_cols(housing_test_y) %>%
-    metrics(truth = medv, estimate = .pred) %>% print
-# out-of-sample RMSE is 0.205
-# out-of-sample R^2 is 0.802
-
-
-# in-sample prediction
-ols_fit %>%
-  predict(housing_train_x) %>%
-  bind_cols(housing_train_y) %>%
-    metrics(truth = medv, estimate = .pred) %>% print
-# in-sample RMSE is 0.173
-# in-sample R2 is 0.808
-=======
 # predict RMSE in sample
 ols_fit %>% predict(housing_train_prepped) %>%
-            mutate(truth = housing_train_prepped$medv) %>%
-            rmse(truth,`.pred`) %>%
-            print
+  mutate(truth = housing_train_prepped$medv) %>%
+  rmse(truth,`.pred`) %>%
+  print
 
 # predict RMSE out of sample
 ols_fit %>% predict(housing_test_prepped) %>%
-            mutate(truth = housing_test_prepped$medv) %>%
-            rmse(truth,`.pred`) %>%
-            print
+  mutate(truth = housing_test_prepped$medv) %>%
+  rmse(truth,`.pred`) %>%
+  print
 
 # predict R2 in sample
 ols_fit %>% predict(housing_train_prepped) %>%
-            mutate(truth = housing_train_prepped$medv) %>%
-            rsq_trad(truth,`.pred`) %>%
-            print
+  mutate(truth = housing_train_prepped$medv) %>%
+  rsq_trad(truth,`.pred`) %>%
+  print
 # in-sample RMSE was 0.181
 # out-of-sample RMSE is 0.173
 
 # predict R2 out of sample
 ols_fit %>% predict(housing_test_prepped) %>%
-            mutate(truth = housing_test_prepped$medv) %>%
-            rsq_trad(truth,`.pred`) %>%
-            print
+  mutate(truth = housing_test_prepped$medv) %>%
+  rsq_trad(truth,`.pred`) %>%
+  print
 # in-sample R^2 was 0.814
 # out-of-sample R^2 is 0.764
 
->>>>>>> upstream/master
-
-# in-sample R^2 should always be higher than out of sample
-# RMSE in-sample should probably be lower than out of sample
-# If in-sample R^2 high and out of sample very low, probably overfit (high variance).
 
 
 
-# now train with LASSO (L1) regularization
-# want to use tune package to get the optimal value of lambda
-# Specify a model; mixture=1 means LASSO regularization; mixture=0 means RIDGE regularization
-lasso_spec <- linear_reg(penalty=0.5,mixture=1) %>% 
-  set_engine("glmnet") %>%  # Specify an engine: lm, glmnet, stan, keras, spark
+# now do lasso where we set the penalty
+lasso_spec <- linear_reg(penalty=0.5,mixture=1) %>%       # Specify a model
+  set_engine("glmnet") %>%   # Specify an engine: lm, glmnet, stan, keras, spark
   set_mode("regression") # Declare a mode: regression or classification
 
 lasso_fit <- lasso_spec %>%
-             fit(medv ~ ., data=housing_train_prepped)
+  fit(medv ~ ., data=housing_train_prepped)
 
 # predict RMSE in sample
 lasso_fit %>% predict(housing_train_prepped) %>%
-            mutate(truth = housing_train_prepped$medv) %>%
-            rmse(truth,`.pred`) %>%
-            print
+  mutate(truth = housing_train_prepped$medv) %>%
+  rmse(truth,`.pred`) %>%
+  print
 
 # predict RMSE out of sample
 lasso_fit %>% predict(housing_test_prepped) %>%
-            mutate(truth = housing_test_prepped$medv) %>%
-            rmse(truth,`.pred`) %>%
-            print
+  mutate(truth = housing_test_prepped$medv) %>%
+  rmse(truth,`.pred`) %>%
+  print
 
 # predict R2 in sample
 lasso_fit %>% predict(housing_train_prepped) %>%
-            mutate(truth = housing_train_prepped$medv) %>%
-            rsq_trad(truth,`.pred`) %>%
-            print
+  mutate(truth = housing_train_prepped$medv) %>%
+  rsq_trad(truth,`.pred`) %>%
+  print
 
 # predict R2 out of sample
 lasso_fit %>% predict(housing_test_prepped) %>%
-            mutate(truth = housing_test_prepped$medv) %>%
-            rsq_trad(truth,`.pred`) %>%
-            print
+  mutate(truth = housing_test_prepped$medv) %>%
+  rsq_trad(truth,`.pred`) %>%
+  print
 # in-sample RMSE was 0.420
 # out-of-sample RMSE is 0.357
 # in-sample R^2 was 0
@@ -221,22 +161,17 @@ tune_spec <- linear_reg(
   set_engine("glmnet") %>%
   set_mode("regression")
 
-# define a grid over which to try different values of lambda; how refined will lambda be (resolution of it)?
+# define a grid over which to try different values of lambda
 lambda_grid <- grid_regular(penalty(), levels = 50)
 
-<<<<<<< HEAD
-# 10-fold (k=10) cross-validation; re-sample within training data 10 different times; v (k) should be 3 to 10.
-rec_folds <- vfold_cv(housing_train_x %>% bind_cols(tibble(medv = housing_train_y$medv)), v = 10)
-=======
 # 10-fold cross-validation
 rec_folds <- vfold_cv(housing_train_prepped, v = 10)
->>>>>>> upstream/master
 
-# Workflow package to do k-fold cross-validation
+# Workflow
 rec_wf <- workflow() %>%
   add_formula(log(medv) ~ .) %>%
   add_model(tune_spec) #%>%
-  #add_recipe(housing_recipe)
+#add_recipe(housing_recipe)
 
 # Tuning results
 rec_res <- rec_wf %>%
@@ -245,7 +180,6 @@ rec_res <- rec_wf %>%
     grid = lambda_grid
   )
 
-# optimal lambda value
 top_rmse  <- show_best(rec_res, metric = "rmse")
 best_rmse <- select_best(rec_res, metric = "rmse")
 
@@ -254,8 +188,7 @@ final_lasso <- finalize_workflow(rec_wf, best_rmse)
 
 # Print out results in test set
 last_fit(final_lasso, split = housing_split) %>%
-         collect_metrics() %>% print
+  collect_metrics() %>% print
 
 
 top_rmse %>% print(n = 1)
-
