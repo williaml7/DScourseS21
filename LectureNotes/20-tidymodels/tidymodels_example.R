@@ -35,8 +35,13 @@ housing_train <- training(housing_split)
 # testing data
 housing_test  <- testing(housing_split)
 
+<<<<<<< HEAD
 # pre-process the data via a recipe
 housing_recipe <- recipe(medv ~ ., data = housing) %>%
+=======
+
+housing_recipe <- recipe(medv ~ ., data = housing_train) %>%
+>>>>>>> upstream/master
   # convert outcome variable to logs
   step_log(all_outcomes()) %>%
   # convert 0/1 chas to a factor
@@ -44,8 +49,10 @@ housing_recipe <- recipe(medv ~ ., data = housing) %>%
   # create interaction term between crime and nox
   step_interact(terms = ~ crim:nox) %>%
   # create square terms of some continuous variables
-  step_poly(dis,nox)
+  step_poly(dis,nox) %>%
+  prep()
 
+<<<<<<< HEAD
 # prep, juice, and bake the recipe
 # prep recipe
 housing_prep <- housing_recipe %>% prep(housing_train, retain = TRUE)
@@ -53,6 +60,11 @@ housing_prep <- housing_recipe %>% prep(housing_train, retain = TRUE)
 housing_train_prepped <- housing_prep %>% juice
 # apply prepped recipe to testing data via bake
 housing_test_prepped  <- housing_prep %>% bake(new_data = housing_test)
+=======
+
+housing_train_prepped <- housing_recipe %>% juice
+housing_test_prepped  <- housing_recipe %>% bake(new_data = housing_test)
+>>>>>>> upstream/master
 
 # train the model with OLS
 housing_train_x <- housing_train_prepped %>% select(-medv)
@@ -84,13 +96,17 @@ ols_spec <- linear_reg() %>%   # Specify a model
   set_engine("lm") %>%   # Specify an engine: lm, glmnet, stan, keras, spark
   set_mode("regression") # Declare a mode: regression or classification
 
+#ols_fit <- ols_spec %>%
+  #fit_xy(x = housing_train_x, y = housing_train_y)
+
 ols_fit <- ols_spec %>%
-  fit_xy(x = housing_train_x, y = housing_train_y)
+          fit(medv ~ ., data=juice(housing_recipe))
 
 # inspect coefficients
 tidy(ols_fit$fit$coefficients) %>% print
 tidy(est.ols) %>% print
 
+<<<<<<< HEAD
 # predict out of sample
 ols_parsnip_predicted <- predict(ols_fit, housing_test_x)
 
@@ -119,6 +135,36 @@ ols_fit %>%
     metrics(truth = medv, estimate = .pred) %>% print
 # in-sample RMSE is 0.173
 # in-sample R2 is 0.808
+=======
+# predict RMSE in sample
+ols_fit %>% predict(housing_train_prepped) %>%
+            mutate(truth = housing_train_prepped$medv) %>%
+            rmse(truth,`.pred`) %>%
+            print
+
+# predict RMSE out of sample
+ols_fit %>% predict(housing_test_prepped) %>%
+            mutate(truth = housing_test_prepped$medv) %>%
+            rmse(truth,`.pred`) %>%
+            print
+
+# predict R2 in sample
+ols_fit %>% predict(housing_train_prepped) %>%
+            mutate(truth = housing_train_prepped$medv) %>%
+            rsq_trad(truth,`.pred`) %>%
+            print
+# in-sample RMSE was 0.181
+# out-of-sample RMSE is 0.173
+
+# predict R2 out of sample
+ols_fit %>% predict(housing_test_prepped) %>%
+            mutate(truth = housing_test_prepped$medv) %>%
+            rsq_trad(truth,`.pred`) %>%
+            print
+# in-sample R^2 was 0.814
+# out-of-sample R^2 is 0.764
+
+>>>>>>> upstream/master
 
 # in-sample R^2 should always be higher than out of sample
 # RMSE in-sample should probably be lower than out of sample
@@ -134,25 +180,35 @@ lasso_spec <- linear_reg(penalty=0.5,mixture=1) %>%
   set_mode("regression") # Declare a mode: regression or classification
 
 lasso_fit <- lasso_spec %>%
-  fit_xy(x = housing_train_x, y = housing_train_y)
+             fit(medv ~ ., data=housing_train_prepped)
 
-# out of sample prediction
-lasso_fit %>%
-  predict(housing_test_x) %>%
-  bind_cols(housing_test_y) %>%
-    metrics(truth = medv, estimate = .pred) %>% print
-# out-of-sample RMSE is 0.205
-# out-of-sample R2 is 0.802
+# predict RMSE in sample
+lasso_fit %>% predict(housing_train_prepped) %>%
+            mutate(truth = housing_train_prepped$medv) %>%
+            rmse(truth,`.pred`) %>%
+            print
 
+# predict RMSE out of sample
+lasso_fit %>% predict(housing_test_prepped) %>%
+            mutate(truth = housing_test_prepped$medv) %>%
+            rmse(truth,`.pred`) %>%
+            print
 
-# in-sample prediction
-lasso_fit %>%
-  predict(housing_train_x) %>%
-  bind_cols(housing_train_y) %>%
-    metrics(truth = medv, estimate = .pred) %>% print
-# in-sample RMSE is 0.173
-# in-sample R2 is 0.808
+# predict R2 in sample
+lasso_fit %>% predict(housing_train_prepped) %>%
+            mutate(truth = housing_train_prepped$medv) %>%
+            rsq_trad(truth,`.pred`) %>%
+            print
 
+# predict R2 out of sample
+lasso_fit %>% predict(housing_test_prepped) %>%
+            mutate(truth = housing_test_prepped$medv) %>%
+            rsq_trad(truth,`.pred`) %>%
+            print
+# in-sample RMSE was 0.420
+# out-of-sample RMSE is 0.357
+# in-sample R^2 was 0
+# out-of-sample R^2 is 0
 
 
 #::::::::::::::::::::::::::::::::
@@ -168,13 +224,19 @@ tune_spec <- linear_reg(
 # define a grid over which to try different values of lambda; how refined will lambda be (resolution of it)?
 lambda_grid <- grid_regular(penalty(), levels = 50)
 
+<<<<<<< HEAD
 # 10-fold (k=10) cross-validation; re-sample within training data 10 different times; v (k) should be 3 to 10.
 rec_folds <- vfold_cv(housing_train_x %>% bind_cols(tibble(medv = housing_train_y$medv)), v = 10)
+=======
+# 10-fold cross-validation
+rec_folds <- vfold_cv(housing_train_prepped, v = 10)
+>>>>>>> upstream/master
 
 # Workflow package to do k-fold cross-validation
 rec_wf <- workflow() %>%
-  add_model(tune_spec) %>%
-  add_formula(medv ~ .)
+  add_formula(log(medv) ~ .) %>%
+  add_model(tune_spec) #%>%
+  #add_recipe(housing_recipe)
 
 # Tuning results
 rec_res <- rec_wf %>%
@@ -194,4 +256,6 @@ final_lasso <- finalize_workflow(rec_wf, best_rmse)
 last_fit(final_lasso, split = housing_split) %>%
          collect_metrics() %>% print
 
+
+top_rmse %>% print(n = 1)
 
