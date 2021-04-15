@@ -20,7 +20,11 @@ print(clusters)
 
 # compare k-means classes with actual classes
 print(table(Y,clusters$cluster))
+# setosa perfect
+# versicolor a bit off
+# virginica even more off (hard to predict)
 
+# elbow at k=3
 
 #-------------------------------
 # EM using the iris dataset
@@ -28,20 +32,28 @@ print(table(Y,clusters$cluster))
 # call the EM clustering function from the mclust package
 clusters <- X %>% Mclust(G=3)
 # equivalently: clusters <- Mclust(X,G=3)
+# 3 points of support for 3 species of flowers
 
 # list inferred probabilities of Pr(Y=y)
+# class probabilities (average of posteriors at end of algorithm)
+# good since species are 1/3 each (see below)
 print(clusters$parameters$pro)
 
 # list frequencies of each species in iris data
 print(table(Y))
+# 50/150
 
-# list average of X's conditional on being in class y
+# list average of X's conditional on being in class y (1, 2, or 3)
 print(clusters$parameters$mean)
 
 # list posterior class probabilities for each observation in our training data
+# first observations are setosa, so probability of that class (1) should be high
 head(clusters$z)
 
 # compare EM classes with actual classes
+# setosa did well
+# versicolor messed up a bit
+# virginica did well
 print(table(Y,clusters$classification))
 
 
