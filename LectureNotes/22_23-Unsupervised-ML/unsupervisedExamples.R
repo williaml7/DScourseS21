@@ -60,13 +60,20 @@ print(table(Y,clusters$classification))
 #-------------------------------
 # Principal components analysis
 #-------------------------------
-# computing eigen values
+# computing eigen values 
+# eigen values tell us how the data needs to be transformed in order to preserve original variation in the data after removing some vars.
 cormat <- X %>% cor(.)
+# correlation matrix
 print(cormat)
+# eigen values; only unique when matrix is full rank (no perfect collinearity among X's)
+# one of the eigen values will be zero if matrix not full rank.
+# larger eigen value --> more variance
 print(eigen(cormat)$values)
 
-# compute eigen vectors
+# one vector for every eigen value (4 eigen values --> 4 eigen vectors)
+# compute eigen vectors; transformation of correlation matrix.
 v <- eigen(cormat)$vectors
+# v transpose times v
 print(crossprod(v)) # should be identity matrix
 
 # do PCA using base R function prcomp
@@ -75,10 +82,12 @@ prin.comp <- prcomp(X, scale. = T)
 # show eigen vectors (will be same as v)
 print(prin.comp$rotation)
 
-# show eigen values
+# show eigen values; standard deviations of object squared
 print(prin.comp$sdev^2)
 
 # which components explain the most variance?
+# first component gives 73% of the data variation
+# first and second component give ~96% of variation in data; don't really need the others for example...
 prop.var.explained <- prin.comp$sdev^2/sum(prin.comp$sdev^2)
 print(prop.var.explained)
 
