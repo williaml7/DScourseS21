@@ -1,3 +1,7 @@
+# ECON 5253: PS10 R Script
+# William Lorton
+# April 20, 2021
+
 library(tidyverse)
 library(tidymodels)
 library(magrittr)
@@ -7,6 +11,9 @@ library(e1071)
 library(kknn)
 library(nnet)
 library(kernlab)
+
+# Goal is to compare 5 ML tribes according to how capable they are of classifying whether someone is high income
+# or not. Focus on the high.earner variable.
 
 set.seed(100)
 
@@ -95,6 +102,7 @@ tune_logit_spec <- logistic_reg(
   set_mode("classification")
 
 # define a grid over which to try different values of the regularization parameter lambda
+# lambda from L1 regularization; sum of absolute value of parameters.
 lambda_grid <- grid_regular(penalty(), levels = 50)
 
 # 3-fold cross-validation
@@ -115,13 +123,16 @@ rec_res <- rec_wf %>%
 # what is the best value of lambda?
 top_acc  <- show_best(rec_res, metric = "accuracy")
 best_acc <- select_best(rec_res, metric = "accuracy")
+# train model using optimal tuning parameters.
 final_logit_lasso <- finalize_workflow(rec_wf,
                                  best_acc
                                 )
 print('*********** LOGISTIC REGRESSION **************')
+# generate predictions.
 logit_test <- last_fit(final_logit_lasso,income_split) %>%
          collect_metrics()
 
+# assess performance.
 logit_test %>% print(n = 1)
 top_acc %>% print(n = 1)
 
@@ -130,8 +141,6 @@ logit_ans <- top_acc %>% slice(1)
 logit_ans %<>% left_join(logit_test %>% slice(1),by=c(".metric",".estimator")) %>%
                mutate(alg = "logit") %>% select(-starts_with(".config"))
 
-
-asdfafd
 
 #####################
 # tree model
@@ -147,14 +156,47 @@ tune_tree_spec <- decision_tree(
   set_mode("classification")
 
 # define a set over which to try different values of the regularization parameter (complexity, depth, etc.)
+# cost complexity (complexity of tree).
 tree_parm_df1 <- tibble(cost_complexity = seq(.001,.2,by=.05))
+# minimum sample size for making a split (minimal leaf size).
 tree_parm_df2 <- tibble(min_n = seq(10,100,by=10))
+# maximum tree depth.
 tree_parm_df3 <- tibble(tree_depth = seq(5,20,by=5))
+# join tuning parameters together in one df.
 tree_parm_df  <- full_join(tree_parm_df1,tree_parm_df2,by=character()) %>% full_join(.,tree_parm_df3,by=character())
 
-# YOU FILL IN THE REST
+# 3-fold cross-validation
+rec_folds <- vfold_cv(income_train, v = 3)
 
+# Workflow
+rec_wf <- workflow() %>%
+  add_model(tune_tree_spec) %>%
+  add_formula(high.earner ~ education + marital.status + race + workclass + occupation + relationship + sex + age + capital.gain + capital.loss + hours)
 
+# Tuning results
+rec_res <- rec_wf %>%
+  tune_grid(
+    resamples = rec_folds,
+    grid = tree_parm_df
+  )
+
+# what is the best value of the regularization parameters; cost complexity, minimal leaf size, and tree depth.
+top_acc  <- show_best(rec_res, metric = "accuracy")
+best_acc <- select_best(rec_res, metric = "accuracy")
+final_tree <- finalize_workflow(rec_wf,
+                                       best_acc
+)
+print('*********** TREE MODEL **************')
+tree_test <- last_fit(final_tree, income_split) %>%
+  collect_metrics()
+
+tree_test %>% print(n = 1)
+top_acc %>% print(n = 1)
+
+# combine results into a nice tibble (for later use)
+tree_ans <- top_acc %>% slice(1)
+tree_ans %<>% left_join(tree_test %>% slice(1),by=c(".metric",".estimator")) %>%
+  mutate(alg = "tree") %>% select(-starts_with(".config"))
 
 
 #####################
@@ -169,14 +211,46 @@ tune_nnet_spec <- mlp(
   set_engine("nnet") %>%
   set_mode("classification")
 
-# define a set over which to try different values of the regularization parameter (number of neighbors)
+# define a set over which to try different values of the regularization parameter
+# number of units (neurons) in hidden layer.
 nnet_parm_df1 <- tibble(hidden_units = seq(1,10))
+# penalty term similar to lambda from L1 and L2 regularization (connections among the layers penalized).
 lambda_grid   <- grid_regular(penalty(), levels = 10)
 nnet_parm_df  <- full_join(nnet_parm_df1,lambda_grid,by=character())
 
-# YOU FILL IN THE REST
+# 3-fold cross-validation
+rec_folds <- vfold_cv(income_train, v = 3)
 
+# Workflow
+rec_wf <- workflow() %>%
+  add_model(tune_nnet_spec) %>%
+  add_formula(high.earner ~ education + marital.status + race + workclass + occupation + relationship + sex + age + capital.gain + capital.loss + hours)
 
+# Tuning results
+rec_res <- rec_wf %>%
+  tune_grid(
+    resamples = rec_folds,
+    grid = nnet_parm_df
+  )
+
+# what is the best value of the regularization parameters; hidden units and penalty term for connections among
+# layers.
+top_acc  <- show_best(rec_res, metric = "accuracy")
+best_acc <- select_best(rec_res, metric = "accuracy")
+final_nnet <- finalize_workflow(rec_wf,
+                                best_acc
+)
+print('*********** NNET MODEL **************')
+nnet_test <- last_fit(final_nnet, income_split) %>%
+  collect_metrics()
+
+nnet_test %>% print(n = 1)
+top_acc %>% print(n = 1)
+
+# combine results into a nice tibble (for later use)
+nnet_ans <- top_acc %>% slice(1)
+nnet_ans %<>% left_join(nnet_test %>% slice(1),by=c(".metric",".estimator")) %>%
+  mutate(alg = "nnet") %>% select(-starts_with(".config"))
 
 
 #####################
@@ -193,7 +267,38 @@ tune_knn_spec <- nearest_neighbor(
 # define a set over which to try different values of the regularization parameter (number of neighbors)
 knn_parm_df <- tibble(neighbors = seq(1,30))
 
-# YOU FILL IN THE REST
+# 3-fold cross-validation
+rec_folds <- vfold_cv(income_train, v = 3)
+
+# Workflow
+rec_wf <- workflow() %>%
+  add_model(tune_knn_spec) %>%
+  add_formula(high.earner ~ education + marital.status + race + workclass + occupation + relationship + sex + age + capital.gain + capital.loss + hours)
+
+# Tuning results
+rec_res <- rec_wf %>%
+  tune_grid(
+    resamples = rec_folds,
+    grid = knn_parm_df
+  )
+
+# what is the best value of the regularization parameter; number of neighbors to use.
+top_acc  <- show_best(rec_res, metric = "accuracy")
+best_acc <- select_best(rec_res, metric = "accuracy")
+final_knn <- finalize_workflow(rec_wf,
+                                best_acc
+)
+print('*********** KNN MODEL **************')
+knn_test <- last_fit(final_knn, income_split) %>%
+  collect_metrics()
+
+knn_test %>% print(n = 1)
+top_acc %>% print(n = 1)
+
+# combine results into a nice tibble (for later use)
+knn_ans <- top_acc %>% slice(1)
+knn_ans %<>% left_join(knn_test %>% slice(1),by=c(".metric",".estimator")) %>%
+  mutate(alg = "knn") %>% select(-starts_with(".config"))
 
 
 
@@ -209,24 +314,56 @@ tune_svm_spec <- svm_rbf(
   set_engine("kernlab") %>%
   set_mode("classification")
 
-# define a set over which to try different values of the regularization parameter (number of neighbors)
+# define a set over which to try different values of the regularization parameters
+# cost governs "softness" of margin of classification (high income or not).
 svm_parm_df1 <- tibble(cost      = c(2^(-2),2^(-1),2^0,2^1,2^2,2^10))
+# rbf_sigma governs shape (variance) of Gaussian kernel.
 svm_parm_df2 <- tibble(rbf_sigma = c(2^(-2),2^(-1),2^0,2^1,2^2,2^10))
 svm_parm_df  <- full_join(svm_parm_df1,svm_parm_df2,by=character())
 
-# YOU FILL IN THE REST
+# 3-fold cross-validation
+rec_folds <- vfold_cv(income_train, v = 3)
+
+# Workflow
+rec_wf <- workflow() %>%
+  add_model(tune_svm_spec) %>%
+  add_formula(high.earner ~ education + marital.status + race + workclass + occupation + relationship + sex + age + capital.gain + capital.loss + hours)
+
+# Tuning results
+rec_res <- rec_wf %>%
+  tune_grid(
+    resamples = rec_folds,
+    grid = svm_parm_df
+  )
+
+# what is the best value of the regularization parameter; number of neighbors to use.
+top_acc  <- show_best(rec_res, metric = "accuracy")
+best_acc <- select_best(rec_res, metric = "accuracy")
+final_svm <- finalize_workflow(rec_wf,
+                               best_acc
+)
+print('*********** SVM MODEL **************')
+svm_test <- last_fit(final_svm, income_split) %>%
+  collect_metrics()
+
+svm_test %>% print(n = 1)
+top_acc %>% print(n = 1)
+
+# combine results into a nice tibble (for later use)
+svm_ans <- top_acc %>% slice(1)
+svm_ans %<>% left_join(svm_test %>% slice(1),by=c(".metric",".estimator")) %>%
+  mutate(alg = "svm") %>% select(-starts_with(".config"))
 
 
-
-
-
-
-
+# SVM code appears to be throwing errors when tuning; seems to continue running though, but I'm unsure of
+# how long it will take to finish.
 
 #####################
 # combine answers
 #####################
-all_ans <- bind_rows(logit_ans,tree_ans,nnet_ans,knn_ans,svm_ans)
+# Without svm_ans
+all_ans <- bind_rows(logit_ans,tree_ans,nnet_ans,knn_ans)
 datasummary_df(all_ans %>% select(-.metric,-.estimator,-mean,-n,-std_err),output="markdown") %>% print
+datasummary_df(all_ans %>% select(-.metric,-.estimator,-mean,-n,-std_err),output="latex") %>% print
 
 

@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
+\title{ECON 5253: PS10}
+\author{William Lorton}
+\date{April 20, 2021}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\begin{document}
+
+\maketitle
+
+\section{Question 9}
+
+The table displayed below gives the optimal tuning parameter values (using 3-fold cross validation) and the associated predictive model accuracy results. The tree model performed the best with accuracy around 0.86. The neural network model performed the worst with accuracy around 0.83. The nearest neighbor and logit models both had accuracies of around 0.84. Note that the SVM model results are not displayed despite the R script for this problem set having what seems to be the appropriate code. During tuning, the SVM code was throwing errors while also taking a long time to finish (which is apparently to be expected); I interrupted the process around 1.5 hours in (6 errors were encountered over this period of time).
+
+\begin{table}
+\centering
+\begin{tabular}[t]{llllllll}
+\toprule
+penalty & .estimate & alg & cost\_complexity & tree\_depth & min\_n & hidden\_units & neighbors\\
+\midrule
+0.00 & 0.84 & logit &  &  &  &  & \\
+ & 0.86 & tree & 0.00 & 15.00 & 40.00 &  & \\
+0.00 & 0.83 & nnet &  &  &  & 9.00 & \\
+ & 0.84 & knn &  &  &  &  & 30.00\\
+\bottomrule
+\end{tabular}
+\caption{\label{tab:table-name}Classification model results}
+\end{table}
+
+\end{document}
