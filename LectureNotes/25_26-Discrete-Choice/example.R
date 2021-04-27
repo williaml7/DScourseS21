@@ -8,19 +8,27 @@ levels(Heating$depvar) <- c("gas","gas","elec","elec","elec")
 # estimate logit and get predicted probabilities
 estim <- glm(depvar ~ income+agehed+rooms+region,family=binomial(link='logit'),data=Heating)
 print(summary(estim))
+# coefficients are differences in betas from slides; need to be transformed to get change in odds or probability.
+# The reference group is gas.
 Heating$predLogit <- predict(estim, newdata = Heating, type = "response")
+# get probabilities for each observation of using elec.
 print(summary(Heating$predLogit))
 
 # estimate probit and get predicted probabilities
 estim2 <- glm(depvar ~ income+agehed+rooms+region,family=binomial(link='probit'),data=Heating)
+# coefficients should be same sign as logit.
 print(summary(estim2))
 Heating$predProbit <- predict(estim2, newdata = Heating, type = "response")
+# prediction should be similar to logit.
 print(summary(Heating$predProbit))
 
+# both logit and probit pass through mean of dep var; note that median of prediction is similar to relative frequency of elec.
+table(Heating$depvar)
 
 # counterfactual policy: electric heating subsidy to higher-income folks
 estim$coefficients["income"] <- 4*estim$coefficients["income"]
 Heating$predLogitCfl <- predict(estim, newdata = Heating, type = "response")
+# increases mean by 7.5 percentage points; more users of electricity.
 print(summary(Heating$predLogitCfl))
 
 
