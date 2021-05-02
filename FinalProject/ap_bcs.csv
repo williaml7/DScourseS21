@@ -1,0 +1,401 @@
+year,school,rank
+1998,Tennessee,1
+1998,Ohio State,2
+1998,Florida State,3
+1998,Arizona,4
+1998,Florida,5
+1998,Wisconsin,6
+1998,Tulane,7
+1998,UCLA,8
+1998,Georgia Tech,9
+1998,Kansas State,10
+1998,Texas A&M,11
+1998,Michigan,12
+1998,Air Force,13
+1998,Georgia,14
+1998,Texas,15
+1998,Arkansas,16
+1998,Penn State,17
+1998,Virginia,18
+1998,Nebraska,19
+1998,Miami,20
+1998,Missouri,21
+1998,Notre Dame,22
+1998,Virginia Tech,23
+1998,Purdue,24
+1998,Syracuse,25
+1999,Florida State,1
+1999,Virginia Tech,2
+1999,Nebraska,3
+1999,Wisconsin,4
+1999,Michigan,5
+1999,Kansas State,6
+1999,Michigan State,7
+1999,Alabama,8
+1999,Tennessee,9
+1999,Marshall,10
+1999,Penn State,11
+1999,Florida,12
+1999,Mississippi State,13
+1999,Southern Mississippi,14
+1999,Miami,15
+1999,Georgia,16
+1999,Arkansas,17
+1999,Minnesota,18
+1999,Oregon,19
+1999,Georgia Tech,20
+1999,Texas,21
+1999,Ole Miss,22
+1999,Texas A&M,23
+1999,Illinois,24
+1999,Purdue,25
+2000,Oklahoma,1
+2000,Miami,2
+2000,Washington,3
+2000,Oregon State,4
+2000,Florida State,5
+2000,Virginia Tech,6
+2000,Oregon,7
+2000,Nebraska,8
+2000,Kansas State,9
+2000,Florida,10
+2000,Michigan,11
+2000,Texas,12
+2000,Purdue,13
+2000,Colorado State,14
+2000,Notre Dame,15
+2000,Clemson,16
+2000,Georgia Tech,17
+2000,Auburn,18
+2000,South Carolina,19
+2000,Georgia,20
+2000,TCU,21
+2000,LSU,22
+2000,Wisconsin,23
+2000,Mississippi State,24
+2000,Iowa State,25
+2001,Miami,1
+2001,Oregon,2
+2001,Colorado,3
+2001,Nebraska,4
+2001,Florida,5
+2001,Maryland,6
+2001,Illinois,7
+2001,Tennessee,8
+2001,Texas,9
+2001,Oklahoma,10
+2001,Stanford,11
+2001,LSU,12
+2001,Washington State,13
+2001,South Carolina,14
+2001,Virginia Tech,15
+2001,Georgia,16
+2001,Michigan,17
+2001,Syracuse,18
+2001,BYU,19
+2001,Fresno State,20
+2001,Washington,21
+2001,Ohio State,22
+2001,Louisville,23
+2001,Florida State,24
+2001,Toledo,25
+2002,Miami,1
+2002,Ohio State,2
+2002,Iowa,3
+2002,Georgia,4
+2002,USC,5
+2002,Kansas State,6
+2002,Washington State,7
+2002,Oklahoma,8
+2002,Texas,9
+2002,Penn State,10
+2002,Notre Dame,11
+2002,Michigan,12
+2002,Alabama,13
+2002,Colorado,14
+2002,West Virginia,15
+2002,Florida State,16
+2002,NC State,17
+2002,Boise State,18
+2002,Auburn,19
+2002,Maryland,20
+2002,Virginia Tech,21
+2002,Florida,22
+2002,Colorado State,23
+2002,Pittsburgh,24
+2002,Arkansas,25
+2003,USC,1
+2003,LSU,2
+2003,Oklahoma,3
+2003,Ohio State,4
+2003,Miami,5
+2003,Michigan,6
+2003,Georgia,7
+2003,Iowa,8
+2003,Washington State,9
+2003,Miami (OH),10
+2003,Florida State,11
+2003,Texas,12
+2003,Ole Miss,13
+2003,Kansas State,14
+2003,Tennessee,15
+2003,Boise State,16
+2003,Maryland,17
+2003,Purdue,18
+2003,Nebraska,19
+2003,Minnesota,20
+2003,Utah,21
+2003,Clemson,22
+2003,Bowling Green,23
+2003,Florida,24
+2003,TCU,25
+2004,USC,1
+2004,Auburn,2
+2004,Oklahoma,3
+2004,Utah,4
+2004,Texas,5
+2004,Louisville,6
+2004,Georgia,7
+2004,Iowa,8
+2004,California,9
+2004,Virginia Tech,10
+2004,Miami,11
+2004,Boise State,12
+2004,Tennessee,13
+2004,Michigan,14
+2004,Florida State,15
+2004,LSU,16
+2004,Wisconsin,17
+2004,Texas Tech,18
+2004,Arizona State,19
+2004,Ohio State,20
+2004,Boston College,21
+2004,Fresno State,22
+2004,Virginia,23
+2004,Navy,24
+2004,Pittsburgh,25
+2005,Texas,1
+2005,USC,2
+2005,Penn State,3
+2005,Ohio State,4
+2005,West Virginia,5
+2005,LSU,6
+2005,Virginia Tech,7
+2005,Alabama,8
+2005,Notre Dame,9
+2005,Georgia,10
+2005,TCU,11
+2005,Oregon,12
+2005,Florida,12
+2005,Auburn,14
+2005,Wisconsin,15
+2005,UCLA,16
+2005,Miami,17
+2005,Boston College,18
+2005,Louisville,19
+2005,Texas Tech,20
+2005,Clemson,21
+2005,Oklahoma,22
+2005,Florida State,23
+2005,Nebraska,24
+2005,California,25
+2006,Florida,1
+2006,Ohio State,2
+2006,LSU,3
+2006,USC,4
+2006,Boise State,5
+2006,Louisville,6
+2006,Wisconsin,7
+2006,Michigan,8
+2006,Auburn,9
+2006,West Virginia,10
+2006,Oklahoma,11
+2006,Rutgers,12
+2006,Texas,13
+2006,California,14
+2006,Arkansas,15
+2006,BYU,16
+2006,Notre Dame,17
+2006,Wake Forest,18
+2006,Virginia Tech,19
+2006,Boston College,20
+2006,Oregon State,21
+2006,TCU,22
+2006,Georgia,23
+2006,Penn State,24
+2006,Tennessee,25
+2007,LSU,1
+2007,Georgia,2
+2007,USC,3
+2007,Missouri,4
+2007,Ohio State,5
+2007,West Virginia,6
+2007,Kansas,7
+2007,Oklahoma,8
+2007,Virginia Tech,9
+2007,Texas,10
+2007,Boston College,10
+2007,Tennessee,12
+2007,Florida,13
+2007,BYU,14
+2007,Auburn,15
+2007,Arizona State,16
+2007,Cincinnati,17
+2007,Michigan,18
+2007,Hawai'i,19
+2007,Illinois,20
+2007,Clemson,21
+2007,Texas Tech,22
+2007,Oregon,23
+2007,Wisconsin,24
+2007,Oregon State,25
+2008,Florida,1
+2008,Utah,2
+2008,USC,3
+2008,Texas,4
+2008,Oklahoma,5
+2008,Alabama,6
+2008,TCU,7
+2008,Penn State,8
+2008,Ohio State,9
+2008,Oregon,10
+2008,Boise State,11
+2008,Texas Tech,12
+2008,Georgia,13
+2008,Ole Miss,14
+2008,Virginia Tech,15
+2008,Oklahoma State,16
+2008,Cincinnati,17
+2008,Oregon State,18
+2008,Missouri,19
+2008,Iowa,20
+2008,Florida State,21
+2008,Georgia Tech,22
+2008,West Virginia,23
+2008,Michigan State,24
+2008,BYU,25
+2009,Alabama,1
+2009,Texas,2
+2009,Florida,3
+2009,Boise State,4
+2009,Ohio State,5
+2009,TCU,6
+2009,Iowa,7
+2009,Cincinnati,8
+2009,Penn State,9
+2009,Virginia Tech,10
+2009,Oregon,11
+2009,BYU,12
+2009,Georgia Tech,13
+2009,Nebraska,14
+2009,Pittsburgh,15
+2009,Wisconsin,16
+2009,LSU,17
+2009,Utah,18
+2009,Miami,19
+2009,Ole Miss,20
+2009,Texas Tech,21
+2009,USC,22
+2009,Central Michigan,23
+2009,Clemson,24
+2009,West Virginia,25
+2010,Auburn,1
+2010,TCU,2
+2010,Oregon,3
+2010,Stanford,4
+2010,Ohio State,5
+2010,Oklahoma,6
+2010,Wisconsin,7
+2010,LSU,8
+2010,Boise State,9
+2010,Alabama,10
+2010,Nevada,11
+2010,Arkansas,12
+2010,Oklahoma State,13
+2010,Michigan State,14
+2010,Mississippi State,15
+2010,Virginia Tech,16
+2010,Florida State,17
+2010,Missouri,18
+2010,Texas A&M,19
+2010,Nebraska,20
+2010,UCF,21
+2010,South Carolina,22
+2010,Maryland,23
+2010,Tulsa,24
+2010,NC State,25
+2011,Alabama,1
+2011,LSU,2
+2011,Oklahoma State,3
+2011,Oregon,4
+2011,Arkansas,5
+2011,USC,6
+2011,Stanford,7
+2011,Boise State,8
+2011,South Carolina,9
+2011,Wisconsin,10
+2011,Michigan State,11
+2011,Michigan,12
+2011,Baylor,13
+2011,TCU,14
+2011,Kansas State,15
+2011,Oklahoma,16
+2011,West Virginia,17
+2011,Houston,18
+2011,Georgia,19
+2011,Southern Mississippi,20
+2011,Virginia Tech,21
+2011,Clemson,22
+2011,Florida State,23
+2011,Nebraska,24
+2011,Cincinnati,25
+2012,Alabama,1
+2012,Oregon,2
+2012,Ohio State,3
+2012,Notre Dame,4
+2012,Georgia,5
+2012,Texas A&M,5
+2012,Stanford,7
+2012,South Carolina,8
+2012,Florida,9
+2012,Florida State,10
+2012,Clemson,11
+2012,Kansas State,12
+2012,Louisville,13
+2012,LSU,14
+2012,Oklahoma,15
+2012,Utah State,16
+2012,Northwestern,17
+2012,Boise State,18
+2012,Texas,19
+2012,Oregon State,20
+2012,San José State,21
+2012,Northern Illinois,22
+2012,Vanderbilt,23
+2012,Michigan,24
+2012,Nebraska,25
+2013,Florida State,1
+2013,Auburn,2
+2013,Michigan State,3
+2013,South Carolina,4
+2013,Missouri,5
+2013,Oklahoma,6
+2013,Alabama,7
+2013,Clemson,8
+2013,Oregon,9
+2013,UCF,10
+2013,Stanford,11
+2013,Ohio State,12
+2013,Baylor,13
+2013,LSU,14
+2013,Louisville,15
+2013,UCLA,16
+2013,Oklahoma State,17
+2013,Texas A&M,18
+2013,USC,19
+2013,Notre Dame,20
+2013,Arizona State,21
+2013,Wisconsin,22
+2013,Duke,23
+2013,Vanderbilt,24
+2013,Washington,25
