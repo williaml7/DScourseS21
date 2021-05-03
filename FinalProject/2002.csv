@@ -1,0 +1,66 @@
+"unitid","institution name","year","HD2002.USPS state abbreviation","IC2002.Applicants total","IC2002.Admissions total","IC2002.Enrolled total","IC2002.SAT 1 Verbal 75th percentile score","IC2002.SAT 1 Math 75th percentile score","IC2002.ACT Composite 75th percentile score"
+"100751","The University of Alabama","2002","Alabama","7322","6196","2655","620","620","26"
+"100858","Auburn University","2002","Alabama","13264","10994","4184","600","610","26"
+"104151","Arizona State University-Tempe","2002","Arizona","18155","15385","6348","590","610","26"
+"104179","University of Arizona","2002","Arizona","19832","16973","5808","600","620","26"
+"106397","University of Arkansas","2002","Arkansas","5017","4320","2251","640","650","28"
+"110635","University of California-Berkeley","2002","California","36100","8912","3863","700","740",
+"110662","University of California-Los Angeles","2002","California","40739","10953","4246","680","720","29"
+"123961","University of Southern California","2002","California","28362","8620","2766","700","720","31"
+"126614","University of Colorado Boulder","2002","Colorado","19152","15341","5428","620","640","27"
+"134097","Florida State University","2002","Florida","18342","11444","5772","630","640",
+"134130","University of Florida","2002","Florida","20119","11728","6536","660","680",
+"135726","University of Miami","2002","Florida","15909","6977","2059","640","660","28"
+"139755","Georgia Institute of Technology-Main Campus","2002","Georgia","8953","5270","2282","690","730",
+"139959","University of Georgia","2002","Georgia","12786","8340","4228","640","650","29"
+"145600","University of Illinois at Chicago","2002","Illinois","12430","7596","3015",,,"25"
+"147767","Northwestern University","2002","Illinois","13988","4780","1952","730","750",
+"151351","Indiana University-Bloomington","2002","Indiana","21264","17267","7080","600","610","27"
+"152080","University of Notre Dame","2002","Indiana","9744","3336","1946","720","730","33"
+"153603","Iowa State University","2002","Iowa","10370","9232","4219","650","670","27"
+"153658","University of Iowa","2002","Iowa","13079","11038","4184","650","660","27"
+"155317","University of Kansas","2002","Kansas","9005","6157","4078",,,"28"
+"155399","Kansas State University","2002","Kansas","8212","4752","3527",,,"25"
+"157085","University of Kentucky","2002","Kentucky","8449","6914","3140","610","630","26"
+"157289","University of Louisville","2002","Kentucky","5814","3955","2331","600","600","25"
+"159391","Louisiana State University and Agricultural & Mechanical College","2002","Louisiana","10536","8336","5301",,,"26"
+"163259","University of Maryland, Baltimore","2002","Maryland","0","0","0",,,
+"164924","Boston College","2002","Massachusetts","21133","6850","2315","690","700",
+"170976","University of Michigan-Ann Arbor","2002","Michigan","25108","12315","5187","670","720","30"
+"171100","Michigan State University","2002","Michigan","25210","16977","7000","610","640","27"
+"174066","University of Minnesota-Twin Cities","2002","Minnesota","14724","10967","5185",,,"28"
+"176017","University of Mississippi","2002","Mississippi","7603","5114","2257",,,"26"
+"176080","Mississippi State University","2002","Mississippi","4772","3469","1759",,,"27"
+"178396","University of Missouri-Columbia","2002","Missouri","11569","9091","4439",,,"28"
+"181464","University of Nebraska-Lincoln","2002","Nebraska","7631","6836","3653","640","660","27"
+"186380","Rutgers University-New Brunswick","2002","New Jersey","26678","14764","5054","630","670",
+"196413","Syracuse University","2002","New York","13644","9380","2916","640","660",
+"198419","Duke University","2002","North Carolina","13976","3673","1615","740","760",
+"199120","University of North Carolina at Chapel Hill","2002","North Carolina","15946","6339","3687","680","690",
+"199193","North Carolina State University at Raleigh","2002","North Carolina","11928","7866","3893","620","660",
+"199847","Wake Forest University","2002","North Carolina","5995","2454","1007","680","710",
+"204796","Ohio State University-Main Campus","2002","Ohio","19563","14414","5982","620","650","27"
+"207388","Oklahoma State University-Main Campus","2002","Oklahoma","5167","4712","3265","610","610","26"
+"207500","University of Oklahoma-Norman Campus","2002","Oklahoma","7248","6425","3833",,,"28"
+"209542","Oregon State University","2002","Oregon","6645","3402","3115","590","610",
+"209551","University of Oregon","2002","Oregon","8686","7819","3107","610","610",
+"214777","Pennsylvania State University-Main Campus","2002","Pennsylvania","28100","15966","6122","630","660",
+"215293","University of Pittsburgh-Pittsburgh Campus","2002","Pennsylvania","15438","9224","3208","630","640","28"
+"217882","Clemson University","2002","South Carolina","11315","5864","2471","640","670","29"
+"218663","University of South Carolina-Columbia","2002","South Carolina","11176","7788","3287","600","610","26"
+"221759","The University of Tennessee-Knoxville","2002","Tennessee","9350","8241","3682","600","610","26"
+"221999","Vanderbilt University","2002","Tennessee","9836","4550","1579","700","720","31"
+"223232","Baylor University","2002","Texas","7431","6028","2620","630","650",
+"228723","Texas A & M University-College Station","2002","Texas","17284","11777","6949","630","660","27"
+"228778","The University of Texas at Austin","2002","Texas","22178","13473","7935","650","680","28"
+"228875","Texas Christian University","2002","Texas","6137","4380","1451","620","630","27"
+"229115","Texas Tech University","2002","Texas","13101","9039","4531","590","610","26"
+"230764","University of Utah","2002","Utah","5802","5221","2350",,,"25"
+"233921","Virginia Polytechnic Institute and State University","2002","Virginia","17900","12131","4735","630","660",
+"234076","University of Virginia-Main Campus","2002","Virginia","14320","5588","2999","700","720","31"
+"236939","Washington State University","2002","Washington","8932","6885","2790","580","590",
+"236948","University of Washington-Seattle Campus","2002","Washington","15633","10787","4846","630","660",
+"238032","West Virginia University","2002","West Virginia","8786","8238","3661","555","570","25"
+"240444","University of Wisconsin-Madison","2002","Wisconsin","19249","13683","6095",,,"29"
+"243744","Stanford University","2002","California","18599","2368","1639","760","780","33"
+"243780","Purdue University-Main Campus","2002","Indiana","22872","17292","6208","610","660","28"

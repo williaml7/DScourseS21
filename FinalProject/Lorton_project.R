@@ -231,5 +231,250 @@ colnames(df.playoff)[2] <- "school"
 colnames(df.playoff)[5] <- "rank"
 df.playoff <- df.playoff %>% select(year, school, winpct, rank, top15, top5, wontitle)
 
+###### IPEDS Data #################################################################################################
 
+# Data from Integrated Postsecondary Education Data System (IPEDS).
+
+# Variables:
+
+# (Note: the most recent fall period includes students who enrolled early, during the preceding summer).
+
+# 75th percentile SAT scores for the most recent cohort of fall enrollees available; include Math, Writing, and 
+# Critical Reading and look to average these.
+
+# Number of applications submitted in the most recent fall period.
+
+# Acceptance rate in most recent fall period.
+
+# Yield (proportion of admits who enrolled) in most recent fall period.
+
+# Number of students who enrolled in most recent fall period.
+
+# Could try to use additional variables to control for school quality: student-faculty ratio, average salaries
+# of full professors, average total annual cost of attendance OS and IS, graduation rate, number of national merit
+# scholars, pct of graduate students enrolled, pct of faculty with a doctorate, pct of students who go on
+# to graduate school, amount of grant dollars awarded, etc., but will quickly run into missing data issues
+# and/or multicollinearity issues. We will assume that overall school quality isn't changing over the time
+# frames of our data sets.
+
+# Data for test scores are only available starting in 2001, thus our data set must begin here instead of 1998. The SAT
+# changed format several times over the period of this analysis. There was one period where a relatively large number of
+# schools were not submitting writing section scores; the average SAT variable is computed using only the math and reading
+# section scores in this period.
+
+ipeds.2019 <- read_csv("2019.csv")
+colnames(ipeds.2019)[2] <- "school"
+colnames(ipeds.2019)[5:13] <- c("state", "admitRate", "yield", "applications", "admissions", "enrollments",
+                                "SATreadingWriting75", "SATmath75", "ACTcomposite75")
+ipeds.2019 <- ipeds.2019 %>% mutate(avgSAT75 = (SATreadingWriting75 + SATmath75)/2)
+ipeds.2019 <- ipeds.2019 %>% mutate(yield = yield/100)
+ipeds.2019 <- ipeds.2019 %>% mutate(admitRate = admitRate/100)
+ipeds.2019 <- ipeds.2019 %>% select("unitid", "school", "year", "state", "admitRate", "yield", "applications", 
+                                    "admissions", "enrollments", "avgSAT75", 
+                                    "ACTcomposite75")
+
+ipeds.2018 <- read_csv("2018.csv")
+colnames(ipeds.2018)[2] <- "school"
+colnames(ipeds.2018)[5:13] <- c("state", "admitRate", "yield", "applications", "admissions", "enrollments",
+                                "SATreadingWriting75", "SATmath75", "ACTcomposite75")
+ipeds.2018 <- ipeds.2018 %>% mutate(avgSAT75 = (SATreadingWriting75 + SATmath75)/2)
+ipeds.2018 <- ipeds.2018 %>% mutate(yield = yield/100)
+ipeds.2018 <- ipeds.2018 %>% mutate(admitRate = admitRate/100)
+ipeds.2018 <- ipeds.2018 %>% select("unitid", "school", "year", "state", "admitRate", "yield", "applications", 
+                                    "admissions", "enrollments", "avgSAT75", 
+                                    "ACTcomposite75")
+
+ipeds.2017 <- read_csv("2017.csv")
+colnames(ipeds.2017)[2] <- "school"
+colnames(ipeds.2017)[5:13] <- c("state", "admitRate", "yield", "applications", "admissions", "enrollments",
+                                "SATreadingWriting75", "SATmath75", "ACTcomposite75")
+ipeds.2017 <- ipeds.2017 %>% mutate(avgSAT75 = (SATreadingWriting75 + SATmath75)/2)
+ipeds.2017 <- ipeds.2017 %>% mutate(yield = yield/100)
+ipeds.2017 <- ipeds.2017 %>% mutate(admitRate = admitRate/100)
+ipeds.2017 <- ipeds.2017 %>% select("unitid", "school", "year", "state", "admitRate", "yield", "applications", 
+                                    "admissions", "enrollments", "avgSAT75", 
+                                    "ACTcomposite75")
+
+ipeds.2016 <- read_csv("2016.csv")
+colnames(ipeds.2016)[2] <- "school"
+colnames(ipeds.2016)[5:13] <- c("state", "admitRate", "yield", "applications", "admissions", "enrollments",
+                                "SATreadingWriting75", "SATmath75", "ACTcomposite75")
+ipeds.2016 <- ipeds.2016 %>% mutate(avgSAT75 = (SATreadingWriting75 + SATmath75)/2)
+ipeds.2016 <- ipeds.2016 %>% mutate(yield = yield/100)
+ipeds.2016 <- ipeds.2016 %>% mutate(admitRate = admitRate/100)
+ipeds.2016 <- ipeds.2016 %>% select("unitid", "school", "year", "state", "admitRate", "yield", "applications", 
+                                    "admissions", "enrollments", "avgSAT75", 
+                                    "ACTcomposite75")
+
+ipeds.2015 <- read_csv("2015.csv")
+colnames(ipeds.2015)[2] <- "school"
+colnames(ipeds.2015)[c(4,6:14)] <- c("state", "admitRate", "yield", "applications", "admissions", "enrollments",
+                                     "SATreading75", "SATmath75", "SATwriting75", "ACTcomposite75")
+ipeds.2015 <- ipeds.2015 %>% mutate(avgSAT75 = (SATreading75 + SATmath75)/2)
+ipeds.2015 <- ipeds.2015 %>% mutate(yield = yield/100)
+ipeds.2015 <- ipeds.2015 %>% mutate(admitRate = admitRate/100)
+ipeds.2015 <- ipeds.2015 %>% select("unitid", "school", "year", "state", "admitRate", "yield", "applications", 
+                                    "admissions", "enrollments", "avgSAT75", 
+                                    "ACTcomposite75")
+
+ipeds.2014 <- read_csv("2014.csv")
+colnames(ipeds.2014)[2] <- "school"
+colnames(ipeds.2014)[c(4,6:14)] <- c("state", "admitRate", "yield", "applications", "admissions", "enrollments",
+                                     "SATreading75", "SATmath75", "SATwriting75", "ACTcomposite75")
+ipeds.2014 <- ipeds.2014 %>% mutate(avgSAT75 = (SATreading75 + SATmath75)/2)
+ipeds.2014 <- ipeds.2014 %>% mutate(yield = yield/100)
+ipeds.2014 <- ipeds.2014 %>% mutate(admitRate = admitRate/100)
+ipeds.2014 <- ipeds.2014 %>% select("unitid", "school", "year", "state", "admitRate", "yield", "applications", 
+                                    "admissions", "enrollments", "avgSAT75", 
+                                    "ACTcomposite75")
+
+ipeds.2013 <- read_csv("2013.csv")
+colnames(ipeds.2013)[2] <- "school"
+colnames(ipeds.2013)[c(4,6:14)] <- c("state", "admitRate", "yield", "applications", "admissions", "enrollments",
+                                     "SATreading75", "SATmath75", "SATwriting75", "ACTcomposite75")
+ipeds.2013 <- ipeds.2013 %>% mutate(avgSAT75 = (SATreading75 + SATmath75)/2)
+ipeds.2013 <- ipeds.2013 %>% mutate(yield = yield/100)
+ipeds.2013 <- ipeds.2013 %>% mutate(admitRate = admitRate/100)
+ipeds.2013 <- ipeds.2013 %>% select("unitid", "school", "year", "state", "admitRate", "yield", "applications", 
+                                    "admissions", "enrollments", "avgSAT75", 
+                                    "ACTcomposite75")
+
+ipeds.2012 <- read_csv("2012.csv")
+colnames(ipeds.2012)[2] <- "school"
+colnames(ipeds.2012)[c(4,6:14)] <- c("state", "admitRate", "yield", "applications", "admissions", "enrollments",
+                                     "SATreading75", "SATmath75", "SATwriting75", "ACTcomposite75")
+ipeds.2012 <- ipeds.2012 %>% mutate(avgSAT75 = (SATreading75 + SATmath75)/2)
+ipeds.2012 <- ipeds.2012 %>% mutate(yield = yield/100)
+ipeds.2012 <- ipeds.2012 %>% mutate(admitRate = admitRate/100)
+ipeds.2012 <- ipeds.2012 %>% select("unitid", "school", "year", "state", "admitRate", "yield", "applications", 
+                                    "admissions", "enrollments", "avgSAT75", 
+                                    "ACTcomposite75")
+
+ipeds.2011 <- read_csv("2011.csv")
+colnames(ipeds.2011)[2] <- "school"
+colnames(ipeds.2011)[c(4,6:14)] <- c("state", "admitRate", "yield", "applications", "admissions", "enrollments",
+                                     "SATreading75", "SATmath75", "SATwriting75", "ACTcomposite75")
+ipeds.2011 <- ipeds.2011 %>% mutate(avgSAT75 = (SATreading75 + SATmath75)/2)
+ipeds.2011 <- ipeds.2011 %>% mutate(yield = yield/100)
+ipeds.2011 <- ipeds.2011 %>% mutate(admitRate = admitRate/100)
+ipeds.2011 <- ipeds.2011 %>% select("unitid", "school", "year", "state", "admitRate", "yield", "applications", 
+                                    "admissions", "enrollments", "avgSAT75", 
+                                    "ACTcomposite75")
+
+ipeds.2010 <- read_csv("2010.csv")
+colnames(ipeds.2010)[2] <- "school"
+colnames(ipeds.2010)[c(4,6:14)] <- c("state", "admitRate", "yield", "applications", "admissions", "enrollments",
+                                     "SATreading75", "SATmath75", "SATwriting75", "ACTcomposite75")
+ipeds.2010 <- ipeds.2010 %>% mutate(avgSAT75 = (SATreading75 + SATmath75)/2)
+ipeds.2010 <- ipeds.2010 %>% mutate(yield = yield/100)
+ipeds.2010 <- ipeds.2010 %>% mutate(admitRate = admitRate/100)
+ipeds.2010 <- ipeds.2010 %>% select("unitid", "school", "year", "state", "admitRate", "yield", "applications", 
+                                    "admissions", "enrollments", "avgSAT75", 
+                                    "ACTcomposite75")
+
+ipeds.2009 <- read_csv("2009.csv")
+colnames(ipeds.2009)[2] <- "school"
+colnames(ipeds.2009)[c(4,6:14)] <- c("state", "admitRate", "yield", "applications", "admissions", "enrollments",
+                                     "SATreading75", "SATmath75", "SATwriting75", "ACTcomposite75")
+ipeds.2009 <- ipeds.2009 %>% mutate(avgSAT75 = (SATreading75 + SATmath75)/2)
+ipeds.2009 <- ipeds.2009 %>% mutate(yield = yield/100)
+ipeds.2009 <- ipeds.2009 %>% mutate(admitRate = admitRate/100)
+ipeds.2009 <- ipeds.2009 %>% select("unitid", "school", "year", "state", "admitRate", "yield", "applications", 
+                                    "admissions", "enrollments", "avgSAT75", 
+                                    "ACTcomposite75")
+
+ipeds.2008 <- read_csv("2008.csv")
+colnames(ipeds.2008)[2] <- "school"
+colnames(ipeds.2008)[c(4,6:14)] <- c("state", "admitRate", "yield", "applications", "admissions", "enrollments",
+                                     "SATreading75", "SATmath75", "SATwriting75", "ACTcomposite75")
+ipeds.2008 <- ipeds.2008 %>% mutate(avgSAT75 = (SATreading75 + SATmath75)/2)
+ipeds.2008 <- ipeds.2008 %>% mutate(yield = yield/100)
+ipeds.2008 <- ipeds.2008 %>% mutate(admitRate = admitRate/100)
+ipeds.2008 <- ipeds.2008 %>% select("unitid", "school", "year", "state", "admitRate", "yield", "applications", 
+                                    "admissions", "enrollments", "avgSAT75", 
+                                    "ACTcomposite75")
+
+ipeds.2007 <- read_csv("2007.csv")
+colnames(ipeds.2007 )[2] <- "school"
+colnames(ipeds.2007 )[c(4,6:14)] <- c("state", "admitRate", "yield", "applications", "admissions", "enrollments",
+                                     "SATreading75", "SATmath75", "SATwriting75", "ACTcomposite75")
+ipeds.2007  <- ipeds.2007 %>% mutate(avgSAT75 = (SATreading75 + SATmath75)/2)
+ipeds.2007 <- ipeds.2007 %>% mutate(yield = yield/100)
+ipeds.2007 <- ipeds.2007 %>% mutate(admitRate = admitRate/100)
+ipeds.2007 <- ipeds.2007 %>% select("unitid", "school", "year", "state", "admitRate", "yield", "applications", 
+                                    "admissions", "enrollments", "avgSAT75", 
+                                    "ACTcomposite75")
+
+ipeds.2006 <- read_csv("2006.csv")
+colnames(ipeds.2006)[2] <- "school"
+colnames(ipeds.2006)[c(4,6:14)] <- c("state", "admitRate", "yield", "applications", "admissions", "enrollments",
+                                     "SATreading75", "SATmath75", "SATwriting75", "ACTcomposite75")
+ipeds.2006 <- ipeds.2006 %>% mutate(avgSAT75 = (SATreading75 + SATmath75)/2)
+ipeds.2006 <- ipeds.2006 %>% mutate(yield = yield/100)
+ipeds.2006 <- ipeds.2006 %>% mutate(admitRate = admitRate/100)
+ipeds.2006 <- ipeds.2006 %>% select("unitid", "school", "year", "state", "admitRate", "yield", "applications", 
+                                    "admissions", "enrollments", "avgSAT75", 
+                                    "ACTcomposite75")
+
+ipeds.2005 <- read_csv("2005.csv")
+colnames(ipeds.2005)[2] <- "school"
+colnames(ipeds.2005)[c(4:10)] <- c("state", "applications", "admissions", "enrollments",
+                                     "SATverbal75", "SATmath75", "ACTcomposite75")
+ipeds.2005 <- ipeds.2005 %>% mutate(avgSAT75 = (SATverbal75 + SATmath75)/2)
+ipeds.2005 <- ipeds.2005 %>% mutate(yield = round(enrollments / admissions, 2))
+ipeds.2005 <- ipeds.2005 %>% mutate(admitRate = round(admissions / applications, 2))
+ipeds.2005 <- ipeds.2005 %>% select("unitid", "school", "year", "state", "admitRate", "yield", "applications", 
+                                    "admissions", "enrollments", "avgSAT75", 
+                                    "ACTcomposite75")
+
+ipeds.2004 <- read_csv("2004.csv")
+colnames(ipeds.2004)[2] <- "school"
+colnames(ipeds.2004)[c(4:10)] <- c("state", "applications", "admissions", "enrollments",
+                                   "SATverbal75", "SATmath75", "ACTcomposite75")
+ipeds.2004 <- ipeds.2004 %>% mutate(avgSAT75 = (SATverbal75 + SATmath75)/2)
+ipeds.2004 <- ipeds.2004 %>% mutate(yield = round(enrollments / admissions, 2))
+ipeds.2004 <- ipeds.2004 %>% mutate(admitRate = round(admissions / applications, 2))
+ipeds.2004 <- ipeds.2004 %>% select("unitid", "school", "year", "state", "admitRate", "yield", "applications", 
+                                    "admissions", "enrollments", "avgSAT75", 
+                                    "ACTcomposite75")
+
+ipeds.2003 <- read_csv("2003.csv")
+colnames(ipeds.2003)[2] <- "school"
+colnames(ipeds.2003)[c(4:10)] <- c("state", "applications", "admissions", "enrollments",
+                                   "SATverbal75", "SATmath75", "ACTcomposite75")
+ipeds.2003 <- ipeds.2003 %>% mutate(avgSAT75 = (SATverbal75 + SATmath75)/2)
+ipeds.2003 <- ipeds.2003 %>% mutate(yield = round(enrollments / admissions, 2))
+ipeds.2003 <- ipeds.2003 %>% mutate(admitRate = round(admissions / applications, 2))
+ipeds.2003 <- ipeds.2003 %>% select("unitid", "school", "year", "state", "admitRate", "yield", "applications", 
+                                    "admissions", "enrollments", "avgSAT75", 
+                                    "ACTcomposite75")
+
+ipeds.2002 <- read_csv("2002.csv")
+colnames(ipeds.2002)[2] <- "school"
+colnames(ipeds.2002)[c(4:10)] <- c("state", "applications", "admissions", "enrollments",
+                                   "SATverbal75", "SATmath75", "ACTcomposite75")
+ipeds.2002 <- ipeds.2002 %>% mutate(avgSAT75 = (SATverbal75 + SATmath75)/2)
+ipeds.2002 <- ipeds.2002 %>% mutate(yield = round(enrollments / admissions, 2))
+ipeds.2002 <- ipeds.2002 %>% mutate(admitRate = round(admissions / applications, 2))
+ipeds.2002 <- ipeds.2002 %>% select("unitid", "school", "year", "state", "admitRate", "yield", "applications", 
+                                    "admissions", "enrollments", "avgSAT75", 
+                                    "ACTcomposite75")
+
+ipeds.2001 <- read_csv("2001.csv")
+colnames(ipeds.2001)[2] <- "school"
+colnames(ipeds.2001)[c(4:10)] <- c("state", "applications", "admissions", "enrollments",
+                                   "SATverbal75", "SATmath75", "ACTcomposite75")
+ipeds.2001 <- ipeds.2001 %>% mutate(avgSAT75 = (SATverbal75 + SATmath75)/2)
+ipeds.2001 <- ipeds.2001 %>% mutate(yield = round(enrollments / admissions, 2))
+ipeds.2001 <- ipeds.2001 %>% mutate(admitRate = round(admissions / applications, 2))
+ipeds.2001 <- ipeds.2001 %>% select("unitid", "school", "year", "state", "admitRate", "yield", "applications", 
+                                    "admissions", "enrollments", "avgSAT75", 
+                                    "ACTcomposite75")
+
+ipeds.df <- bind_rows(ipeds.2001, ipeds.2002, ipeds.2003, ipeds.2004, ipeds.2005, ipeds.2006, ipeds.2007,
+                   ipeds.2008, ipeds.2009, ipeds.2010, ipeds.2011, ipeds.2012, ipeds.2013, ipeds.2014,
+                   ipeds.2015, ipeds.2016, ipeds.2017, ipeds.2018, ipeds.2019)
+
+# save this as csv file
+write_csv(ipeds.df, "ap_playoff.csv")
 

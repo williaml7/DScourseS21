@@ -1,0 +1,1236 @@
+unitid,school,year,state,admitRate,yield,applications,admissions,enrollments,avgSAT75,ACTcomposite75
+100751,The University of Alabama,2001,Alabama,0.79,0.39,7864,6250,2420,605,26
+100858,Auburn University,2001,Alabama,0.76,0.36,13645,10362,3755,605,26
+104151,Arizona State University-Tempe,2001,Arizona,0.75,0.4,20861,15702,6203,605,26
+104179,University of Arizona,2001,Arizona,0.84,0.36,19719,16613,5949,605,26
+106397,University of Arkansas,2001,Arkansas,0.9,0.59,4280,3858,2283,650,28
+110635,University of California-Berkeley,2001,California,0.26,0.42,32963,8715,3703,725,NA
+110662,University of California-Los Angeles,2001,California,0.27,0.39,40739,10953,4247,700,NA
+123961,University of Southern California,2001,California,0.34,0.32,26351,8973,2916,700,31
+126614,University of Colorado Boulder,2001,Colorado,0.79,0.34,18486,14637,5021,630,27
+134097,Florida State University,2001,Florida,0.62,0.5,18342,11444,5772,635,NA
+134130,University of Florida,2001,Florida,0.6,0.57,18625,11186,6361,660,NA
+135726,University of Miami,2001,Florida,0.46,0.32,14724,6809,2164,645,NA
+139755,Georgia Institute of Technology-Main Campus,2001,Georgia,0.54,0.43,9476,5157,2225,710,NA
+139959,University of Georgia,2001,Georgia,0.77,0.54,10953,8419,4514,665,30
+145600,University of Illinois at Chicago,2001,Illinois,0.64,0.45,9512,6049,2692,NA,25
+147767,Northwestern University,2001,Illinois,0.33,0.39,14725,4827,1885,735,NA
+151351,Indiana University-Bloomington,2001,Indiana,0.83,0.41,20228,16777,6815,605,27
+152080,University of Notre Dame,2001,Indiana,0.36,0.61,9385,3338,2036,725,32
+153603,Iowa State University,2001,Iowa,0.9,0.48,10658,9604,4654,675,27
+153658,University of Iowa,2001,Iowa,0.85,0.4,11836,10089,4005,NA,27
+155317,University of Kansas,2001,Kansas,0.69,0.72,8479,5861,4208,NA,28
+155399,Kansas State University,2001,Kansas,0.62,0.66,8077,5006,3283,NA,26
+157085,University of Kentucky,2001,Kentucky,0.81,0.44,8312,6696,2928,NA,27
+157289,University of Louisville,2001,Kentucky,0.89,0.65,4198,3741,2414,NA,25
+159391,Louisiana State University and Agricultural & Mechanical College,2001,Louisiana,0.78,0.67,9789,7588,5087,NA,26
+163259,"University of Maryland, Baltimore",2001,Maryland,NA,NA,0,0,0,NA,NA
+164924,Boston College,2001,Massachusetts,0.34,0.33,19059,6401,2103,695,NA
+170976,University of Michigan-Ann Arbor,2001,Michigan,0.52,0.44,24141,12594,5540,701,30
+171100,Michigan State University,2001,Michigan,0.65,0.44,24391,15877,6914,625,27
+174066,University of Minnesota-Twin Cities,2001,Minnesota,0.76,0.46,15436,11673,5344,NA,28
+176017,University of Mississippi,2001,Mississippi,0.7,0.43,7176,5001,2152,NA,26
+176080,Mississippi State University,2001,Mississippi,0.34,0.95,5463,1870,1777,NA,NA
+178396,University of Missouri-Columbia,2001,Missouri,0.8,0.48,10819,8661,4166,650,28
+181464,University of Nebraska-Lincoln,2001,Nebraska,0.91,0.54,7266,6578,3532,645,27
+186380,Rutgers University-New Brunswick,2001,New Jersey,0.6,0.34,27074,16172,5468,645,NA
+196413,Syracuse University,2001,New York,0.64,0.28,14514,9221,2627,650,NA
+198419,Duke University,2001,North Carolina,NA,NA,0,0,0,NA,NA
+199120,University of North Carolina at Chapel Hill,2001,North Carolina,0.37,0.56,16569,6088,3415,680,NA
+199193,North Carolina State University at Raleigh,2001,North Carolina,0.65,0.48,12168,7944,3839,645,NA
+199847,Wake Forest University,2001,North Carolina,0.46,0.41,5271,2421,989,690,NA
+204796,Ohio State University-Main Campus,2001,Ohio,0.73,0.41,19968,14501,5996,645,28
+207388,Oklahoma State University-Main Campus,2001,Oklahoma,0.91,0.62,5548,5074,3165,625,26
+207500,University of Oklahoma-Norman Campus,2001,Oklahoma,0.93,0.58,6943,6459,3748,NA,27
+209542,Oregon State University,2001,Oregon,0.87,0.46,6906,6041,2769,600,26
+209551,University of Oregon,2001,Oregon,0.9,0.39,8107,7305,2876,615,NA
+214777,Pennsylvania State University-Main Campus,2001,Pennsylvania,0.48,0.4,28862,13966,5633,645,NA
+215293,University of Pittsburgh-Pittsburgh Campus,2001,Pennsylvania,0.62,0.35,13565,8370,2951,635,29
+217882,Clemson University,2001,South Carolina,0.52,0.43,11432,5976,2544,640,28
+218663,University of South Carolina-Columbia,2001,South Carolina,0.7,0.42,11176,7788,3298,605,26
+221759,The University of Tennessee-Knoxville,2001,Tennessee,0.69,0.7,8263,5675,3958,605,26
+221999,Vanderbilt University,2001,Tennessee,0.46,0.34,9730,4514,1557,700,31
+223232,Baylor University,2001,Texas,0.79,0.44,7986,6336,2801,640,NA
+228723,Texas A & M University-College Station,2001,Texas,0.69,0.58,16681,11558,6760,645,28
+228778,The University of Texas at Austin,2001,Texas,0.64,0.55,20954,13326,7337,665,NA
+228875,Texas Christian University,2001,Texas,0.72,0.36,5822,4187,1514,630,28
+229115,Texas Tech University,2001,Texas,0.74,0.47,12008,8837,4196,600,26
+230764,University of Utah,2001,Utah,0.91,0.51,5926,5392,2735,NA,26
+233921,Virginia Polytechnic Institute and State University,2001,Virginia,0.7,0.38,18839,13139,5053,645,NA
+234076,University of Virginia-Main Campus,2001,Virginia,0.38,0.54,14739,5534,2980,710,32
+236939,Washington State University,2001,Washington,0.81,0.4,7958,6476,2619,590,NA
+236948,University of Washington-Seattle Campus,2001,Washington,0.79,0.57,14664,11523,6566,640,27
+238032,West Virginia University,2001,West Virginia,0.94,0.47,8016,7564,3540,565,25
+240444,University of Wisconsin-Madison,2001,Wisconsin,0.76,0.45,16874,12777,5736,NA,29
+243744,Stanford University,2001,California,0.13,0.67,19052,2406,1616,775,33
+243780,Purdue University-Main Campus,2001,Indiana,0.77,0.38,21760,16727,6354,625,28
+100751,The University of Alabama,2002,Alabama,0.85,0.43,7322,6196,2655,620,26
+100858,Auburn University,2002,Alabama,0.83,0.38,13264,10994,4184,605,26
+104151,Arizona State University-Tempe,2002,Arizona,0.85,0.41,18155,15385,6348,600,26
+104179,University of Arizona,2002,Arizona,0.86,0.34,19832,16973,5808,610,26
+106397,University of Arkansas,2002,Arkansas,0.86,0.52,5017,4320,2251,645,28
+110635,University of California-Berkeley,2002,California,0.25,0.43,36100,8912,3863,720,NA
+110662,University of California-Los Angeles,2002,California,0.27,0.39,40739,10953,4246,700,29
+123961,University of Southern California,2002,California,0.3,0.32,28362,8620,2766,710,31
+126614,University of Colorado Boulder,2002,Colorado,0.8,0.35,19152,15341,5428,630,27
+134097,Florida State University,2002,Florida,0.62,0.5,18342,11444,5772,635,NA
+134130,University of Florida,2002,Florida,0.58,0.56,20119,11728,6536,670,NA
+135726,University of Miami,2002,Florida,0.44,0.3,15909,6977,2059,650,28
+139755,Georgia Institute of Technology-Main Campus,2002,Georgia,0.59,0.43,8953,5270,2282,710,NA
+139959,University of Georgia,2002,Georgia,0.65,0.51,12786,8340,4228,645,29
+145600,University of Illinois at Chicago,2002,Illinois,0.61,0.4,12430,7596,3015,NA,25
+147767,Northwestern University,2002,Illinois,0.34,0.41,13988,4780,1952,740,NA
+151351,Indiana University-Bloomington,2002,Indiana,0.81,0.41,21264,17267,7080,605,27
+152080,University of Notre Dame,2002,Indiana,0.34,0.58,9744,3336,1946,725,33
+153603,Iowa State University,2002,Iowa,0.89,0.46,10370,9232,4219,660,27
+153658,University of Iowa,2002,Iowa,0.84,0.38,13079,11038,4184,655,27
+155317,University of Kansas,2002,Kansas,0.68,0.66,9005,6157,4078,NA,28
+155399,Kansas State University,2002,Kansas,0.58,0.74,8212,4752,3527,NA,25
+157085,University of Kentucky,2002,Kentucky,0.82,0.45,8449,6914,3140,620,26
+157289,University of Louisville,2002,Kentucky,0.68,0.59,5814,3955,2331,600,25
+159391,Louisiana State University and Agricultural & Mechanical College,2002,Louisiana,0.79,0.64,10536,8336,5301,NA,26
+163259,"University of Maryland, Baltimore",2002,Maryland,NA,NA,0,0,0,NA,NA
+164924,Boston College,2002,Massachusetts,0.32,0.34,21133,6850,2315,695,NA
+170976,University of Michigan-Ann Arbor,2002,Michigan,0.49,0.42,25108,12315,5187,695,30
+171100,Michigan State University,2002,Michigan,0.67,0.41,25210,16977,7000,625,27
+174066,University of Minnesota-Twin Cities,2002,Minnesota,0.74,0.47,14724,10967,5185,NA,28
+176017,University of Mississippi,2002,Mississippi,0.67,0.44,7603,5114,2257,NA,26
+176080,Mississippi State University,2002,Mississippi,0.73,0.51,4772,3469,1759,NA,27
+178396,University of Missouri-Columbia,2002,Missouri,0.79,0.49,11569,9091,4439,NA,28
+181464,University of Nebraska-Lincoln,2002,Nebraska,0.9,0.53,7631,6836,3653,650,27
+186380,Rutgers University-New Brunswick,2002,New Jersey,0.55,0.34,26678,14764,5054,650,NA
+196413,Syracuse University,2002,New York,0.69,0.31,13644,9380,2916,650,NA
+198419,Duke University,2002,North Carolina,0.26,0.44,13976,3673,1615,750,NA
+199120,University of North Carolina at Chapel Hill,2002,North Carolina,0.4,0.58,15946,6339,3687,685,NA
+199193,North Carolina State University at Raleigh,2002,North Carolina,0.66,0.49,11928,7866,3893,640,NA
+199847,Wake Forest University,2002,North Carolina,0.41,0.41,5995,2454,1007,695,NA
+204796,Ohio State University-Main Campus,2002,Ohio,0.74,0.42,19563,14414,5982,635,27
+207388,Oklahoma State University-Main Campus,2002,Oklahoma,0.91,0.69,5167,4712,3265,610,26
+207500,University of Oklahoma-Norman Campus,2002,Oklahoma,0.89,0.6,7248,6425,3833,NA,28
+209542,Oregon State University,2002,Oregon,0.51,0.92,6645,3402,3115,600,NA
+209551,University of Oregon,2002,Oregon,0.9,0.4,8686,7819,3107,610,NA
+214777,Pennsylvania State University-Main Campus,2002,Pennsylvania,0.57,0.38,28100,15966,6122,645,NA
+215293,University of Pittsburgh-Pittsburgh Campus,2002,Pennsylvania,0.6,0.35,15438,9224,3208,635,28
+217882,Clemson University,2002,South Carolina,0.52,0.42,11315,5864,2471,655,29
+218663,University of South Carolina-Columbia,2002,South Carolina,0.7,0.42,11176,7788,3287,605,26
+221759,The University of Tennessee-Knoxville,2002,Tennessee,0.88,0.45,9350,8241,3682,605,26
+221999,Vanderbilt University,2002,Tennessee,0.46,0.35,9836,4550,1579,710,31
+223232,Baylor University,2002,Texas,0.81,0.43,7431,6028,2620,640,NA
+228723,Texas A & M University-College Station,2002,Texas,0.68,0.59,17284,11777,6949,645,27
+228778,The University of Texas at Austin,2002,Texas,0.61,0.59,22178,13473,7935,665,28
+228875,Texas Christian University,2002,Texas,0.71,0.33,6137,4380,1451,625,27
+229115,Texas Tech University,2002,Texas,0.69,0.5,13101,9039,4531,600,26
+230764,University of Utah,2002,Utah,0.9,0.45,5802,5221,2350,NA,25
+233921,Virginia Polytechnic Institute and State University,2002,Virginia,0.68,0.39,17900,12131,4735,645,NA
+234076,University of Virginia-Main Campus,2002,Virginia,0.39,0.54,14320,5588,2999,710,31
+236939,Washington State University,2002,Washington,0.77,0.41,8932,6885,2790,585,NA
+236948,University of Washington-Seattle Campus,2002,Washington,0.69,0.45,15633,10787,4846,645,NA
+238032,West Virginia University,2002,West Virginia,0.94,0.44,8786,8238,3661,562.5,25
+240444,University of Wisconsin-Madison,2002,Wisconsin,0.71,0.45,19249,13683,6095,NA,29
+243744,Stanford University,2002,California,0.13,0.69,18599,2368,1639,770,33
+243780,Purdue University-Main Campus,2002,Indiana,0.76,0.36,22872,17292,6208,635,28
+100751,The University of Alabama,2003,Alabama,0.87,0.43,8298,7194,3077,NA,26
+100858,Auburn University,2003,Alabama,0.78,0.38,12439,9653,3706,610,27
+104151,Arizona State University-Tempe,2003,Arizona,0.88,0.41,19785,17490,7126,610,26
+104179,University of Arizona,2003,Arizona,0.85,0.33,21185,18021,5958,620,26
+106397,University of Arkansas,2003,Arkansas,0.85,0.51,5491,4661,2357,655,28
+110635,University of California-Berkeley,2003,California,0.24,0.42,36445,8707,3653,720,NA
+110662,University of California-Los Angeles,2003,California,0.24,0.41,43436,10454,4257,695,NA
+123961,University of Southern California,2003,California,0.3,0.34,29278,8753,2976,710,31
+126614,University of Colorado Boulder,2003,Colorado,0.8,0.33,20920,16790,5586,640,28
+134097,Florida State University,2003,Florida,0.64,0.42,22438,14465,6097,625,27
+134130,University of Florida,2003,Florida,0.52,0.55,22973,12029,6596,670,NA
+135726,University of Miami,2003,Florida,0.44,0.28,16851,7490,2078,670,30
+139755,Georgia Institute of Technology-Main Campus,2003,Georgia,0.63,0.42,8573,5386,2237,715,NA
+139959,University of Georgia,2003,Georgia,0.75,0.58,11813,8885,5190,650,28
+145600,University of Illinois at Chicago,2003,Illinois,0.61,0.4,12250,7425,2942,NA,25
+147767,Northwestern University,2003,Illinois,0.33,0.43,14283,4701,2005,740,33
+151351,Indiana University-Bloomington,2003,Indiana,0.81,0.38,22178,17992,6784,610,27
+152080,University of Notre Dame,2003,Indiana,0.29,0.57,12095,3524,1996,730,33
+153603,Iowa State University,2003,Iowa,0.9,0.48,9035,8116,3897,665,27
+153658,University of Iowa,2003,Iowa,0.82,0.37,13337,10979,4083,650,27
+155317,University of Kansas,2003,Kansas,0.67,0.63,9573,6458,4074,NA,27
+155399,Kansas State University,2003,Kansas,0.6,0.73,7952,4736,3439,NA,25
+157085,University of Kentucky,2003,Kentucky,0.82,0.51,8879,7250,3718,625,26
+157289,University of Louisville,2003,Kentucky,0.77,0.57,5306,4076,2318,NA,26
+159391,Louisiana State University and Agricultural & Mechanical College,2003,Louisiana,0.77,0.66,10376,7973,5262,NA,27
+163259,"University of Maryland, Baltimore",2003,Maryland,NA,NA,NA,NA,NA,NA,NA
+164924,Boston College,2003,Massachusetts,0.31,0.32,22424,6896,2208,700,NA
+170976,University of Michigan-Ann Arbor,2003,Michigan,0.53,0.4,25943,13814,5553,705,30
+171100,Michigan State University,2003,Michigan,0.71,0.4,24973,17690,7122,635,27
+174066,University of Minnesota-Twin Cities,2003,Minnesota,0.76,0.4,17180,13059,5186,NA,28
+176017,University of Mississippi,2003,Mississippi,0.67,0.44,7603,5114,2257,NA,26
+176080,Mississippi State University,2003,Mississippi,0.75,0.48,4646,3493,1688,NA,27
+178396,University of Missouri-Columbia,2003,Missouri,0.81,0.49,11677,9443,4669,NA,28
+181464,University of Nebraska-Lincoln,2003,Nebraska,0.78,0.61,7631,5974,3653,650,27
+186380,Rutgers University-New Brunswick,2003,New Jersey,0.54,0.31,27311,14857,4679,650,NA
+196413,Syracuse University,2003,New York,0.62,0.3,14144,8718,2650,660,NA
+198419,Duke University,2003,North Carolina,0.23,0.43,16315,3778,1619,760,34
+199120,University of North Carolina at Chapel Hill,2003,North Carolina,0.35,0.57,17141,6073,3460,685,NA
+199193,North Carolina State University at Raleigh,2003,North Carolina,0.59,0.51,12293,7310,3732,650,NA
+199847,Wake Forest University,2003,North Carolina,0.45,0.39,5752,2599,1007,695,NA
+204796,Ohio State University-Main Campus,2003,Ohio,0.72,0.44,20122,14494,6390,645,28
+207388,Oklahoma State University-Main Campus,2003,Oklahoma,0.89,0.59,6706,5952,3484,605,26
+207500,University of Oklahoma-Norman Campus,2003,Oklahoma,0.82,0.57,8140,6638,3808,NA,28
+209542,Oregon State University,2003,Oregon,0.75,0.7,5811,4379,3058,595,26
+209551,University of Oregon,2003,Oregon,0.86,0.39,9889,8479,3317,610,NA
+214777,Pennsylvania State University-Main Campus,2003,Pennsylvania,0.57,0.38,27604,15628,5929,650,NA
+215293,University of Pittsburgh-Pittsburgh Campus,2003,Pennsylvania,0.55,0.36,15888,8703,3112,645,29
+217882,Clemson University,2003,South Carolina,0.61,0.4,11419,6945,2769,645,29
+218663,University of South Carolina-Columbia,2003,South Carolina,0.7,0.42,12016,8446,3561,615,26
+221759,The University of Tennessee-Knoxville,2003,Tennessee,0.71,0.53,9514,6790,3579,615,26
+221999,Vanderbilt University,2003,Tennessee,0.46,0.35,9836,4550,1579,710,31
+223232,Baylor University,2003,Texas,0.82,0.36,8931,7341,2678,625,27
+228723,Texas A & M University-College Station,2003,Texas,0.67,0.57,17250,11639,6675,650,28
+228778,The University of Texas at Austin,2003,Texas,0.47,0.57,24519,11504,6544,675,NA
+228875,Texas Christian University,2003,Texas,0.65,0.32,7654,4971,1596,630,28
+229115,Texas Tech University,2003,Texas,0.67,0.48,13755,9257,4445,610,26
+230764,University of Utah,2003,Utah,0.86,0.53,5842,5036,2653,NA,26
+233921,Virginia Polytechnic Institute and State University,2003,Virginia,0.7,0.39,18426,12827,4948,645,NA
+234076,University of Virginia-Main Campus,2003,Virginia,0.39,0.54,14627,5775,3102,715,NA
+236939,Washington State University,2003,Washington,0.78,0.42,9213,7184,3032,585,NA
+236948,University of Washington-Seattle Campus,2003,Washington,0.71,0.45,15773,11156,4977,650,NA
+238032,West Virginia University,2003,West Virginia,0.94,0.46,9147,8589,3978,575,25
+240444,University of Wisconsin-Madison,2003,Wisconsin,0.66,0.42,19737,12992,5514,NA,30
+243744,Stanford University,2003,California,0.13,0.7,18628,2343,1640,780,34
+243780,Purdue University-Main Campus,2003,Indiana,0.79,0.36,22977,18076,6505,630,28
+100751,The University of Alabama,2004,Alabama,0.77,0.48,9106,7021,3368,600,26
+100858,Auburn University,2004,Alabama,0.84,0.33,12827,10796,3594,605,27
+104151,Arizona State University-Tempe,2004,Arizona,0.86,0.4,20789,17899,7147,610,26
+104179,University of Arizona,2004,Arizona,0.83,0.29,23725,19788,5725,615,26
+106397,University of Arkansas,2004,Arkansas,0.78,0.55,5819,4567,2514,650,28
+110635,University of California-Berkeley,2004,California,0.24,0.41,37001,8833,3653,720,30
+110662,University of California-Los Angeles,2004,California,0.24,0.4,44981,10577,4268,705,29
+123961,University of Southern California,2004,California,0.27,0.34,29792,8037,2770,720,31
+126614,University of Colorado Boulder,2004,Colorado,0.85,0.31,19360,16425,5149,640,28
+134097,Florida State University,2004,Florida,0.65,0.44,22127,14307,6240,630,27
+134130,University of Florida,2004,Florida,0.53,0.57,22458,11928,6741,680,NA
+135726,University of Miami,2004,Florida,0.42,0.26,18507,7784,2043,675,30
+139755,Georgia Institute of Technology-Main Campus,2004,Georgia,0.7,0.43,8568,6008,2579,710,30
+139959,University of Georgia,2004,Georgia,0.75,0.58,11813,8885,5190,650,28
+145600,University of Illinois at Chicago,2004,Illinois,0.62,0.36,12362,7627,2716,NA,25
+147767,Northwestern University,2004,Illinois,0.33,0.41,14137,4702,1941,740,33
+151351,Indiana University-Bloomington,2004,Indiana,0.83,0.36,21172,17572,6352,610,27
+152080,University of Notre Dame,2004,Indiana,0.3,0.57,11490,3488,1985,735,33
+153603,Iowa State University,2004,Iowa,0.9,0.45,9172,8273,3729,670,27
+153658,University of Iowa,2004,Iowa,0.83,0.35,13874,11545,4017,665,27
+155317,University of Kansas,2004,Kansas,0.68,0.62,9700,6600,4066,NA,27
+155399,Kansas State University,2004,Kansas,0.48,0.72,10066,4806,3466,NA,26
+157085,University of Kentucky,2004,Kentucky,0.81,0.49,9418,7603,3688,625,27
+157289,University of Louisville,2004,Kentucky,0.79,0.55,5284,4189,2307,605,26
+159391,Louisiana State University and Agricultural & Mechanical College,2004,Louisiana,0.81,0.66,10147,8171,5428,635,27
+163259,"University of Maryland, Baltimore",2004,Maryland,NA,NA,NA,NA,NA,NA,NA
+164924,Boston College,2004,Massachusetts,0.32,0.32,22451,7178,2309,705,NA
+170976,University of Michigan-Ann Arbor,2004,Michigan,0.62,0.45,21293,13304,6040,720,31
+171100,Michigan State University,2004,Michigan,0.79,0.44,21834,17343,7607,635,27
+174066,University of Minnesota-Twin Cities,2004,Minnesota,0.74,0.41,18537,13707,5588,670,28
+176017,University of Mississippi,2004,Mississippi,0.81,0.46,6490,5251,2427,NA,26
+176080,Mississippi State University,2004,Mississippi,0.68,0.49,5245,3568,1753,NA,27
+178396,University of Missouri-Columbia,2004,Missouri,0.8,0.46,12659,10100,4668,655,28
+181464,University of Nebraska-Lincoln,2004,Nebraska,0.74,0.64,6871,5118,3266,650,28
+186380,Rutgers University-New Brunswick,2004,New Jersey,0.61,0.32,24434,14961,4817,655,NA
+196413,Syracuse University,2004,New York,0.59,0.28,16019,9463,2671,660,28
+198419,Duke University,2004,North Carolina,0.21,0.43,17749,3804,1640,765,34
+199120,University of North Carolina at Chapel Hill,2004,North Carolina,0.37,0.55,17591,6441,3516,695,30
+199193,North Carolina State University at Raleigh,2004,North Carolina,0.62,0.49,12978,8048,3931,650,29
+199847,Wake Forest University,2004,North Carolina,0.47,0.38,6289,2945,1121,705,NA
+204796,Ohio State University-Main Campus,2004,Ohio,0.76,0.47,16954,12822,6057,645,28
+207388,Oklahoma State University-Main Campus,2004,Oklahoma,0.89,0.56,6633,5881,3264,600,27
+207500,University of Oklahoma-Norman Campus,2004,Oklahoma,0.82,0.54,8165,6723,3614,NA,28
+209542,Oregon State University,2004,Oregon,0.88,0.45,7410,6529,2949,600,26
+209551,University of Oregon,2004,Oregon,0.84,0.33,10193,8602,2865,605,NA
+214777,Pennsylvania State University-Main Campus,2004,Pennsylvania,0.55,0.35,31264,17174,6048,650,NA
+215293,University of Pittsburgh-Pittsburgh Campus,2004,Pennsylvania,0.48,0.34,17494,8445,2913,655,28
+217882,Clemson University,2004,South Carolina,0.69,0.41,10620,7287,3019,650,28
+218663,University of South Carolina-Columbia,2004,South Carolina,0.7,0.41,12004,8442,3491,625,27
+221759,The University of Tennessee-Knoxville,2004,Tennessee,0.44,0.92,10832,4793,4422,615,26
+221999,Vanderbilt University,2004,Tennessee,0.38,0.37,11173,4280,1602,720,32
+223232,Baylor University,2004,Texas,0.73,0.35,10917,7924,2785,645,27
+228723,Texas A & M University-College Station,2004,Texas,0.72,0.57,17324,12426,7068,650,28
+228778,The University of Texas at Austin,2004,Texas,0.51,0.58,23008,11788,6791,670,28
+228875,Texas Christian University,2004,Texas,0.65,0.32,7654,4971,1596,630,28
+229115,Texas Tech University,2004,Texas,0.67,0.44,13323,8939,3950,610,26
+230764,University of Utah,2004,Utah,0.86,0.51,6251,5403,2769,NA,26
+233921,Virginia Polytechnic Institute and State University,2004,Virginia,0.72,0.39,17845,12771,4943,645,NA
+234076,University of Virginia-Main Campus,2004,Virginia,0.39,0.54,14824,5760,3113,715,NA
+236939,Washington State University,2004,Washington,0.75,0.44,9463,7125,3108,590,25
+236948,University of Washington-Seattle Campus,2004,Washington,0.71,0.45,15773,11156,4977,655,28
+238032,West Virginia University,2004,West Virginia,0.92,0.48,10049,9281,4415,575,25
+240444,University of Wisconsin-Madison,2004,Wisconsin,0.7,0.41,19342,13447,5579,NA,30
+243744,Stanford University,2004,California,0.13,0.66,19172,2486,1649,775,34
+243780,Purdue University-Main Campus,2004,Indiana,0.8,0.36,24003,19259,6865,630,28
+100751,The University of Alabama,2005,Alabama,0.74,0.48,10555,7776,3739,630,26
+100858,Auburn University,2005,Alabama,0.82,0.36,14249,11616,4197,610,27
+104151,Arizona State University-Tempe,2005,Arizona,0.91,0.43,19914,18126,7706,615,26
+104179,University of Arizona,2005,Arizona,0.88,0.38,17904,15701,5974,625,26
+106397,University of Arkansas,2005,Arkansas,0.87,0.52,6041,5283,2752,640,28
+110635,University of California-Berkeley,2005,California,0.25,0.41,36679,9041,3672,725,30
+110662,University of California-Los Angeles,2005,California,0.23,0.37,43267,9949,3723,705,30
+123961,University of Southern California,2005,California,0.27,0.33,31634,8418,2741,720,32
+126614,University of Colorado Boulder,2005,Colorado,0.88,0.34,17111,15003,5047,640,28
+134097,Florida State University,2005,Florida,0.62,0.43,22450,14016,6067,625,27
+134130,University of Florida,2005,Florida,0.57,0.6,21151,12100,7241,680,29
+135726,University of Miami,2005,Florida,0.46,0.26,18812,8679,2277,680,30
+139755,Georgia Institute of Technology-Main Campus,2005,Georgia,0.67,0.39,9172,6191,2427,710,30
+139959,University of Georgia,2005,Georgia,0.62,0.55,13267,8197,4513,660,28
+145600,University of Illinois at Chicago,2005,Illinois,0.58,0.37,12692,7418,2776,655,26
+147767,Northwestern University,2005,Illinois,0.3,0.41,15637,4684,1915,750,33
+151351,Indiana University-Bloomington,2005,Indiana,0.85,0.37,21974,18602,6949,615,27
+152080,University of Notre Dame,2005,Indiana,0.32,0.55,11316,3581,1965,740,33
+153603,Iowa State University,2005,Iowa,0.9,0.46,9101,8216,3769,675,27
+153658,University of Iowa,2005,Iowa,0.84,0.35,13241,11122,3849,655,27
+155317,University of Kansas,2005,Kansas,0.69,0.59,10442,7228,4269,NA,27
+155399,Kansas State University,2005,Kansas,0.48,0.72,10067,4806,3466,NA,26
+157085,University of Kentucky,2005,Kentucky,0.79,0.47,10604,8353,3961,630,27
+157289,University of Louisville,2005,Kentucky,0.81,0.55,5335,4325,2358,615,26
+159391,Louisiana State University and Agricultural & Mechanical College,2005,Louisiana,0.78,0.66,11077,8660,5700,645,27
+163259,"University of Maryland, Baltimore",2005,Maryland,NA,NA,NA,NA,NA,NA,NA
+164924,Boston College,2005,Massachusetts,0.31,0.3,23823,7302,2174,710,31
+170976,University of Michigan-Ann Arbor,2005,Michigan,0.57,0.45,23882,13610,6115,710,31
+171100,Michigan State University,2005,Michigan,0.76,0.45,21844,16686,7485,635,27
+174066,University of Minnesota-Twin Cities,2005,Minnesota,0.7,0.37,20573,14309,5305,675,28
+176017,University of Mississippi,2005,Mississippi,0.81,0.42,6662,5410,2270,590,26
+176080,Mississippi State University,2005,Mississippi,0.69,0.49,5778,3982,1966,NA,27
+178396,University of Missouri-Columbia,2005,Missouri,0.83,0.46,12404,10262,4718,655,28
+181464,University of Nebraska-Lincoln,2005,Nebraska,0.75,0.63,7474,5633,3560,665,28
+186380,Rutgers University-New Brunswick,2005,New Jersey,0.61,0.33,25462,15437,5121,650,NA
+196413,Syracuse University,2005,New York,0.65,0.31,16265,10519,3253,660,29
+198419,Duke University,2005,North Carolina,0.22,0.43,18090,3995,1724,765,33
+199120,University of North Carolina at Chapel Hill,2005,North Carolina,0.36,0.53,18850,6741,3589,695,30
+199193,North Carolina State University at Raleigh,2005,North Carolina,0.59,0.47,14109,8336,3957,645,27
+199847,Wake Forest University,2005,North Carolina,0.47,0.38,6289,2945,1121,705,NA
+204796,Ohio State University-Main Campus,2005,Ohio,0.73,0.46,17636,12957,5954,600,28
+207388,Oklahoma State University-Main Campus,2005,Oklahoma,0.51,1,6533,3331,3315,615,27
+207500,University of Oklahoma-Norman Campus,2005,Oklahoma,0.86,0.51,7382,6325,3239,NA,28
+209542,Oregon State University,2005,Oregon,0.9,0.46,6917,6224,2888,600,26
+209551,University of Oregon,2005,Oregon,0.91,0.36,9623,8749,3183,615,NA
+214777,Pennsylvania State University-Main Campus,2005,Pennsylvania,0.58,0.34,30122,17551,5907,645,28
+215293,University of Pittsburgh-Pittsburgh Campus,2005,Pennsylvania,0.49,0.32,18973,9295,2991,665,28
+217882,Clemson University,2005,South Carolina,0.69,0.42,10620,7287,3033,650,28
+218663,University of South Carolina-Columbia,2005,South Carolina,0.67,0.41,12379,8344,3403,625,27
+221759,The University of Tennessee-Knoxville,2005,Tennessee,0.44,0.92,10832,4793,4422,610,27
+221999,Vanderbilt University,2005,Tennessee,0.35,0.39,11663,4115,1622,730,33
+223232,Baylor University,2005,Texas,0.66,0.31,15485,10170,3168,655,27
+228723,Texas A & M University-College Station,2005,Texas,0.7,0.56,17911,12547,7079,655,28
+228778,The University of Texas at Austin,2005,Texas,0.51,0.56,23925,12207,6836,680,29
+228875,Texas Christian University,2005,Texas,0.67,0.29,8155,5471,1596,635,28
+229115,Texas Tech University,2005,Texas,0.71,0.42,12583,8927,3779,610,26
+230764,University of Utah,2005,Utah,0.86,0.51,6251,5403,2769,NA,26
+233921,Virginia Polytechnic Institute and State University,2005,Virginia,0.72,0.4,17670,12703,5049,645,NA
+234076,University of Virginia-Main Campus,2005,Virginia,0.38,0.53,15657,5898,3113,715,30
+236939,Washington State University,2005,Washington,0.74,0.42,9193,6793,2878,605,26
+236948,University of Washington-Seattle Campus,2005,Washington,0.67,0.46,15955,10694,4893,660,28
+238032,West Virginia University,2005,West Virginia,0.89,0.46,10523,9409,4359,580,25
+240444,University of Wisconsin-Madison,2005,Wisconsin,0.71,0.41,19263,13723,5641,685,30
+243744,Stanford University,2005,California,0.12,0.67,20195,2426,1633,775,33
+243780,Purdue University-Main Campus,2005,Indiana,0.85,0.35,24052,20432,7252,630,28
+100751,The University of Alabama,2006,Alabama,0.7,0.5,12522,8770,4378,630,27
+100858,Auburn University,2006,Alabama,0.72,0.35,15919,11538,4092,615,27
+104151,Arizona State University-Tempe,2006,Arizona,0.92,0.41,20702,19133,7894,610,26
+104179,University of Arizona,2006,Arizona,0.86,0.42,16609,14293,6009,615,26
+106397,University of Arkansas,2006,Arkansas,0.68,0.48,8443,5770,2784,640,28
+110635,University of California-Berkeley,2006,California,0.27,0.42,37014,9817,4101,725,31
+110662,University of California-Los Angeles,2006,California,0.27,0.39,42223,11361,4423,705,30
+123961,University of Southern California,2006,California,0.25,0.32,33973,8634,2763,730,32
+126614,University of Colorado Boulder,2006,Colorado,0.88,0.35,18160,15960,5645,640,28
+134097,Florida State University,2006,Florida,0.59,0.44,23687,14027,6222,625,27
+134130,University of Florida,2006,Florida,0.48,0.63,22093,10652,6702,680,29
+135726,University of Miami,2006,Florida,0.4,0.27,19040,7709,2062,680,31
+139755,Georgia Institute of Technology-Main Campus,2006,Georgia,0.67,0.46,9250,6163,2837,700,32
+139959,University of Georgia,2006,Georgia,0.65,0.59,12326,7982,4712,665,28
+145600,University of Illinois at Chicago,2006,Illinois,0.58,0.38,13000,7559,2852,NA,26
+147767,Northwestern University,2006,Illinois,0.3,0.41,16204,4818,1952,750,33
+151351,Indiana University-Bloomington,2006,Indiana,0.78,0.39,26645,20873,8183,620,27
+152080,University of Notre Dame,2006,Indiana,0.27,0.58,12796,3492,2039,750,33
+153603,Iowa State University,2006,Iowa,0.9,0.46,9101,8216,3769,675,27
+153658,University of Iowa,2006,Iowa,0.83,0.36,14350,11880,4289,660,27
+155317,University of Kansas,2006,Kansas,0.74,0.57,10030,7435,4201,NA,27
+155399,Kansas State University,2006,Kansas,0.48,0.69,9937,4788,3309,NA,27
+157085,University of Kentucky,2006,Kentucky,0.77,0.47,10516,8124,3835,635,27
+157289,University of Louisville,2006,Kentucky,0.79,0.51,5712,4515,2318,630,27
+159391,Louisiana State University and Agricultural & Mechanical College,2006,Louisiana,0.73,0.63,10825,7927,4970,650,27
+163259,"University of Maryland, Baltimore",2006,Maryland,NA,NA,NA,NA,NA,NA,NA
+164924,Boston College,2006,Massachusetts,0.29,0.3,26584,7736,2284,710,31
+170976,University of Michigan-Ann Arbor,2006,Michigan,0.47,0.44,25806,12246,5386,710,31
+171100,Michigan State University,2006,Michigan,0.73,0.44,23247,17046,7440,645,27
+174066,University of Minnesota-Twin Cities,2006,Minnesota,0.57,0.38,24663,14165,5439,680,28
+176017,University of Mississippi,2006,Mississippi,0.73,0.44,6763,4942,2192,590,26
+176080,Mississippi State University,2006,Mississippi,0.69,0.49,5778,3982,1966,NA,27
+178396,University of Missouri-Columbia,2006,Missouri,0.78,0.47,13102,10228,4838,650,28
+181464,University of Nebraska-Lincoln,2006,Nebraska,0.73,0.66,7993,5858,3849,660,28
+186380,Rutgers University-New Brunswick,2006,New Jersey,0.58,0.32,27560,16049,5086,655,NA
+196413,Syracuse University,2006,New York,0.51,0.3,19744,10157,3065,665,29
+198419,Duke University,2006,North Carolina,0.24,0.43,16820,3992,1724,780,33
+199120,University of North Carolina at Chapel Hill,2006,North Carolina,0.37,0.56,18414,6736,3751,695,31
+199193,North Carolina State University at Raleigh,2006,North Carolina,0.67,0.48,13752,9170,4375,640,28
+199847,Wake Forest University,2006,North Carolina,0.43,0.36,7342,3128,1125,700,NA
+204796,Ohio State University-Main Campus,2006,Ohio,0.65,0.5,19026,12443,6280,655,29
+207388,Oklahoma State University-Main Campus,2006,Oklahoma,0.87,0.55,6730,5853,3236,625,27
+207500,University of Oklahoma-Norman Campus,2006,Oklahoma,0.83,0.49,8223,6814,3342,NA,28
+209542,Oregon State University,2006,Oregon,0.93,0.48,6552,6078,2925,600,26
+209551,University of Oregon,2006,Oregon,0.9,0.35,10012,9048,3207,620,NA
+214777,Pennsylvania State University-Main Campus,2006,Pennsylvania,0.62,0.35,29904,18423,6496,650,28
+215293,University of Pittsburgh-Pittsburgh Campus,2006,Pennsylvania,0.53,0.34,18153,9654,3249,665,29
+217882,Clemson University,2006,South Carolina,0.55,0.4,12784,6990,2813,655,29
+218663,University of South Carolina-Columbia,2006,South Carolina,0.68,0.42,13023,8812,3734,635,27
+221759,The University of Tennessee-Knoxville,2006,Tennessee,0.74,0.47,12251,9060,4265,635,28
+221999,Vanderbilt University,2006,Tennessee,0.35,0.39,11663,4115,1622,730,33
+223232,Baylor University,2006,Texas,0.43,0.31,21393,9097,2783,655,28
+228723,Texas A & M University-College Station,2006,Texas,0.73,0.61,17382,12774,7799,645,28
+228778,The University of Texas at Austin,2006,Texas,0.49,0.56,27315,13307,7417,675,29
+228875,Texas Christian University,2006,Texas,0.63,0.3,8677,5442,1652,630,28
+229115,Texas Tech University,2006,Texas,0.7,0.4,13809,9691,3918,605,26
+230764,University of Utah,2006,Utah,0.85,0.43,6701,5702,2462,630,27
+233921,Virginia Polytechnic Institute and State University,2006,Virginia,0.68,0.4,18919,12824,5084,645,NA
+234076,University of Virginia-Main Campus,2006,Virginia,0.37,0.51,16087,6020,3091,715,31
+236939,Washington State University,2006,Washington,0.77,0.4,9314,7177,2856,600,NA
+236948,University of Washington-Seattle Campus,2006,Washington,0.67,0.46,15923,10681,4924,660,28
+238032,West Virginia University,2006,West Virginia,0.92,0.45,10957,10110,4574,570,26
+240444,University of Wisconsin-Madison,2006,Wisconsin,0.73,0.42,20156,14734,6141,685,30
+243744,Stanford University,2006,California,0.11,0.67,22333,2444,1648,770,33
+243780,Purdue University-Main Campus,2006,Indiana,0.85,0.36,24883,21042,7537,625,28
+100751,The University of Alabama,2007,Alabama,0.64,0.5,14313,9140,4538,615,27
+100858,Auburn University,2007,Alabama,0.69,0.34,17688,12200,4191,620,27
+104151,Arizona State University-Tempe,2007,Arizona,0.92,0.41,20702,19133,7894,610,26
+104179,University of Arizona,2007,Arizona,0.77,0.43,25449,19703,8482,610,26
+106397,University of Arkansas,2007,Arkansas,0.62,0.46,10135,6262,2899,640,29
+110635,University of California-Berkeley,2007,California,0.24,0.42,41796,9932,4157,725,30
+110662,University of California-Los Angeles,2007,California,0.26,0.39,47317,12188,4810,700,30
+123961,University of Southern California,2007,California,0.25,0.35,33760,8453,2963,730,32
+126614,University of Colorado Boulder,2007,Colorado,0.82,0.35,19857,16187,5591,640,28
+134097,Florida State University,2007,Florida,0.55,0.46,24343,13415,6133,635,28
+134130,University of Florida,2007,Florida,0.42,0.63,24126,10158,6443,680,29
+135726,University of Miami,2007,Florida,0.38,0.26,19809,7527,1991,685,31
+139755,Georgia Institute of Technology-Main Campus,2007,Georgia,0.63,0.45,9259,5831,2626,710,31
+139959,University of Georgia,2007,Georgia,0.58,0.55,15924,9214,5064,660,28
+145600,University of Illinois at Chicago,2007,Illinois,0.64,0.38,13595,8686,3291,NA,26
+147767,Northwestern University,2007,Illinois,0.3,0.38,18385,5434,2060,750,33
+151351,Indiana University-Bloomington,2007,Indiana,0.7,0.35,29059,20282,7197,630,28
+152080,University of Notre Dame,2007,Indiana,0.24,0.56,14503,3549,1991,755,34
+153603,Iowa State University,2007,Iowa,0.9,0.46,9634,8674,3983,665,27
+153658,University of Iowa,2007,Iowa,0.83,0.35,14678,12209,4287,660,27
+155317,University of Kansas,2007,Kansas,0.77,0.53,10240,7874,4153,NA,27
+155399,Kansas State University,2007,Kansas,0.83,0.5,7479,6207,3104,NA,25
+157085,University of Kentucky,2007,Kentucky,0.81,0.52,10024,8073,4190,620,26
+157289,University of Louisville,2007,Kentucky,0.71,0.55,6323,4477,2443,635,27
+159391,Louisiana State University and Agricultural & Mechanical College,2007,Louisiana,0.74,0.6,10135,7455,4508,645,28
+163259,"University of Maryland, Baltimore",2007,Maryland,NA,NA,NA,NA,NA,NA,NA
+164924,Boston College,2007,Massachusetts,0.27,0.29,28850,7869,2291,715,31
+170976,University of Michigan-Ann Arbor,2007,Michigan,0.5,0.43,27474,13826,5992,710,31
+171100,Michigan State University,2007,Michigan,0.74,0.42,24436,18040,7541,635,27
+174066,University of Minnesota-Twin Cities,2007,Minnesota,0.57,0.36,26096,14823,5280,690,29
+176017,University of Mississippi,2007,Mississippi,0.84,0.39,7921,6644,2570,565,26
+176080,Mississippi State University,2007,Mississippi,0.64,0.59,6098,3879,2281,NA,27
+178396,University of Missouri-Columbia,2007,Missouri,0.78,0.47,13102,10228,4838,650,28
+181464,University of Nebraska-Lincoln,2007,Nebraska,0.62,0.71,9598,5978,4235,660,28
+186380,Rutgers University-New Brunswick,2007,New Jersey,0.56,0.35,28208,15877,5519,650,NA
+196413,Syracuse University,2007,New York,0.51,0.29,21225,10750,3104,665,29
+198419,Duke University,2007,North Carolina,0.23,0.41,18159,4122,1683,770,34
+199120,University of North Carolina at Chapel Hill,2007,North Carolina,0.34,0.57,19728,6737,3807,695,30
+199193,North Carolina State University at Raleigh,2007,North Carolina,0.61,0.49,15640,9610,4693,640,26
+199847,Wake Forest University,2007,North Carolina,0.42,0.37,7177,3041,1124,705,31
+204796,Ohio State University-Main Campus,2007,Ohio,0.59,0.49,21508,12697,6168,665,29
+207388,Oklahoma State University-Main Campus,2007,Oklahoma,0.88,0.57,6415,5651,3209,620,27
+207500,University of Oklahoma-Norman Campus,2007,Oklahoma,0.82,0.5,9428,7776,3883,645,28
+209542,Oregon State University,2007,Oregon,0.92,0.36,9077,8387,3009,600,26
+209551,University of Oregon,2007,Oregon,0.88,0.36,10821,9531,3423,610,NA
+214777,Pennsylvania State University-Main Campus,2007,Pennsylvania,0.58,0.4,34813,20181,8039,640,28
+215293,University of Pittsburgh-Pittsburgh Campus,2007,Pennsylvania,0.56,0.34,18195,10160,3420,660,29
+217882,Clemson University,2007,South Carolina,0.55,0.41,12784,6990,2866,655,29
+218663,University of South Carolina-Columbia,2007,South Carolina,0.63,0.42,13946,8782,3697,630,28
+221759,The University of Tennessee-Knoxville,2007,Tennessee,0.71,0.48,12606,9009,4351,635,28
+221999,Vanderbilt University,2007,Tennessee,0.33,0.39,12911,4238,1673,740,33
+223232,Baylor University,2007,Texas,0.44,0.23,26514,11668,2732,655,28
+228723,Texas A & M University-College Station,2007,Texas,0.72,0.6,18778,13530,8076,650,28
+228778,The University of Texas at Austin,2007,Texas,0.51,0.54,27237,13800,7478,675,28
+228875,Texas Christian University,2007,Texas,0.49,0.28,11888,5812,1644,630,28
+229115,Texas Tech University,2007,Texas,0.9,0.42,11961,10759,4496,595,26
+230764,University of Utah,2007,Utah,0.91,0.48,6557,5962,2838,635,27
+233921,Virginia Polytechnic Institute and State University,2007,Virginia,0.67,0.39,19429,13031,5122,650,NA
+234076,University of Virginia-Main Campus,2007,Virginia,0.35,0.52,17800,6274,3245,710,NA
+236939,Washington State University,2007,Washington,0.76,0.42,10853,8240,3477,605,26
+236948,University of Washington-Seattle Campus,2007,Washington,0.65,0.46,17808,11511,5325,660,29
+238032,West Virginia University,2007,West Virginia,0.4,1,12047,4828,4828,570,26
+240444,University of Wisconsin-Madison,2007,Wisconsin,0.66,0.42,20436,13403,5643,690,30
+243744,Stanford University,2007,California,0.1,0.7,23958,2464,1723,775,33
+243780,Purdue University-Main Campus,2007,Indiana,0.79,0.34,25929,20429,6914,635,28
+100751,The University of Alabama,2008,Alabama,0.6,0.46,18500,11172,5116,605,27
+100858,Auburn University,2008,Alabama,0.71,0.33,17068,12085,3984,635,28
+104151,Arizona State University-Tempe,2008,Arizona,0.94,0.39,24922,23504,9274,600,26
+104179,University of Arizona,2008,Arizona,0.81,0.37,22544,18158,6709,610,26
+106397,University of Arkansas,2008,Arkansas,0.58,0.43,12045,6945,3011,635,28
+110635,University of California-Berkeley,2008,California,0.23,0.41,44149,10251,4225,730,31
+110662,University of California-Los Angeles,2008,California,0.24,0.38,50746,11960,4563,705,31
+123961,University of Southern California,2008,California,0.22,0.35,35900,7875,2766,735,33
+126614,University of Colorado Boulder,2008,Colorado,0.78,0.33,23004,17933,5860,640,28
+134097,Florida State University,2008,Florida,0.47,0.42,25485,11901,5031,645,28
+134130,University of Florida,2008,Florida,0.41,0.58,26326,10916,6384,690,30
+135726,University of Miami,2008,Florida,0.39,0.24,21774,8411,2010,690,31
+139755,Georgia Institute of Technology-Main Campus,2008,Georgia,0.63,0.43,9664,6122,2628,710,31
+139959,University of Georgia,2008,Georgia,0.55,0.51,16871,9242,4721,655,29
+145600,University of Illinois at Chicago,2008,Illinois,0.6,0.35,14269,8567,2964,NA,26
+147767,Northwestern University,2008,Illinois,0.27,0.34,21930,5872,1981,760,34
+151351,Indiana University-Bloomington,2008,Indiana,0.71,0.34,31177,22039,7564,630,29
+152080,University of Notre Dame,2008,Indiana,0.27,0.54,13945,3727,2000,750,34
+153603,Iowa State University,2008,Iowa,0.89,0.44,11058,9832,4347,660,27
+153658,University of Iowa,2008,Iowa,0.82,0.33,15582,12827,4246,670,28
+155317,University of Kansas,2008,Kansas,0.92,0.43,10367,9554,4084,NA,27
+155399,Kansas State University,2008,Kansas,0.56,0.76,9386,5249,3981,640,26
+157085,University of Kentucky,2008,Kentucky,0.77,0.47,10619,8172,3865,620,27
+157289,University of Louisville,2008,Kentucky,0.7,0.5,7280,5109,2569,625,27
+159391,Louisiana State University and Agricultural & Mechanical College,2008,Louisiana,0.73,0.55,11452,8332,4596,642.5,28
+163259,"University of Maryland, Baltimore",2008,Maryland,NA,NA,NA,NA,NA,NA,NA
+164924,Boston College,2008,Massachusetts,0.26,0.27,30845,8093,2167,715,32
+170976,University of Michigan-Ann Arbor,2008,Michigan,0.42,0.46,29814,12567,5783,715,31
+171100,Michigan State University,2008,Michigan,0.7,0.42,25589,17919,7555,640,27
+174066,University of Minnesota-Twin Cities,2008,Minnesota,0.53,0.33,29173,15324,5107,690,29
+176017,University of Mississippi,2008,Mississippi,0.83,0.37,7946,6630,2473,565,26
+176080,Mississippi State University,2008,Mississippi,0.57,0.78,7479,4273,3313,635,27
+178396,University of Missouri-Columbia,2008,Missouri,0.85,0.47,14491,12327,5783,655,28
+181464,University of Nebraska-Lincoln,2008,Nebraska,0.63,0.69,9709,6122,4200,670,28
+186380,Rutgers University-New Brunswick,2008,New Jersey,0.56,0.35,29547,16478,5840,650,NA
+196413,Syracuse University,2008,New York,0.53,0.27,22079,11597,3186,635,28
+198419,Duke University,2008,North Carolina,0.23,0.42,17748,4077,1700,770,34
+199120,University of North Carolina at Chapel Hill,2008,North Carolina,0.35,0.56,20090,6999,3893,700,31
+199193,North Carolina State University at Raleigh,2008,North Carolina,0.6,0.49,16553,9985,4907,630,27
+199847,Wake Forest University,2008,North Carolina,0.38,0.35,9050,3473,1202,700,31
+204796,Ohio State University-Main Campus,2008,Ohio,0.62,0.47,20932,13041,6173,665,30
+207388,Oklahoma State University-Main Campus,2008,Oklahoma,0.89,0.54,6406,5702,3073,610,27
+207500,University of Oklahoma-Norman Campus,2008,Oklahoma,0.73,0.48,10863,7958,3803,645,28
+209542,Oregon State University,2008,Oregon,0.86,0.45,8149,6971,3141,595,26
+209551,University of Oregon,2008,Oregon,0.87,0.37,11287,9813,3587,605,NA
+214777,Pennsylvania State University-Main Campus,2008,Pennsylvania,0.51,0.32,39551,20156,6495,650,28
+215293,University of Pittsburgh-Pittsburgh Campus,2008,Pennsylvania,0.56,0.32,19056,10591,3432,670,30
+217882,Clemson University,2008,South Carolina,0.5,0.39,14255,7154,2762,660,30
+218663,University of South Carolina-Columbia,2008,South Carolina,0.59,0.43,14994,8908,3813,640,28
+221759,The University of Tennessee-Knoxville,2008,Tennessee,0.71,0.48,12824,9136,4351,635,28
+221999,Vanderbilt University,2008,Tennessee,0.25,0.37,16944,4292,1569,750,33
+223232,Baylor University,2008,Texas,0.51,0.23,25501,13096,3068,655,28
+228723,Texas A & M University-College Station,2008,Texas,0.7,0.55,20887,14640,8091,650,29
+228778,The University of Texas at Austin,2008,Texas,0.44,0.52,29501,12843,6718,675,30
+228875,Texas Christian University,2008,Texas,0.5,0.26,12212,6157,1630,635,28
+229115,Texas Tech University,2008,Texas,0.72,0.38,16143,11643,4385,605,26
+230764,University of Utah,2008,Utah,0.81,0.45,7244,5873,2642,622.5,27
+233921,Virginia Polytechnic Institute and State University,2008,Virginia,0.65,0.4,20615,13485,5460,650,NA
+234076,University of Virginia-Main Campus,2008,Virginia,0.37,0.48,18363,6735,3255,720,32
+236939,Washington State University,2008,Washington,0.72,0.42,11326,8179,3411,610,26
+236948,University of Washington-Seattle Campus,2008,Washington,0.61,0.46,19906,12094,5607,660,29
+238032,West Virginia University,2008,West Virginia,0.35,1,13634,4731,4731,575,26
+240444,University of Wisconsin-Madison,2008,Wisconsin,0.63,0.43,22289,14004,5994,690,30
+243744,Stanford University,2008,California,0.09,0.71,25299,2400,1703,770,34
+243780,Purdue University-Main Campus,2008,Indiana,0.72,0.33,29952,21423,7025,635,29
+100751,The University of Alabama,2009,Alabama,0.59,0.46,18967,11133,5148,620,28
+100858,Auburn University,2009,Alabama,0.8,0.33,14862,11816,3918,650,29
+104151,Arizona State University-Tempe,2009,Arizona,0.9,0.4,27089,24473,9707,605,26
+104179,University of Arizona,2009,Arizona,0.78,0.36,24756,19310,6966,610,27
+106397,University of Arkansas,2009,Arkansas,0.56,0.43,12035,6751,2919,630,29
+110635,University of California-Berkeley,2009,California,0.21,0.41,48473,10404,4261,730,32
+110662,University of California-Los Angeles,2009,California,0.23,0.37,55423,12659,4735,700,31
+123961,University of Southern California,2009,California,0.24,0.33,35753,8724,2869,725,32
+126614,University of Colorado Boulder,2009,Colorado,0.84,0.34,19649,16514,5555,640,29
+134097,Florida State University,2009,Florida,0.61,0.42,23439,14308,5967,645,28
+134130,University of Florida,2009,Florida,0.43,0.57,25798,11015,6253,680,29
+135726,University of Miami,2009,Florida,0.44,0.21,21845,9700,2006,690,31
+139755,Georgia Institute of Technology-Main Campus,2009,Georgia,0.61,0.42,10258,6248,2640,710,31
+139959,University of Georgia,2009,Georgia,0.56,0.51,17207,9569,4851,660,29
+145600,University of Illinois at Chicago,2009,Illinois,0.63,0.34,14661,9244,3147,645,26
+147767,Northwestern University,2009,Illinois,0.26,0.32,25013,6553,2078,765,33
+151351,Indiana University-Bloomington,2009,Indiana,0.73,0.31,33011,23975,7327,645,29
+152080,University of Notre Dame,2009,Indiana,0.29,0.5,14357,4113,2064,755,34
+153603,Iowa State University,2009,Iowa,0.87,0.42,12549,10953,4546,665,28
+153658,University of Iowa,2009,Iowa,0.83,0.32,15060,12503,4063,665,28
+155317,University of Kansas,2009,Kansas,0.92,0.45,10902,10003,4483,NA,27
+155399,Kansas State University,2009,Kansas,0.98,0.45,8413,8283,3687,NA,NA
+157085,University of Kentucky,2009,Kentucky,0.79,0.47,11120,8757,4110,620,27
+157289,University of Louisville,2009,Kentucky,0.7,0.48,7861,5473,2609,630,27
+159391,Louisiana State University and Agricultural & Mechanical College,2009,Louisiana,0.73,0.46,15093,11092,5141,640,28
+163259,"University of Maryland, Baltimore",2009,Maryland,NA,NA,NA,NA,NA,NA,NA
+164924,Boston College,2009,Massachusetts,0.3,0.25,29289,8804,2171,715,32
+170976,University of Michigan-Ann Arbor,2009,Michigan,0.5,0.41,29965,14970,6079,715,31
+171100,Michigan State University,2009,Michigan,0.72,0.4,25395,18392,7416,635,27
+174066,University of Minnesota-Twin Cities,2009,Minnesota,0.5,0.32,33910,16960,5400,690,29
+176017,University of Mississippi,2009,Mississippi,0.8,0.38,8595,6839,2576,590,26
+176080,Mississippi State University,2009,Mississippi,0.57,0.38,11281,6415,2450,625,27
+178396,University of Missouri-Columbia,2009,Missouri,0.83,0.41,16455,13659,5589,650,28
+181464,University of Nebraska-Lincoln,2009,Nebraska,0.63,0.67,9455,5943,3986,675,29
+186380,Rutgers University-New Brunswick,2009,New Jersey,0.61,0.33,28624,17598,5839,650,NA
+196413,Syracuse University,2009,New York,0.6,0.26,20951,12596,3261,635,28
+198419,Duke University,2009,North Carolina,0.22,0.41,18774,4202,1703,770,NA
+199120,University of North Carolina at Chapel Hill,2009,North Carolina,0.34,0.53,21543,7315,3865,695,31
+199193,North Carolina State University at Raleigh,2009,North Carolina,0.59,0.46,17853,10538,4804,640,27
+199847,Wake Forest University,2009,North Carolina,0.38,0.3,10553,3959,1201,NA,NA
+204796,Ohio State University-Main Campus,2009,Ohio,0.65,0.49,21330,13840,6739,670,30
+207388,Oklahoma State University-Main Campus,2009,Oklahoma,0.86,0.48,7561,6537,3148,620,27
+207500,University of Oklahoma-Norman Campus,2009,Oklahoma,0.89,0.46,9252,8211,3760,650,29
+209542,Oregon State University,2009,Oregon,0.84,0.44,8640,7270,3191,605,26
+209551,University of Oregon,2009,Oregon,0.85,0.33,15013,12801,4260,609.5,NA
+214777,Pennsylvania State University-Main Campus,2009,Pennsylvania,0.51,0.36,39089,20011,7241,650,29
+215293,University of Pittsburgh-Pittsburgh Campus,2009,Pennsylvania,0.55,0.3,20685,11467,3488,680,30
+217882,Clemson University,2009,South Carolina,0.58,0.36,14504,8355,2982,660,30
+218663,University of South Carolina-Columbia,2009,South Carolina,0.58,0.4,17018,9954,3967,640,28
+221759,The University of Tennessee-Knoxville,2009,Tennessee,0.73,0.42,12234,8892,3717,645,29
+221999,Vanderbilt University,2009,Tennessee,0.2,0.41,19353,3899,1599,760,34
+223232,Baylor University,2009,Texas,0.5,0.2,31440,15699,3098,645,29
+228723,Texas A & M University-College Station,2009,Texas,0.67,0.53,22969,15369,8104,650,30
+228778,The University of Texas at Austin,2009,Texas,0.45,0.51,31362,14213,7243,675,30
+228875,Texas Christian University,2009,Texas,0.59,0.26,11951,7079,1821,640,28
+229115,Texas Tech University,2009,Texas,0.68,0.41,16551,11228,4585,600,26
+230764,University of Utah,2009,Utah,0.8,0.59,7890,6318,3748,630,27
+233921,Virginia Polytechnic Institute and State University,2009,Virginia,0.67,0.36,21053,14040,5050,655,NA
+234076,University of Virginia-Main Campus,2009,Virginia,0.32,0.48,21109,6768,3250,720,32
+236939,Washington State University,2009,Washington,0.76,0.37,11795,8995,3372,600,26
+236948,University of Washington-Seattle Campus,2009,Washington,0.61,0.45,20224,12327,5579,665,29
+238032,West Virginia University,2009,West Virginia,0.88,0.39,15094,13232,5135,570,26
+240444,University of Wisconsin-Madison,2009,Wisconsin,0.59,0.43,22613,13446,5773,700,30
+243744,Stanford University,2009,California,0.08,0.7,30429,2426,1694,770,34
+243780,Purdue University-Main Campus,2009,Indiana,0.73,0.31,27213,19905,6225,640,29
+100751,The University of Alabama,2010,Alabama,0.54,0.52,20112,10776,5563,620,29
+100858,Auburn University,2010,Alabama,0.79,0.34,15784,12417,4204,655,30
+104151,Arizona State University-Tempe,2010,Arizona,0.91,0.36,28304,25616,9344,605,26
+104179,University of Arizona,2010,Arizona,0.75,0.35,26629,20068,7032,610,27
+106397,University of Arkansas,2010,Arkansas,0.6,0.45,14019,8468,3810,625,28
+110635,University of California-Berkeley,2010,California,0.22,0.41,48682,10524,4356,730,32
+110662,University of California-Los Angeles,2010,California,0.22,0.37,55694,12178,4472,700,31
+123961,University of Southern California,2010,California,0.24,0.34,35794,8715,2972,735,33
+126614,University of Colorado Boulder,2010,Colorado,0.83,0.3,21150,17517,5211,645,28
+134097,Florida State University,2010,Florida,0.6,0.38,26037,15498,5952,645,28
+134130,University of Florida,2010,Florida,0.43,0.56,26512,11459,6381,680,30
+135726,University of Miami,2010,Florida,0.39,0.21,25899,10157,2132,690,32
+139755,Georgia Institute of Technology-Main Campus,2010,Georgia,0.59,0.4,11432,6721,2660,715,31
+139959,University of Georgia,2010,Georgia,0.54,0.49,17776,9557,4684,665,29
+145600,University of Illinois at Chicago,2010,Illinois,0.63,0.34,14889,9411,3204,635,26
+147767,Northwestern University,2010,Illinois,0.27,0.31,25369,6887,2128,765,33
+151351,Indiana University-Bloomington,2010,Indiana,0.69,0.28,36719,25391,7020,640,29
+152080,University of Notre Dame,2010,Indiana,0.29,0.49,14521,4177,2067,755,34
+153603,Iowa State University,2010,Iowa,0.85,0.41,12536,10662,4356,665,28
+153658,University of Iowa,2010,Iowa,0.84,0.32,17220,14434,4557,670,28
+155317,University of Kansas,2010,Kansas,0.91,0.4,10653,9740,3942,NA,27
+155399,Kansas State University,2010,Kansas,0.99,0.44,8268,8147,3561,NA,NA
+157085,University of Kentucky,2010,Kentucky,0.74,0.46,12195,8966,4153,625,28
+157289,University of Louisville,2010,Kentucky,0.73,0.44,7755,5625,2478,634,28
+159391,Louisiana State University and Agricultural & Mechanical College,2010,Louisiana,0.69,0.43,15917,11012,4789,640,28
+163259,"University of Maryland, Baltimore",2010,Maryland,NA,NA,NA,NA,NA,NA,NA
+164924,Boston College,2010,Massachusetts,0.31,0.25,29933,9310,2359,715,32
+170976,University of Michigan-Ann Arbor,2010,Michigan,0.51,0.4,31613,16006,6481,720,31
+171100,Michigan State University,2010,Michigan,0.7,0.39,26907,18829,7375,640,28
+174066,University of Minnesota-Twin Cities,2010,Minnesota,0.48,0.3,36853,17613,5323,705,30
+176017,University of Mississippi,2010,Mississippi,0.78,0.36,10909,8479,3088,595,27
+176080,Mississippi State University,2010,Mississippi,0.55,0.52,9300,5158,2707,620,26
+178396,University of Missouri-Columbia,2010,Missouri,0.81,0.36,20664,16730,6089,650,28
+181464,University of Nebraska-Lincoln,2010,Nebraska,0.62,0.67,9768,6089,4075,660,28
+186380,Rutgers University-New Brunswick,2010,New Jersey,0.59,0.35,29532,17448,6033,650,NA
+196413,Syracuse University,2010,New York,0.6,0.25,22935,13704,3471,635,28
+198419,Duke University,2010,North Carolina,0.19,0.41,22280,4203,1723,765,34
+199120,University of North Carolina at Chapel Hill,2010,North Carolina,0.32,0.54,23225,7345,3960,705,31
+199193,North Carolina State University at Raleigh,2010,North Carolina,0.55,0.46,18992,10409,4772,640,28
+199847,Wake Forest University,2010,North Carolina,0.4,0.29,10566,4256,1225,NA,NA
+204796,Ohio State University-Main Campus,2010,Ohio,0.62,0.4,26764,16572,6672,675,30
+207388,Oklahoma State University-Main Campus,2010,Oklahoma,0.81,0.5,8696,7079,3554,615,28
+207500,University of Oklahoma-Norman Campus,2010,Oklahoma,0.85,0.44,9996,8500,3726,655,29
+209542,Oregon State University,2010,Oregon,0.82,0.42,10068,8303,3506,605,26
+209551,University of Oregon,2010,Oregon,0.8,0.29,16780,13367,3839,615,27
+214777,Pennsylvania State University-Main Campus,2010,Pennsylvania,0.52,0.31,40714,21017,6560,650,29
+215293,University of Pittsburgh-Pittsburgh Campus,2010,Pennsylvania,0.59,0.29,21737,12722,3642,680,30
+217882,Clemson University,2010,South Carolina,0.63,0.33,16282,10224,3383,655,30
+218663,University of South Carolina-Columbia,2010,South Carolina,0.64,0.35,17695,11262,3917,645,29
+221759,The University of Tennessee-Knoxville,2010,Tennessee,0.74,0.45,12555,9352,4214,640,29
+221999,Vanderbilt University,2010,Tennessee,0.18,0.41,21811,3914,1600,765,34
+223232,Baylor University,2010,Texas,0.48,0.2,34145,16315,3259,660,29
+228723,Texas A & M University-College Station,2010,Texas,0.69,0.51,23314,16003,8176,665,30
+228778,The University of Texas at Austin,2010,Texas,0.47,0.5,31022,14583,7275,680,31
+228875,Texas Christian University,2010,Texas,0.53,0.25,14085,7428,1827,640,29
+229115,Texas Tech University,2010,Texas,0.72,0.41,16349,11720,4858,595,27
+230764,University of Utah,2010,Utah,0.83,0.45,8364,6931,3110,630,27
+233921,Virginia Polytechnic Institute and State University,2010,Virginia,0.67,0.39,19981,13389,5205,660,29
+234076,University of Virginia-Main Campus,2010,Virginia,0.33,0.45,22124,7212,3246,725,32
+236939,Washington State University,2010,Washington,0.7,0.37,11604,8068,2980,595,26
+236948,University of Washington-Seattle Campus,2010,Washington,0.58,0.44,21268,12264,5338,665,30
+238032,West Virginia University,2010,West Virginia,0.88,0.37,14229,12496,4589,570,26
+240444,University of Wisconsin-Madison,2010,Wisconsin,0.67,0.4,21390,14225,5680,695,30
+243744,Stanford University,2010,California,0.07,0.71,32022,2340,1672,775,34
+243780,Purdue University-Main Campus,2010,Indiana,0.65,0.33,30707,19993,6513,645,29
+100751,The University of Alabama,2011,Alabama,0.44,0.6,22136,9636,5766,630,29
+100858,Auburn University,2011,Alabama,0.7,0.33,18323,12827,4202,610,30
+104151,Arizona State University-Tempe,2011,Arizona,0.87,0.37,29771,25795,9544,610,27
+104179,University of Arizona,2011,Arizona,0.75,0.35,26629,20068,7032,615,27
+106397,University of Arkansas,2011,Arkansas,0.61,0.44,16633,10129,4447,620,28
+110635,University of California-Berkeley,2011,California,0.21,0.38,50374,10795,4109,745,32
+110662,University of California-Los Angeles,2011,California,0.26,0.29,61545,15719,4636,710,31
+123961,University of Southern California,2011,California,0.23,0.34,37210,8566,2931,745,33
+126614,University of Colorado Boulder,2011,Colorado,0.87,0.32,20506,17828,5700,640,28
+134097,Florida State University,2011,Florida,0.58,0.37,28313,16561,6135,645,28
+134130,University of Florida,2011,Florida,0.43,0.55,27295,11786,6451,680,30
+135726,University of Miami,2011,Florida,0.38,0.2,27747,10635,2172,700,32
+139755,Georgia Institute of Technology-Main Campus,2011,Georgia,0.52,0.39,13495,6976,2712,715,32
+139959,University of Georgia,2011,Georgia,0.59,0.45,17408,10318,4679,665,29
+145600,University of Illinois at Chicago,2011,Illinois,0.63,0.34,14564,9151,3115,625,26
+147767,Northwestern University,2011,Illinois,0.23,0.33,27528,6367,2127,765,33
+151351,Indiana University-Bloomington,2011,Indiana,0.72,0.29,35218,25455,7424,640,29
+152080,University of Notre Dame,2011,Indiana,0.24,0.5,16548,4019,2020,760,34
+153603,Iowa State University,2011,Iowa,0.81,0.38,15066,12135,4552,655,28
+153658,University of Iowa,2011,Iowa,0.8,0.3,18939,15105,4565,657.5,28
+155317,University of Kansas,2011,Kansas,0.93,0.39,10157,9397,3702,NA,28
+155399,Kansas State University,2011,Kansas,0.99,0.44,8292,8204,3644,NA,NA
+157085,University of Kentucky,2011,Kentucky,0.69,0.47,13537,9275,4328,625,28
+157289,University of Louisville,2011,Kentucky,0.75,0.44,7749,5804,2561,635,27
+159391,Louisiana State University and Agricultural & Mechanical College,2011,Louisiana,0.72,0.42,18214,13148,5481,640,28
+163259,"University of Maryland, Baltimore",2011,Maryland,NA,NA,NA,NA,NA,NA,NA
+164924,Boston College,2011,Massachusetts,0.28,0.25,32974,9227,2285,720,32
+170976,University of Michigan-Ann Arbor,2011,Michigan,0.41,0.39,39584,16073,6236,725,32
+171100,Michigan State University,2011,Michigan,0.73,0.39,28416,20728,7984,635,28
+174066,University of Minnesota-Twin Cities,2011,Minnesota,0.47,0.29,39720,18505,5368,715,30
+176017,University of Mississippi,2011,Mississippi,0.79,0.34,13321,10524,3569,590,27
+176080,Mississippi State University,2011,Mississippi,0.63,0.47,9862,6192,2898,617.5,27
+178396,University of Missouri-Columbia,2011,Missouri,0.81,0.42,18103,14690,6138,650,28
+181464,University of Nebraska-Lincoln,2011,Nebraska,0.59,0.69,10022,5943,4093,665,28
+186380,Rutgers University-New Brunswick,2011,New Jersey,0.61,0.35,28602,17487,6075,655,NA
+196413,Syracuse University,2011,New York,0.49,0.27,25884,12779,3410,635,28
+198419,Duke University,2011,North Carolina,0.16,0.42,25462,4196,1751,765,34
+199120,University of North Carolina at Chapel Hill,2011,North Carolina,0.34,0.52,22288,7552,3960,705,31
+199193,North Carolina State University at Raleigh,2011,North Carolina,0.54,0.44,19753,10709,4705,640,28
+199847,Wake Forest University,2011,North Carolina,0.4,0.32,9869,3933,1240,NA,NA
+204796,Ohio State University-Main Campus,2011,Ohio,0.63,0.43,26100,16518,7089,680,30
+207388,Oklahoma State University-Main Campus,2011,Oklahoma,0.82,0.48,9914,8099,3896,610,27
+207500,University of Oklahoma-Norman Campus,2011,Oklahoma,0.82,0.43,11456,9377,4053,652.5,29
+209542,Oregon State University,2011,Oregon,0.81,0.4,11428,9269,3696,610,26
+209551,University of Oregon,2011,Oregon,0.79,0.27,18515,14588,3978,609,27
+214777,Pennsylvania State University-Main Campus,2011,Pennsylvania,0.55,0.32,41545,22761,7262,650,29
+215293,University of Pittsburgh-Pittsburgh Campus,2011,Pennsylvania,0.58,0.29,22616,13066,3750,685,30
+217882,Clemson University,2011,South Carolina,0.58,0.31,16865,9724,3016,665,30
+218663,University of South Carolina-Columbia,2011,South Carolina,0.7,0.35,18485,12914,4468,640,29
+221759,The University of Tennessee-Knoxville,2011,Tennessee,0.7,0.44,13769,9595,4188,640,29
+221999,Vanderbilt University,2011,Tennessee,0.16,0.39,24837,4078,1601,775,34
+223232,Baylor University,2011,Texas,0.4,0.2,38960,15451,3033,670,29
+228723,Texas A & M University-College Station,2011,Texas,0.63,0.5,25990,16488,8254,660,30
+228778,The University of Texas at Austin,2011,Texas,0.47,0.47,32589,15172,7149,690,31
+228875,Texas Christian University,2011,Texas,0.38,0.26,19170,7219,1873,640,29
+229115,Texas Tech University,2011,Texas,0.66,0.38,17569,11645,4464,600,27
+230764,University of Utah,2011,Utah,0.83,0.41,9545,7941,3268,640,27
+233921,Virginia Polytechnic Institute and State University,2011,Virginia,0.67,0.38,20828,13860,5221,655,NA
+234076,University of Virginia-Main Campus,2011,Virginia,0.33,0.44,23583,7847,3439,730,32
+236939,Washington State University,2011,Washington,0.84,0.38,13094,10939,4176,590,26
+236948,University of Washington-Seattle Campus,2011,Washington,0.58,0.4,24537,14340,5774,675,30
+238032,West Virginia University,2011,West Virginia,0.87,0.4,14335,12475,5034,570,26
+240444,University of Wisconsin-Madison,2011,Wisconsin,0.66,0.41,21689,14417,5927,705,30
+243744,Stanford University,2011,California,0.07,0.7,34348,2437,1707,775,34
+243780,Purdue University-Main Campus,2011,Indiana,0.68,0.34,29721,20318,6821,650,30
+100751,The University of Alabama,2012,Alabama,0.53,0.46,26409,14019,6397,630,30
+100858,Auburn University,2012,Alabama,0.77,0.29,17463,13486,3852,640,30
+104151,Arizona State University-Tempe,2012,Arizona,0.89,0.35,29722,26425,9254,620,27
+104179,University of Arizona,2012,Arizona,0.71,0.38,26854,19172,7300,610,27
+106397,University of Arkansas,2012,Arkansas,0.63,0.43,16749,10630,4574,620,28
+110635,University of California-Berkeley,2012,California,0.22,0.39,52982,11450,4443,745,33
+110662,University of California-Los Angeles,2012,California,0.27,0.35,61556,16689,5825,715,31
+123961,University of Southern California,2012,California,0.2,0.33,46104,9187,3021,740,33
+126614,University of Colorado Boulder,2012,Colorado,0.84,0.3,21744,18172,5472,640,28
+134097,Florida State University,2012,Florida,0.54,0.36,30040,16124,5738,640,29
+134130,University of Florida,2012,Florida,0.44,0.52,27419,12092,6289,680,31
+135726,University of Miami,2012,Florida,0.4,0.18,27757,11020,2012,710,32
+139755,Georgia Institute of Technology-Main Campus,2012,Georgia,0.51,0.37,14088,7210,2695,725,32
+139959,University of Georgia,2012,Georgia,0.63,0.5,17569,11062,5482,655,30
+145600,University of Illinois at Chicago,2012,Illinois,0.64,0.34,14380,9193,3123,635,26
+147767,Northwestern University,2012,Illinois,0.18,0.38,30926,5575,2107,770,34
+151351,Indiana University-Bloomington,2012,Indiana,0.74,0.29,35247,26228,7613,640,29
+152080,University of Notre Dame,2012,Indiana,0.23,0.51,16957,3947,2014,760,34
+153603,Iowa State University,2012,Iowa,0.86,0.4,14540,12541,5048,645,28
+153658,University of Iowa,2012,Iowa,0.78,0.29,19430,15240,4470,660,28
+155317,University of Kansas,2012,Kansas,0.93,0.38,10035,9306,3580,NA,28
+155399,Kansas State University,2012,Kansas,0.99,0.41,9273,9180,3770,NA,NA
+157085,University of Kentucky,2012,Kentucky,0.68,0.4,15153,10362,4139,620,28
+157289,University of Louisville,2012,Kentucky,0.73,0.45,7892,5738,2569,625,28
+159391,Louisiana State University and Agricultural & Mechanical College,2012,Louisiana,0.8,0.45,14818,11789,5290,620,28
+163259,"University of Maryland, Baltimore",2012,Maryland,NA,NA,NA,NA,NA,NA,NA
+164924,Boston College,2012,Massachusetts,0.29,0.25,34061,9813,2405,725,32
+170976,University of Michigan-Ann Arbor,2012,Michigan,0.37,0.4,42544,15551,6148,730,32
+171100,Michigan State University,2012,Michigan,0.71,0.39,30224,21327,8354,630,28
+174066,University of Minnesota-Twin Cities,2012,Minnesota,0.5,0.29,38174,18900,5514,715,30
+176017,University of Mississippi,2012,Mississippi,0.61,0.4,13934,8507,3373,600,27
+176080,Mississippi State University,2012,Mississippi,0.62,0.45,10462,6502,2894,615,27
+178396,University of Missouri-Columbia,2012,Missouri,0.81,0.39,20564,16752,6501,645,28
+181464,University of Nebraska-Lincoln,2012,Nebraska,0.64,0.59,10350,6662,3937,670,29
+186380,Rutgers University-New Brunswick,2012,New Jersey,0.61,0.35,28635,17436,6170,655,NA
+196413,Syracuse University,2012,New York,0.51,0.26,25790,13240,3392,635,28
+198419,Duke University,2012,North Carolina,0.14,0.44,28145,3938,1724,765,34
+199120,University of North Carolina at Chapel Hill,2012,North Carolina,0.33,0.54,22652,7469,4026,700,32
+199193,North Carolina State University at Raleigh,2012,North Carolina,0.53,0.44,20103,10577,4697,640,28
+199847,Wake Forest University,2012,North Carolina,0.34,0.32,11407,3875,1240,NA,NA
+204796,Ohio State University-Main Campus,2012,Ohio,0.64,0.44,25816,16521,7215,680,30
+207388,Oklahoma State University-Main Campus,2012,Oklahoma,0.78,0.46,12056,9351,4289,605,28
+207500,University of Oklahoma-Norman Campus,2012,Oklahoma,0.79,0.45,11650,9220,4138,650,29
+209542,Oregon State University,2012,Oregon,0.78,0.37,12197,9471,3506,610,27
+209551,University of Oregon,2012,Oregon,0.73,0.25,23012,16790,4167,611.5,27
+214777,Pennsylvania State University-Main Campus,2012,Pennsylvania,0.52,0.31,45502,23855,7366,650,29
+215293,University of Pittsburgh-Pittsburgh Campus,2012,Pennsylvania,0.58,0.28,23409,13544,3768,690,30
+217882,Clemson University,2012,South Carolina,0.63,0.27,17072,10803,2935,665,30
+218663,University of South Carolina-Columbia,2012,South Carolina,0.63,0.34,21311,13451,4637,645,29
+221759,The University of Tennessee-Knoxville,2012,Tennessee,0.67,0.43,14398,9693,4207,645,29
+221999,Vanderbilt University,2012,Tennessee,0.14,0.4,28348,4034,1608,780,34
+223232,Baylor University,2012,Texas,0.61,0.19,27828,16879,3254,665,29
+228723,Texas A & M University-College Station,2012,Texas,0.67,0.44,27730,18546,8143,655,30
+228778,The University of Texas at Austin,2012,Texas,0.47,0.49,35431,16563,8092,690,31
+228875,Texas Christian University,2012,Texas,0.41,0.23,19335,7901,1854,640,30
+229115,Texas Tech University,2012,Texas,0.64,0.39,18027,11593,4560,605,27
+230764,University of Utah,2012,Utah,0.83,0.38,11118,9187,3494,635,27
+233921,Virginia Polytechnic Institute and State University,2012,Virginia,0.7,0.39,20191,14210,5487,660,NA
+234076,University of Virginia-Main Campus,2012,Virginia,0.3,0.42,27178,8031,3400,730,32
+236939,Washington State University,2012,Washington,0.76,0.39,14825,11269,4389,585,25
+236948,University of Washington-Seattle Campus,2012,Washington,0.58,0.4,24540,14340,5788,675,30
+238032,West Virginia University,2012,West Virginia,0.85,0.37,15815,13415,5022,580,26
+240444,University of Wisconsin-Madison,2012,Wisconsin,0.69,0.4,21352,14651,5828,705,30
+243744,Stanford University,2012,California,0.07,0.73,36632,2423,1765,785,34
+243780,Purdue University-Main Campus,2012,Indiana,0.61,0.34,31124,19127,6476,650,30
+100751,The University of Alabama,2013,Alabama,0.57,0.37,30975,17515,6454,630,30
+100858,Auburn University,2013,Alabama,0.83,0.29,15745,13027,3726,635,30
+104151,Arizona State University-Tempe,2013,Arizona,0.8,0.41,21770,17465,7171,635,28
+104179,University of Arizona,2013,Arizona,0.77,0.37,26329,20251,7401,615,27
+106397,University of Arkansas,2013,Arkansas,0.59,0.39,18908,11076,4339,615,28
+110635,University of California-Berkeley,2013,California,0.18,0.37,61717,11108,4162,745,33
+110662,University of California-Los Angeles,2013,California,0.22,0.35,72676,15981,5620,720,31
+123961,University of Southern California,2013,California,0.2,0.31,47358,9395,2922,740,33
+126614,University of Colorado Boulder,2013,Colorado,0.88,0.3,22473,19710,5846,640,29
+134097,Florida State University,2013,Florida,0.57,0.36,29579,16803,6048,640,29
+134130,University of Florida,2013,Florida,0.47,0.51,27107,12618,6373,680,31
+135726,University of Miami,2013,Florida,0.4,0.18,28907,11691,2140,710,32
+139755,Georgia Institute of Technology-Main Campus,2013,Georgia,0.55,0.38,14645,8045,3044,730,32
+139959,University of Georgia,2013,Georgia,0.56,0.48,18458,10352,4936,665,30
+145600,University of Illinois at Chicago,2013,Illinois,0.71,0.3,14603,10427,3104,620,26
+147767,Northwestern University,2013,Illinois,0.15,0.41,32060,4912,2037,775,34
+151351,Indiana University-Bloomington,2013,Indiana,0.72,0.28,37826,27300,7604,645,30
+152080,University of Notre Dame,2013,Indiana,0.22,0.53,17647,3936,2070,760,34
+153603,Iowa State University,2013,Iowa,0.83,0.39,16539,13648,5366,650,28
+153658,University of Iowa,2013,Iowa,0.8,0.26,21642,17363,4460,650,28
+155317,University of Kansas,2013,Kansas,0.92,0.33,12389,11433,3771,NA,28
+155399,Kansas State University,2013,Kansas,0.96,0.4,9839,9437,3821,NA,NA
+157085,University of Kentucky,2013,Kentucky,0.69,0.35,19810,13592,4702,620,28
+157289,University of Louisville,2013,Kentucky,0.71,0.44,9166,6519,2857,595,28
+159391,Louisiana State University and Agricultural & Mechanical College,2013,Louisiana,0.76,0.46,16169,12326,5725,625,28
+163259,"University of Maryland, Baltimore",2013,Maryland,NA,NA,NA,NA,NA,NA,NA
+164924,Boston College,2013,Massachusetts,0.32,0.28,24538,7905,2215,725,33
+170976,University of Michigan-Ann Arbor,2013,Michigan,0.33,0.4,46813,15570,6200,740,32
+171100,Michigan State University,2013,Michigan,0.69,0.37,31479,21610,8061,635,28
+174066,University of Minnesota-Twin Cities,2013,Minnesota,0.44,0.29,43048,19121,5544,715,30
+176017,University of Mississippi,2013,Mississippi,0.81,0.31,14258,11484,3582,595,27
+176080,Mississippi State University,2013,Mississippi,0.65,0.44,11191,7254,3156,625,28
+178396,University of Missouri-Columbia,2013,Missouri,0.79,0.38,20956,16473,6194,645,28
+181464,University of Nebraska-Lincoln,2013,Nebraska,0.64,0.63,10929,6999,4420,665,28
+186380,Rutgers University-New Brunswick,2013,New Jersey,0.6,0.35,30631,18230,6337,665,NA
+196413,Syracuse University,2013,New York,0.49,0.25,28269,13990,3487,635,28
+198419,Duke University,2013,North Carolina,0.13,0.42,30374,4077,1714,775,34
+199120,University of North Carolina at Chapel Hill,2013,North Carolina,0.28,0.5,28437,7847,3915,705,32
+199193,North Carolina State University at Raleigh,2013,North Carolina,0.5,0.42,20700,10353,4398,655,30
+199847,Wake Forest University,2013,North Carolina,0.35,0.31,11121,3915,1232,NA,NA
+204796,Ohio State University-Main Campus,2013,Ohio,0.56,0.41,31359,17413,7130,690,31
+207388,Oklahoma State University-Main Campus,2013,Oklahoma,0.76,0.46,11064,8411,3872,605,28
+207500,University of Oklahoma-Norman Campus,2013,Oklahoma,0.8,0.46,10991,8841,4052,640,29
+209542,Oregon State University,2013,Oregon,0.79,0.36,12414,9799,3516,615,27
+209551,University of Oregon,2013,Oregon,0.74,0.26,21263,15770,4031,610,27
+214777,Pennsylvania State University-Main Campus,2013,Pennsylvania,0.54,0.3,47552,25772,7649,650,29
+215293,University of Pittsburgh-Pittsburgh Campus,2013,Pennsylvania,0.56,0.26,24871,13959,3678,670,30
+217882,Clemson University,2013,South Carolina,0.58,0.32,18500,10706,3463,670,31
+218663,University of South Carolina-Columbia,2013,South Carolina,0.61,0.33,23429,14199,4625,645,29
+221759,The University of Tennessee-Knoxville,2013,Tennessee,0.72,0.41,14396,10435,4276,645,29
+221999,Vanderbilt University,2013,Tennessee,0.13,0.41,31099,3963,1613,785,34
+223232,Baylor University,2013,Texas,0.57,0.19,29249,16809,3190,665,29
+228723,Texas A & M University-College Station,2013,Texas,0.69,0.47,31387,21803,10241,645,29
+228778,The University of Texas at Austin,2013,Texas,0.4,0.47,38161,15335,7249,690,31
+228875,Texas Christian University,2013,Texas,0.47,0.22,18551,8791,1936,635,29
+229115,Texas Tech University,2013,Texas,0.66,0.38,19170,12709,4785,605,27
+230764,University of Utah,2013,Utah,0.82,0.34,11354,9281,3124,634,27
+233921,Virginia Polytechnic Institute and State University,2013,Virginia,0.7,0.4,19112,13432,5364,660,NA
+234076,University of Virginia-Main Campus,2013,Virginia,0.3,0.41,28984,8691,3520,730,33
+236939,Washington State University,2013,Washington,0.82,0.34,14887,12219,4163,575,25
+236948,University of Washington-Seattle Campus,2013,Washington,0.55,0.37,30199,16679,6253,680,30
+238032,West Virginia University,2013,West Virginia,0.85,0.37,16521,14060,5135,570,26
+240444,University of Wisconsin-Madison,2013,Wisconsin,0.68,0.4,23324,15841,6279,700,30
+243744,Stanford University,2013,California,0.06,0.76,38828,2208,1677,785,34
+243780,Purdue University-Main Campus,2013,Indiana,0.6,0.34,31083,18779,6422,660,30
+100751,The University of Alabama,2014,Alabama,0.51,0.4,33736,17221,6824,625,31
+100858,Auburn University,2014,Alabama,0.83,0.32,16958,14154,4592,637.5,30
+104151,Arizona State University-Tempe,2014,Arizona,0.84,0.4,22581,19042,7647,635,28
+104179,University of Arizona,2014,Arizona,0.75,0.32,32723,24417,7744,NA,NA
+106397,University of Arkansas,2014,Arkansas,0.62,0.39,18984,11777,4571,615,28
+110635,University of California-Berkeley,2014,California,0.16,0.46,73782,11820,5467,750,34
+110662,University of California-Los Angeles,2014,California,0.19,0.36,86537,16059,5764,730,33
+123961,University of Southern California,2014,California,0.18,0.33,51920,9358,3098,740,33
+126614,University of Colorado Boulder,2014,Colorado,0.84,0.24,28852,24282,5869,645,30
+134097,Florida State University,2014,Florida,0.55,0.36,30266,16763,6021,640,29
+134130,University of Florida,2014,Florida,0.46,0.5,28662,13072,6512,680,31
+135726,University of Miami,2014,Florida,0.38,0.17,31613,12069,2078,710,32
+139755,Georgia Institute of Technology-Main Campus,2014,Georgia,0.33,0.33,25884,8641,2809,745,33
+139959,University of Georgia,2014,Georgia,0.56,0.45,20918,11655,5243,665,30
+145600,University of Illinois at Chicago,2014,Illinois,0.74,0.26,15560,11589,3030,625,27
+147767,Northwestern University,2014,Illinois,0.13,0.46,33674,4416,2043,780,34
+151351,Indiana University-Bloomington,2014,Indiana,0.76,0.28,36362,27668,7716,645,30
+152080,University of Notre Dame,2014,Indiana,0.21,0.53,17901,3785,2011,760,34
+153603,Iowa State University,2014,Iowa,0.87,0.38,18399,15990,6041,655,29
+153658,University of Iowa,2014,Iowa,0.81,0.24,24097,19506,4666,660,28
+155317,University of Kansas,2014,Kansas,0.91,0.28,15767,14414,4084,NA,28
+155399,Kansas State University,2014,Kansas,0.95,0.41,9614,9127,3757,NA,NA
+157085,University of Kentucky,2014,Kentucky,0.72,0.35,20677,14930,5185,630,28
+157289,University of Louisville,2014,Kentucky,0.74,0.37,10604,7832,2887,625,28
+159391,Louisiana State University and Agricultural & Mechanical College,2014,Louisiana,0.77,0.45,16580,12706,5655,615,28
+163259,"University of Maryland, Baltimore",2014,Maryland,NA,NA,NA,NA,NA,NA,NA
+164924,Boston College,2014,Massachusetts,0.34,0.29,23223,7875,2288,730,33
+170976,University of Michigan-Ann Arbor,2014,Michigan,0.32,0.41,49776,16047,6505,740,33
+171100,Michigan State University,2014,Michigan,0.66,0.37,33211,21950,8055,635,28
+174066,University of Minnesota-Twin Cities,2014,Minnesota,0.45,0.27,44760,20300,5530,720,30
+176017,University of Mississippi,2014,Mississippi,0.81,0.29,16101,13077,3809,590,27
+176080,Mississippi State University,2014,Mississippi,0.71,0.39,10766,7646,2974,635,28
+178396,University of Missouri-Columbia,2014,Missouri,0.78,0.4,21163,16437,6515,655,28
+181464,University of Nebraska-Lincoln,2014,Nebraska,0.7,0.56,11865,8293,4652,650,28
+186380,Rutgers University-New Brunswick,2014,New Jersey,0.6,0.33,31941,19324,6412,670,NA
+196413,Syracuse University,2014,New York,0.53,0.24,26790,14260,3470,640,29
+198419,Duke University,2014,North Carolina,0.11,0.48,31523,3596,1721,775,34
+199120,University of North Carolina at Chapel Hill,2014,North Carolina,0.28,0.45,31332,8929,3976,710,32
+199193,North Carolina State University at Raleigh,2014,North Carolina,0.52,0.43,20443,10548,4499,665,30
+199847,Wake Forest University,2014,North Carolina,0.34,0.34,11119,3826,1287,NA,NA
+204796,Ohio State University-Main Campus,2014,Ohio,0.53,0.36,36788,19484,7079,695,31
+207388,Oklahoma State University-Main Campus,2014,Oklahoma,0.75,0.44,12259,9188,4057,610,28
+207500,University of Oklahoma-Norman Campus,2014,Oklahoma,0.81,0.45,11331,9216,4176,670,29
+209542,Oregon State University,2014,Oregon,0.78,0.34,14116,10976,3718,615,28
+209551,University of Oregon,2014,Oregon,0.75,0.25,21359,15997,3961,615,27
+214777,Pennsylvania State University-Main Campus,2014,Pennsylvania,0.5,0.32,50299,25295,8183,645,29
+215293,University of Pittsburgh-Pittsburgh Campus,2014,Pennsylvania,0.53,0.24,30629,16271,3847,680,31
+217882,Clemson University,2014,South Carolina,0.52,0.32,20756,10694,3475,670,31
+218663,University of South Carolina-Columbia,2014,South Carolina,0.65,0.33,23342,15219,4983,650,29
+221759,The University of Tennessee-Knoxville,2014,Tennessee,0.75,0.41,15442,11555,4701,635,29
+221999,Vanderbilt University,2014,Tennessee,0.13,0.42,29518,3865,1605,790,34
+223232,Baylor University,2014,Texas,0.55,0.19,33898,18766,3625,665,30
+228723,Texas A & M University-College Station,2014,Texas,0.71,0.47,32190,22863,10835,655,30
+228778,The University of Texas at Austin,2014,Texas,0.4,0.47,38785,15381,7285,705,32
+228875,Texas Christian University,2014,Texas,0.49,0.23,17029,8322,1891,640,30
+229115,Texas Tech University,2014,Texas,0.66,0.39,21873,14464,5619,600,27
+230764,University of Utah,2014,Utah,0.81,0.35,10991,8949,3158,645,28
+233921,Virginia Polytechnic Institute and State University,2014,Virginia,0.73,0.36,20744,15067,5494,660,NA
+234076,University of Virginia-Main Campus,2014,Virginia,0.29,0.41,31021,8997,3709,730,33
+236939,Washington State University,2014,Washington,0.82,0.34,14887,12219,4163,575,25
+236948,University of Washington-Seattle Campus,2014,Washington,0.55,0.36,31611,17451,6360,675,31
+238032,West Virginia University,2014,West Virginia,0.86,0.36,15604,13386,4868,570,26
+240444,University of Wisconsin-Madison,2014,Wisconsin,0.57,0.43,25438,14484,6264,700,31
+243744,Stanford University,2014,California,0.05,0.78,42167,2145,1678,785,34
+243780,Purdue University-Main Campus,2014,Indiana,0.59,0.27,39896,23654,6500,665,30
+100751,The University of Alabama,2015,Alabama,0.54,0.37,36203,19400,7211,605,31
+100858,Auburn University,2015,Alabama,0.78,0.33,19414,15077,4902,640,30
+104151,Arizona State University-Tempe,2015,Arizona,0.83,0.4,25380,21042,8348,635,28
+104179,University of Arizona,2015,Arizona,0.76,0.3,35408,27061,8037,NA,NA
+106397,University of Arkansas,2015,Arkansas,0.6,0.4,20542,12337,4915,610,28
+110635,University of California-Berkeley,2015,California,0.17,0.42,78893,13320,5550,755,34
+110662,University of California-Los Angeles,2015,California,0.17,0.35,92690,16016,5679,735,33
+123961,University of Southern California,2015,California,0.18,0.32,51924,9181,2949,750,33
+126614,University of Colorado Boulder,2015,Colorado,0.8,0.25,31325,24941,6208,650,30
+134097,Florida State University,2015,Florida,0.56,0.37,29828,16674,6100,640,29
+134130,University of Florida,2015,Florida,0.48,0.5,29220,13892,6887,675,31
+135726,University of Miami,2015,Florida,0.38,0.17,33420,12629,2084,695,32
+139755,Georgia Institute of Technology-Main Campus,2015,Georgia,0.32,0.35,27277,8775,3089,750,33
+139959,University of Georgia,2015,Georgia,0.53,0.45,21945,11604,5274,665,30
+145600,University of Illinois at Chicago,2015,Illinois,0.77,0.29,15664,12007,3485,630,26
+147767,Northwestern University,2015,Illinois,0.13,0.48,32122,4190,2018,780,34
+151351,Indiana University-Bloomington,2015,Indiana,0.78,0.29,34483,26892,7875,645,30
+152080,University of Notre Dame,2015,Indiana,0.2,0.56,18157,3595,2007,765,34
+153603,Iowa State University,2015,Iowa,0.87,0.37,19164,16702,6230,630,28
+153658,University of Iowa,2015,Iowa,0.81,0.25,26222,21171,5241,660,28
+155317,University of Kansas,2015,Kansas,0.93,0.3,15155,14165,4187,NA,28
+155399,Kansas State University,2015,Kansas,0.95,0.42,9178,8712,3624,NA,NA
+157085,University of Kentucky,2015,Kentucky,0.89,0.31,18725,16685,5211,625,28
+157289,University of Louisville,2015,Kentucky,0.72,0.4,9685,6943,2797,620,29
+159391,Louisiana State University and Agricultural & Mechanical College,2015,Louisiana,0.77,0.42,17429,13480,5624,630,28
+163259,"University of Maryland, Baltimore",2015,Maryland,NA,NA,NA,NA,NA,NA,NA
+164924,Boston College,2015,Massachusetts,0.29,0.26,29486,8405,2162,735,33
+170976,University of Michigan-Ann Arbor,2015,Michigan,0.26,0.45,51797,13611,6092,750,33
+171100,Michigan State University,2015,Michigan,0.66,0.35,35300,23397,8173,630,28
+174066,University of Minnesota-Twin Cities,2015,Minnesota,0.45,0.28,46165,20579,5771,720,31
+176017,University of Mississippi,2015,Mississippi,0.79,0.28,18059,14217,3966,600,28
+176080,Mississippi State University,2015,Mississippi,0.65,0.43,12446,8120,3471,630,29
+178396,University of Missouri-Columbia,2015,Missouri,0.78,0.36,21988,17180,6191,650,29
+181464,University of Nebraska-Lincoln,2015,Nebraska,0.76,0.62,9724,7425,4628,645,28
+186380,Rutgers University-New Brunswick,2015,New Jersey,0.58,0.32,35340,20657,6607,670,NA
+196413,Syracuse University,2015,New York,0.48,0.22,33254,16071,3481,645,29
+198419,Duke University,2015,North Carolina,0.11,0.49,31220,3566,1746,775,34
+199120,University of North Carolina at Chapel Hill,2015,North Carolina,0.31,0.43,31143,9510,4076,715,33
+199193,North Carolina State University at Raleigh,2015,North Carolina,0.5,0.41,21364,10774,4364,665,31
+199847,Wake Forest University,2015,North Carolina,0.29,0.33,13281,3903,1284,NA,NA
+204796,Ohio State University-Main Campus,2015,Ohio,0.49,0.35,40240,19872,7032,695,31
+207388,Oklahoma State University-Main Campus,2015,Oklahoma,0.75,0.44,12501,9392,4177,605,27
+207500,University of Oklahoma-Norman Campus,2015,Oklahoma,0.78,0.45,12002,9318,4200,670,29
+209542,Oregon State University,2015,Oregon,0.78,0.33,14058,11016,3593,620,28
+209551,University of Oregon,2015,Oregon,0.74,0.25,22000,16328,4133,615,27
+214777,Pennsylvania State University-Main Campus,2015,Pennsylvania,0.51,0.28,53472,27440,7626,650,29
+215293,University of Pittsburgh-Pittsburgh Campus,2015,Pennsylvania,0.54,0.24,30626,16503,4014,675,31
+217882,Clemson University,2015,South Carolina,0.51,0.3,22396,11483,3447,675,31
+218663,University of South Carolina-Columbia,2015,South Carolina,0.65,0.31,25740,16611,5199,645,30
+221759,The University of Tennessee-Knoxville,2015,Tennessee,0.76,0.36,17081,13032,4719,630,30
+221999,Vanderbilt University,2015,Tennessee,0.12,0.44,31464,3674,1607,795,35
+223232,Baylor University,2015,Texas,0.44,0.24,32136,14033,3394,660,30
+228723,Texas A & M University-College Station,2015,Texas,0.67,0.47,33213,22134,10318,655,30
+228778,The University of Texas at Austin,2015,Texas,0.39,0.47,42392,16633,7743,705,32
+228875,Texas Christian University,2015,Texas,0.43,0.26,18423,7974,2078,640,30
+229115,Texas Tech University,2015,Texas,0.63,0.36,23010,14510,5160,610,27
+230764,University of Utah,2015,Utah,0.81,0.34,12174,9913,3410,650,28
+233921,Virginia Polytechnic Institute and State University,2015,Virginia,0.73,0.39,22280,16355,6324,660,NA
+234076,University of Virginia-Main Campus,2015,Virginia,0.3,0.4,30840,9186,3674,730,33
+236939,Washington State University,2015,Washington,0.8,0.3,19766,15742,4727,575,26
+236948,University of Washington-Seattle Campus,2015,Washington,0.53,0.35,36840,19646,6789,685,31
+238032,West Virginia University,2015,West Virginia,0.86,0.36,15353,13174,4782,570,27
+240444,University of Wisconsin-Madison,2015,Wisconsin,0.58,0.39,28007,16134,6269,705,31
+243744,Stanford University,2015,California,0.05,0.8,42497,2140,1720,790,35
+243780,Purdue University-Main Campus,2015,Indiana,0.59,0.26,45264,26692,6942,665,31
+100751,The University of Alabama,2016,Alabama,0.53,0.38,38237,20107,7559,615,31
+100858,Auburn University,2016,Alabama,0.81,0.31,18256,14704,4529,630,30
+104151,Arizona State University-Tempe,2016,Arizona,0.83,0.4,24764,20431,8230,640,28
+104179,University of Arizona,2016,Arizona,0.79,0.27,36166,28433,7753,NA,NA
+106397,University of Arkansas,2016,Arkansas,0.63,0.36,21539,13613,4967,610,29
+110635,University of California-Berkeley,2016,California,0.17,0.44,82561,13975,6182,770,34
+110662,University of California-Los Angeles,2016,California,0.18,0.37,97112,17473,6545,735,33
+123961,University of Southern California,2016,California,0.17,0.34,54280,9022,3068,750,33
+126614,University of Colorado Boulder,2016,Colorado,0.77,0.25,34047,26087,6439,655,30
+134097,Florida State University,2016,Florida,0.58,0.37,29027,16840,6282,640,29
+134130,University of Florida,2016,Florida,0.46,0.49,30118,13836,6842,685,31
+135726,University of Miami,2016,Florida,0.38,0.17,32528,12267,2066,695,32
+139755,Georgia Institute of Technology-Main Campus,2016,Georgia,0.26,0.37,30528,7868,2877,750,34
+139959,University of Georgia,2016,Georgia,0.54,0.44,22694,12232,5433,670,31
+145600,University of Illinois at Chicago,2016,Illinois,0.74,0.25,17931,13196,3307,617.5,27
+147767,Northwestern University,2016,Illinois,0.11,0.53,35100,3743,1985,780,34
+151351,Indiana University-Bloomington,2016,Indiana,0.79,0.28,34646,27272,7673,645,30
+152080,University of Notre Dame,2016,Indiana,0.19,0.56,19505,3654,2046,770,35
+153603,Iowa State University,2016,Iowa,0.87,0.37,19433,17002,6325,635,28
+153658,University of Iowa,2016,Iowa,0.84,0.24,28494,23967,5643,660,28
+155317,University of Kansas,2016,Kansas,0.93,0.3,15015,13965,4233,NA,29
+155399,Kansas State University,2016,Kansas,0.94,0.41,9213,8667,3581,NA,NA
+157085,University of Kentucky,2016,Kentucky,0.91,0.28,20480,18593,5117,625,29
+157289,University of Louisville,2016,Kentucky,0.73,0.38,10404,7550,2883,NA,29
+159391,Louisiana State University and Agricultural & Mechanical College,2016,Louisiana,0.76,0.4,18122,13843,5475,625,28
+163259,"University of Maryland, Baltimore",2016,Maryland,NA,NA,NA,NA,NA,NA,NA
+164924,Boston College,2016,Massachusetts,0.31,0.26,28956,9017,2359,730,33
+170976,University of Michigan-Ann Arbor,2016,Michigan,0.29,0.42,55504,15871,6689,750,33
+171100,Michigan State University,2016,Michigan,0.66,0.33,37480,24641,8190,630,29
+174066,University of Minnesota-Twin Cities,2016,Minnesota,0.44,0.27,49129,21820,5880,725,31
+176017,University of Mississippi,2016,Mississippi,0.78,0.28,17918,14029,3964,615,29
+176080,Mississippi State University,2016,Mississippi,0.56,0.46,14012,7801,3624,NA,28
+178396,University of Missouri-Columbia,2016,Missouri,0.75,0.3,21107,15767,4772,645,29
+181464,University of Nebraska-Lincoln,2016,Nebraska,0.75,0.58,11193,8425,4860,640,28
+186380,Rutgers University-New Brunswick,2016,New Jersey,0.57,0.31,36677,20884,6466,675,NA
+196413,Syracuse University,2016,New York,0.52,0.23,30923,16179,3712,645,29
+198419,Duke University,2016,North Carolina,0.11,0.5,31671,3430,1723,785,34
+199120,University of North Carolina at Chapel Hill,2016,North Carolina,0.27,0.45,34889,9400,4228,710,33
+199193,North Carolina State University at Raleigh,2016,North Carolina,0.48,0.35,26451,12568,4388,675,31
+199847,Wake Forest University,2016,North Carolina,0.3,0.31,14006,4249,1306,NA,NA
+204796,Ohio State University-Main Campus,2016,Ohio,0.54,0.33,44845,24265,7938,705,31
+207388,Oklahoma State University-Main Campus,2016,Oklahoma,0.75,0.43,13055,9729,4161,600,27
+207500,University of Oklahoma-Norman Campus,2016,Oklahoma,0.71,0.41,14391,10194,4198,672.5,29
+209542,Oregon State University,2016,Oregon,0.77,0.34,14595,11308,3814,620,28
+209551,University of Oregon,2016,Oregon,0.78,0.24,21821,16992,4041,610,27
+214777,Pennsylvania State University-Main Campus,2016,Pennsylvania,0.56,0.28,52974,29878,8499,650,29
+215293,University of Pittsburgh-Pittsburgh Campus,2016,Pennsylvania,0.55,0.24,29175,16165,3954,690,32
+217882,Clemson University,2016,South Carolina,0.51,0.31,23506,11881,3684,670,31
+218663,University of South Carolina-Columbia,2016,South Carolina,0.68,0.3,25057,17073,5110,650,30
+221759,The University of Tennessee-Knoxville,2016,Tennessee,0.77,0.36,17583,13578,4851,625,30
+221999,Vanderbilt University,2016,Tennessee,0.11,0.46,32442,3487,1601,795,35
+223232,Baylor University,2016,Texas,0.4,0.25,34636,13758,3503,655,30
+228723,Texas A & M University-College Station,2016,Texas,0.67,0.43,34780,23361,10142,655,30
+228778,The University of Texas at Austin,2016,Texas,0.4,0.45,47511,19182,8719,705,32
+228875,Texas Christian University,2016,Texas,0.38,0.25,19972,7506,1888,640,30
+229115,Texas Tech University,2016,Texas,0.63,0.33,23311,14592,4762,600,27
+230764,University of Utah,2016,Utah,0.76,0.33,14308,10934,3601,650,27
+233921,Virginia Polytechnic Institute and State University,2016,Virginia,0.71,0.33,25000,17718,5929,660,NA
+234076,University of Virginia-Main Campus,2016,Virginia,0.3,0.38,32377,9668,3683,730,33
+236939,Washington State University,2016,Washington,0.72,0.27,23223,16731,4527,582.5,26
+236948,University of Washington-Seattle Campus,2016,Washington,0.45,0.33,43517,19733,6475,685,32
+238032,West Virginia University,2016,West Virginia,0.76,0.31,21558,16411,5124,565,26
+240444,University of Wisconsin-Madison,2016,Wisconsin,0.53,0.37,32839,17281,6430,710,31
+243744,Stanford University,2016,California,0.05,0.82,43997,2118,1739,790,35
+243780,Purdue University-Main Campus,2016,Indiana,0.56,0.27,49007,27427,7399,660,31
+100751,The University of Alabama,2017,Alabama,0.53,0.36,38129,20321,7407,640,32
+100858,Auburn University,2017,Alabama,0.84,0.32,18072,15168,4836,655,30
+104151,Arizona State University-Tempe,2017,Arizona,0.84,0.39,24127,20302,7874,675,29
+104179,University of Arizona,2017,Arizona,0.84,0.26,33608,28089,7360,NA,NA
+106397,University of Arkansas,2017,Arkansas,0.66,0.35,21715,14324,5066,640,29
+110635,University of California-Berkeley,2017,California,0.17,0.44,85044,14549,6379,740,34
+110662,University of California-Los Angeles,2017,California,0.16,0.37,102225,16456,6038,725,34
+123961,University of Southern California,2017,California,0.16,0.37,56676,9042,3358,750,34
+126614,University of Colorado Boulder,2017,Colorado,0.8,0.23,36148,28861,6569,670,30
+134097,Florida State University,2017,Florida,0.49,0.38,35334,17381,6523,665,30
+134130,University of Florida,2017,Florida,0.42,0.47,32747,13758,6428,700,32
+135726,University of Miami,2017,Florida,0.36,0.2,30638,10939,2212,710,32
+139755,Georgia Institute of Technology-Main Campus,2017,Georgia,0.23,0.39,31497,7369,2861,760,34
+139959,University of Georgia,2017,Georgia,0.54,0.45,24165,13052,5826,685,31
+145600,University of Illinois at Chicago,2017,Illinois,0.77,0.28,18768,14467,4051,665,26
+147767,Northwestern University,2017,Illinois,0.09,0.55,37259,3442,1903,780,34
+151351,Indiana University-Bloomington,2017,Indiana,0.76,0.25,41939,31878,8001,675,31
+152080,University of Notre Dame,2017,Indiana,0.19,0.55,19564,3702,2051,760,34
+153603,Iowa State University,2017,Iowa,0.89,0.35,19262,17208,5944,705,28
+153658,University of Iowa,2017,Iowa,0.86,0.21,27734,23862,5027,685,28
+155317,University of Kansas,2017,Kansas,0.93,0.31,14538,13576,4153,NA,28
+155399,Kansas State University,2017,Kansas,0.94,0.42,8517,8016,3350,NA,NA
+157085,University of Kentucky,2017,Kentucky,0.96,0.27,18925,18125,4855,665,28
+157289,University of Louisville,2017,Kentucky,0.75,0.34,10987,8273,2796,645,28
+159391,Louisiana State University and Agricultural & Mechanical College,2017,Louisiana,0.74,0.37,17907,13236,4917,645,28
+163259,"University of Maryland, Baltimore",2017,Maryland,NA,NA,NA,NA,NA,NA,NA
+164924,Boston College,2017,Massachusetts,0.32,0.26,28454,9223,2412,745,33
+170976,University of Michigan-Ann Arbor,2017,Michigan,0.27,0.43,59886,15871,6879,750,33
+171100,Michigan State University,2017,Michigan,0.72,0.32,36143,25860,8366,660,28
+174066,University of Minnesota-Twin Cities,2017,Minnesota,0.5,0.29,43731,21692,6201,740,31
+176017,University of Mississippi,2017,Mississippi,0.84,0.25,17416,14614,3694,645,29
+176080,Mississippi State University,2017,Mississippi,0.62,0.39,13973,8719,3435,NA,28
+178396,University of Missouri-Columbia,2017,Missouri,0.78,0.32,16367,12781,4134,675,29
+181464,University of Nebraska-Lincoln,2017,Nebraska,0.64,0.51,14947,9623,4905,690,29
+186380,Rutgers University-New Brunswick,2017,New Jersey,0.58,0.28,38384,22186,6268,700,31
+196413,Syracuse University,2017,New York,0.47,0.24,33099,15517,3649,675,30
+198419,Duke University,2017,North Carolina,0.1,0.54,33077,3261,1748,770,35
+199120,University of North Carolina at Chapel Hill,2017,North Carolina,0.24,0.45,39650,9673,4356,730,33
+199193,North Carolina State University at Raleigh,2017,North Carolina,0.51,0.35,26980,13856,4797,695,31
+199847,Wake Forest University,2017,North Carolina,0.28,0.37,13071,3604,1349,NA,NA
+204796,Ohio State University-Main Campus,2017,Ohio,0.48,0.31,47782,22964,7209,725,31
+207388,Oklahoma State University-Main Campus,2017,Oklahoma,0.74,0.42,13635,10128,4220,630,28
+207500,University of Oklahoma-Norman Campus,2017,Oklahoma,0.74,0.39,15579,11529,4473,690,29
+209542,Oregon State University,2017,Oregon,0.79,0.33,14888,11738,3819,650,28
+209551,University of Oregon,2017,Oregon,0.83,0.23,20317,16824,3938,635,28
+214777,Pennsylvania State University-Main Campus,2017,Pennsylvania,0.5,0.28,56114,28233,7863,670,30
+215293,University of Pittsburgh-Pittsburgh Campus,2017,Pennsylvania,0.6,0.24,27679,16528,4019,709,32
+217882,Clemson University,2017,South Carolina,0.47,0.29,26242,12380,3650,695,31
+218663,University of South Carolina-Columbia,2017,South Carolina,0.72,0.31,26015,18811,5879,665,30
+221759,The University of Tennessee-Knoxville,2017,Tennessee,0.77,0.34,18872,14526,4895,655,30
+221999,Vanderbilt University,2017,Tennessee,0.11,0.47,31462,3415,1607,785,35
+223232,Baylor University,2017,Texas,0.39,0.23,37083,14442,3320,680,31
+228723,Texas A & M University-College Station,2017,Texas,0.71,0.45,36669,25866,11639,680,30
+228778,The University of Texas at Austin,2017,Texas,0.36,0.45,51033,18620,8381,730,33
+228875,Texas Christian University,2017,Texas,0.41,0.24,19740,8110,1955,665,30
+229115,Texas Tech University,2017,Texas,0.69,0.34,25207,17438,5883,620,27
+230764,University of Utah,2017,Utah,0.66,0.28,22400,14818,4119,675,29
+233921,Virginia Polytechnic Institute and State University,2017,Virginia,0.7,0.36,27423,19212,6836,680,30
+234076,University of Virginia-Main Campus,2017,Virginia,0.27,0.38,36779,10058,3788,750,33
+236939,Washington State University,2017,Washington,0.73,0.28,22565,16487,4612,610,26
+236948,University of Washington-Seattle Campus,2017,Washington,0.46,0.33,44877,20833,6793,710,32
+238032,West Virginia University,2017,West Virginia,0.72,0.35,20594,14807,5225,605,27
+240444,University of Wisconsin-Madison,2017,Wisconsin,0.54,0.35,35596,19153,6609,725,31
+243744,Stanford University,2017,California,0.05,0.82,44073,2085,1700,770,35
+243780,Purdue University-Main Campus,2017,Indiana,0.57,0.27,49354,28363,7728,690,31
+100751,The University of Alabama,2018,Alabama,0.59,0.3,37302,22032,6663,640,31
+100858,Auburn University,2018,Alabama,0.75,0.31,20742,15645,4783,655,30
+104151,Arizona State University-Tempe,2018,Arizona,0.85,0.39,26869,22779,8861,680,29
+104179,University of Arizona,2018,Arizona,0.84,0.23,39941,33717,7750,655,28
+106397,University of Arkansas,2018,Arkansas,0.77,0.35,18732,14512,5008,645,29
+110635,University of California-Berkeley,2018,California,0.15,0.45,89607,13301,6012,765,35
+110662,University of California-Los Angeles,2018,California,0.14,0.39,113754,15970,6240,760,34
+123961,University of Southern California,2018,California,0.13,0.41,64352,8339,3401,765,34
+126614,University of Colorado Boulder,2018,Colorado,0.82,0.22,36604,29848,6700,680,31
+134097,Florida State University,2018,Florida,0.37,0.34,50314,18504,6324,675,30
+134130,University of Florida,2018,Florida,0.39,0.45,38905,15077,6801,720,32
+135726,University of Miami,2018,Florida,0.32,0.21,34281,11021,2367,715,32
+139755,Georgia Institute of Technology-Main Campus,2018,Georgia,0.22,0.41,35644,7673,3146,770,34
+139959,University of Georgia,2018,Georgia,0.49,0.45,26164,12723,5727,705,32
+145600,University of Illinois at Chicago,2018,Illinois,0.76,0.26,21106,15945,4159,610,27
+147767,Northwestern University,2018,Illinois,0.08,0.56,40425,3422,1931,775,35
+151351,Indiana University-Bloomington,2018,Indiana,0.77,0.24,44169,33970,8097,680,31
+152080,University of Notre Dame,2018,Indiana,0.18,0.57,20371,3608,2070,775,35
+153603,Iowa State University,2018,Iowa,0.91,0.35,18855,17082,6047,667,28
+153658,University of Iowa,2018,Iowa,0.83,0.22,26706,22077,4806,665,28
+155317,University of Kansas,2018,Kansas,0.92,0.31,14752,13529,4164,NA,29
+155399,Kansas State University,2018,Kansas,0.93,0.43,8685,8112,3467,NA,NA
+157085,University of Kentucky,2018,Kentucky,0.94,0.28,19324,18258,5077,650,29
+157289,University of Louisville,2018,Kentucky,0.72,0.29,13851,10032,2932,645,29
+159391,Louisiana State University and Agricultural & Mechanical College,2018,Louisiana,0.74,0.32,24280,18024,5812,645,29
+163259,"University of Maryland, Baltimore",2018,Maryland,NA,NA,NA,NA,NA,NA,NA
+164924,Boston College,2018,Massachusetts,0.28,0.27,31084,8669,2327,745,34
+170976,University of Michigan-Ann Arbor,2018,Michigan,0.23,0.45,64917,14818,6695,755,34
+171100,Michigan State University,2018,Michigan,0.78,0.34,33129,25733,8688,655,29
+174066,University of Minnesota-Twin Cities,2018,Minnesota,0.52,0.27,43444,22525,5977,740,31
+176017,University of Mississippi,2018,Mississippi,0.88,0.25,15371,13535,3421,635,29
+176080,Mississippi State University,2018,Mississippi,0.57,0.36,17381,9893,3565,665,29
+178396,University of Missouri-Columbia,2018,Missouri,0.78,0.32,18948,14750,4673,645,29
+181464,University of Nebraska-Lincoln,2018,Nebraska,0.8,0.4,14956,11906,4816,680,29
+186380,Rutgers University-New Brunswick,2018,New Jersey,0.6,0.28,41348,24854,7036,705,31
+196413,Syracuse University,2018,New York,0.5,0.21,34981,17443,3599,685,30
+198419,Duke University,2018,North Carolina,0.09,0.55,35786,3189,1745,785,35
+199120,University of North Carolina at Chapel Hill,2018,North Carolina,0.23,0.45,41939,9525,4327,740,33
+199193,North Carolina State University at Raleigh,2018,North Carolina,0.47,0.35,30350,14219,4952,695,31
+199847,Wake Forest University,2018,North Carolina,0.29,0.37,12937,3803,1421,NA,NA
+204796,Ohio State University-Main Campus,2018,Ohio,0.52,0.32,48077,24988,7944,725,32
+207388,Oklahoma State University-Main Campus,2018,Oklahoma,0.74,0.39,14405,10629,4166,640,28
+207500,University of Oklahoma-Norman Campus,2018,Oklahoma,0.78,0.36,15811,12283,4385,675,29
+209542,Oregon State University,2018,Oregon,0.81,0.31,14890,12006,3674,655,28
+209551,University of Oregon,2018,Oregon,0.83,0.2,24474,20404,4168,645,28
+214777,Pennsylvania State University-Main Campus,2018,Pennsylvania,0.56,0.27,52742,29793,8075,680,30
+215293,University of Pittsburgh-Pittsburgh Campus,2018,Pennsylvania,0.59,0.23,29857,17696,4126,715,33
+217882,Clemson University,2018,South Carolina,0.47,0.28,28845,13613,3792,700,32
+218663,University of South Carolina-Columbia,2018,South Carolina,0.63,0.3,30889,19480,5854,680,30
+221759,The University of Tennessee-Knoxville,2018,Tennessee,0.78,0.33,20457,15912,5215,665,31
+221999,Vanderbilt University,2018,Tennessee,0.1,0.49,34313,3298,1602,780,35
+223232,Baylor University,2018,Texas,0.39,0.23,37083,14442,3366,685,31
+228723,Texas A & M University-College Station,2018,Texas,0.68,0.46,36000,24343,11133,690,31
+228778,The University of Texas at Austin,2018,Texas,0.39,0.46,50575,19482,8960,740,33
+228875,Texas Christian University,2018,Texas,0.41,0.27,20156,8210,2194,671.5,30
+229115,Texas Tech University,2018,Texas,0.71,0.36,24452,17280,6171,620,27
+230764,University of Utah,2018,Utah,0.67,0.28,23096,15441,4256,675,29
+233921,Virginia Polytechnic Institute and State University,2018,Virginia,0.65,0.3,31936,20709,6285,695,31
+234076,University of Virginia-Main Campus,2018,Virginia,0.26,0.39,37182,9828,3822,750,34
+236939,Washington State University,2018,Washington,0.77,0.29,22773,17579,5164,605,26
+236948,University of Washington-Seattle Campus,2018,Washington,0.49,0.32,45907,22350,7161,730,32
+238032,West Virginia University,2018,West Virginia,0.82,0.31,18639,15211,4732,620,27
+240444,University of Wisconsin-Madison,2018,Wisconsin,0.52,0.31,42727,22104,6862,725,32
+243744,Stanford University,2018,California,0.04,0.82,47452,2071,1697,785,35
+243780,Purdue University-Main Campus,2018,Indiana,0.58,0.27,53722,31146,8491,705,32
+100751,The University of Alabama,2019,Alabama,0.83,0.21,38505,31835,6764,670,31
+100858,Auburn University,2019,Alabama,0.81,0.29,20205,16300,4808,660,31
+104151,Arizona State University-Tempe,2019,Arizona,0.86,0.34,34188,29562,10044,680,28
+104179,University of Arizona,2019,Arizona,0.85,0.22,40854,34558,7683,680,29
+106397,University of Arkansas,2019,Arkansas,0.77,0.33,17913,13809,4605,650,30
+110635,University of California-Berkeley,2019,California,0.16,0.45,87847,14278,6455,765,35
+110662,University of California-Los Angeles,2019,California,0.12,0.43,111321,13720,5920,765,35
+123961,University of Southern California,2019,California,0.11,0.42,66198,7558,3168,765,34
+126614,University of Colorado Boulder,2019,Colorado,0.78,0.22,40677,31872,7113,680,31
+134097,Florida State University,2019,Florida,0.36,0.34,58936,21202,7106,670,30
+134130,University of Florida,2019,Florida,0.37,0.47,38069,13925,6554,735,33
+135726,University of Miami,2019,Florida,0.27,0.21,38920,10558,2204,720,32
+139755,Georgia Institute of Technology-Main Campus,2019,Georgia,0.21,0.41,36856,7584,3076,755,34
+139959,University of Georgia,2019,Georgia,0.45,0.41,29285,13265,5499,710,32
+145600,University of Illinois at Chicago,2019,Illinois,0.73,0.27,22696,16501,4407,630,28
+147767,Northwestern University,2019,Illinois,0.09,0.55,40585,3673,2006,775,35
+151351,Indiana University-Bloomington,2019,Indiana,0.78,0.25,42902,33425,8291,680,31
+152080,University of Notre Dame,2019,Indiana,0.16,0.58,22200,3515,2051,775,35
+153603,Iowa State University,2019,Iowa,0.92,0.33,18246,16796,5597,670,28
+153658,University of Iowa,2019,Iowa,0.83,0.23,25928,21404,4986,670,29
+155317,University of Kansas,2019,Kansas,0.93,0.29,15093,14052,4125,NA,29
+155399,Kansas State University,2019,Kansas,0.95,0.41,8277,7894,3202,NA,NA
+157085,University of Kentucky,2019,Kentucky,0.96,0.3,18759,17981,5348,660,29
+157289,University of Louisville,2019,Kentucky,0.69,0.27,14760,10226,2803,645,29
+159391,Louisiana State University and Agricultural & Mechanical College,2019,Louisiana,0.75,0.34,24501,18272,6132,655,29
+163259,"University of Maryland, Baltimore",2019,Maryland,NA,NA,NA,NA,NA,NA,NA
+164924,Boston College,2019,Massachusetts,0.27,0.24,35552,9679,2297,750,34
+170976,University of Michigan-Ann Arbor,2019,Michigan,0.23,0.46,64972,14883,6830,765,34
+171100,Michigan State University,2019,Michigan,0.71,0.28,44322,31522,8801,660,29
+174066,University of Minnesota-Twin Cities,2019,Minnesota,0.57,0.27,40673,23076,6278,740,31
+176017,University of Mississippi,2019,Mississippi,0.88,0.23,16253,14325,3232,625,29
+176080,Mississippi State University,2019,Mississippi,0.54,0.35,18340,9878,3500,640,30
+178396,University of Missouri-Columbia,2019,Missouri,0.81,0.34,20015,16158,5431,670,29
+181464,University of Nebraska-Lincoln,2019,Nebraska,0.78,0.36,16829,13165,4775,680,28
+186380,Rutgers University-New Brunswick,2019,New Jersey,0.61,0.29,41286,25277,7315,715,32
+196413,Syracuse University,2019,New York,0.44,0.23,35299,15664,3660,690,30
+198419,Duke University,2019,North Carolina,0.08,0.54,41947,3187,1731,785,35
+199120,University of North Carolina at Chapel Hill,2019,North Carolina,0.23,0.44,42465,9610,4182,750,33
+199193,North Carolina State University at Raleigh,2019,North Carolina,0.45,0.35,31130,14050,4873,710,32
+199847,Wake Forest University,2019,North Carolina,0.3,0.37,12559,3717,1360,NA,NA
+204796,Ohio State University-Main Campus,2019,Ohio,0.54,0.3,47703,25634,7716,730,32
+207388,Oklahoma State University-Main Campus,2019,Oklahoma,0.7,0.39,15277,10691,4200,640,28
+207500,University of Oklahoma-Norman Campus,2019,Oklahoma,0.8,0.36,15673,12603,4523,655,29
+209542,Oregon State University,2019,Oregon,0.82,0.26,15786,12996,3423,660,28
+209551,University of Oregon,2019,Oregon,0.82,0.2,27209,22256,4525,655,28
+214777,Pennsylvania State University-Main Campus,2019,Pennsylvania,0.76,0.22,95970,72880,15989,655,30
+215293,University of Pittsburgh-Pittsburgh Campus,2019,Pennsylvania,0.57,0.22,32091,18180,4026,720,33
+217882,Clemson University,2019,South Carolina,0.51,0.26,29070,14900,3932,700,32
+218663,University of South Carolina-Columbia,2019,South Carolina,0.69,0.29,31268,21464,6286,685,31
+221759,The University of Tennessee-Knoxville,2019,Tennessee,0.79,0.31,21764,17160,5254,665,30
+221999,Vanderbilt University,2019,Tennessee,0.09,0.47,37310,3402,1604,780,35
+223232,Baylor University,2019,Texas,0.45,0.21,34582,15676,3307,690,32
+228723,Texas A & M University-College Station,2019,Texas,0.58,0.43,42476,24549,10613,695,31
+228778,The University of Texas at Austin,2019,Texas,0.32,0.48,53525,17029,8170,740,33
+228875,Texas Christian University,2019,Texas,0.47,0.24,19028,8966,2159,675,31
+229115,Texas Tech University,2019,Texas,0.69,0.35,25384,17493,6145,630,27
+230764,University of Utah,2019,Utah,0.62,0.28,24404,15159,4249,690,29
+233921,Virginia Polytechnic Institute and State University,2019,Virginia,0.7,0.34,31974,22393,7651,695,31
+234076,University of Virginia-Main Campus,2019,Virginia,0.24,0.4,40839,9778,3920,760,34
+236939,Washington State University,2019,Washington,0.76,0.3,21434,16247,4812,615,26
+236948,University of Washington-Seattle Campus,2019,Washington,0.52,0.3,45579,23592,6992,735,33
+238032,West Virginia University,2019,West Virginia,0.84,0.32,18202,15340,4949,615,27
+240444,University of Wisconsin-Madison,2019,Wisconsin,0.54,0.32,43896,23886,7550,740,32
+243744,Stanford University,2019,California,0.04,0.82,47498,2062,1698,785,35
+243780,Purdue University-Main Campus,2019,Indiana,0.6,0.25,55311,33093,8195,720,32
