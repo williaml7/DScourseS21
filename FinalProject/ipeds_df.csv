@@ -13,7 +13,7 @@ unitid,school,year,state,admitRate,yield,applications,admissions,enrollments,avg
 135726,University of Miami,2001,Florida,0.46,0.32,14724,6809,2164,645,NA
 139755,Georgia Institute of Technology-Main Campus,2001,Georgia,0.54,0.43,9476,5157,2225,710,NA
 139959,University of Georgia,2001,Georgia,0.77,0.54,10953,8419,4514,665,30
-145600,University of Illinois at Chicago,2001,Illinois,0.64,0.45,9512,6049,2692,NA,25
+145637,University of Illinois at Urbana-Champaign,2001,Illinois,0.64,0.51,18805,12116,6179,NA,28
 147767,Northwestern University,2001,Illinois,0.33,0.39,14725,4827,1885,735,NA
 151351,Indiana University-Bloomington,2001,Indiana,0.83,0.41,20228,16777,6815,605,27
 152080,University of Notre Dame,2001,Indiana,0.36,0.61,9385,3338,2036,725,32
@@ -78,7 +78,7 @@ unitid,school,year,state,admitRate,yield,applications,admissions,enrollments,avg
 135726,University of Miami,2002,Florida,0.44,0.3,15909,6977,2059,650,28
 139755,Georgia Institute of Technology-Main Campus,2002,Georgia,0.59,0.43,8953,5270,2282,710,NA
 139959,University of Georgia,2002,Georgia,0.65,0.51,12786,8340,4228,645,29
-145600,University of Illinois at Chicago,2002,Illinois,0.61,0.4,12430,7596,3015,NA,25
+145637,University of Illinois at Urbana-Champaign,2002,Illinois,0.62,0.51,19930,12351,6247,NA,30
 147767,Northwestern University,2002,Illinois,0.34,0.41,13988,4780,1952,740,NA
 151351,Indiana University-Bloomington,2002,Indiana,0.81,0.41,21264,17267,7080,605,27
 152080,University of Notre Dame,2002,Indiana,0.34,0.58,9744,3336,1946,725,33
@@ -143,7 +143,7 @@ unitid,school,year,state,admitRate,yield,applications,admissions,enrollments,avg
 135726,University of Miami,2003,Florida,0.44,0.28,16851,7490,2078,670,30
 139755,Georgia Institute of Technology-Main Campus,2003,Georgia,0.63,0.42,8573,5386,2237,715,NA
 139959,University of Georgia,2003,Georgia,0.75,0.58,11813,8885,5190,650,28
-145600,University of Illinois at Chicago,2003,Illinois,0.61,0.4,12250,7425,2942,NA,25
+145637,University of Illinois at Urbana-Champaign,2003,Illinois,0.6,0.49,21484,12924,6366,NA,30
 147767,Northwestern University,2003,Illinois,0.33,0.43,14283,4701,2005,740,33
 151351,Indiana University-Bloomington,2003,Indiana,0.81,0.38,22178,17992,6784,610,27
 152080,University of Notre Dame,2003,Indiana,0.29,0.57,12095,3524,1996,730,33
@@ -208,7 +208,7 @@ unitid,school,year,state,admitRate,yield,applications,admissions,enrollments,avg
 135726,University of Miami,2004,Florida,0.42,0.26,18507,7784,2043,675,30
 139755,Georgia Institute of Technology-Main Campus,2004,Georgia,0.7,0.43,8568,6008,2579,710,30
 139959,University of Georgia,2004,Georgia,0.75,0.58,11813,8885,5190,650,28
-145600,University of Illinois at Chicago,2004,Illinois,0.62,0.36,12362,7627,2716,NA,25
+145637,University of Illinois at Urbana-Champaign,2004,Illinois,0.63,0.49,22269,13939,6811,NA,30
 147767,Northwestern University,2004,Illinois,0.33,0.41,14137,4702,1941,740,33
 151351,Indiana University-Bloomington,2004,Indiana,0.83,0.36,21172,17572,6352,610,27
 152080,University of Notre Dame,2004,Indiana,0.3,0.57,11490,3488,1985,735,33
@@ -273,7 +273,7 @@ unitid,school,year,state,admitRate,yield,applications,admissions,enrollments,avg
 135726,University of Miami,2005,Florida,0.46,0.26,18812,8679,2277,680,30
 139755,Georgia Institute of Technology-Main Campus,2005,Georgia,0.67,0.39,9172,6191,2427,710,30
 139959,University of Georgia,2005,Georgia,0.62,0.55,13267,8197,4513,660,28
-145600,University of Illinois at Chicago,2005,Illinois,0.58,0.37,12692,7418,2776,655,26
+145637,University of Illinois at Urbana-Champaign,2005,Illinois,0.68,0.48,21986,14955,7237,700,30
 147767,Northwestern University,2005,Illinois,0.3,0.41,15637,4684,1915,750,33
 151351,Indiana University-Bloomington,2005,Indiana,0.85,0.37,21974,18602,6949,615,27
 152080,University of Notre Dame,2005,Indiana,0.32,0.55,11316,3581,1965,740,33
@@ -338,7 +338,7 @@ unitid,school,year,state,admitRate,yield,applications,admissions,enrollments,avg
 135726,University of Miami,2006,Florida,0.4,0.27,19040,7709,2062,680,31
 139755,Georgia Institute of Technology-Main Campus,2006,Georgia,0.67,0.46,9250,6163,2837,700,32
 139959,University of Georgia,2006,Georgia,0.65,0.59,12326,7982,4712,665,28
-145600,University of Illinois at Chicago,2006,Illinois,0.58,0.38,13000,7559,2852,NA,26
+145637,University of Illinois at Urbana-Champaign,2006,Illinois,0.75,0.53,18985,14324,7580,700,31
 147767,Northwestern University,2006,Illinois,0.3,0.41,16204,4818,1952,750,33
 151351,Indiana University-Bloomington,2006,Indiana,0.78,0.39,26645,20873,8183,620,27
 152080,University of Notre Dame,2006,Indiana,0.27,0.58,12796,3492,2039,750,33
@@ -403,7 +403,7 @@ unitid,school,year,state,admitRate,yield,applications,admissions,enrollments,avg
 135726,University of Miami,2007,Florida,0.38,0.26,19809,7527,1991,685,31
 139755,Georgia Institute of Technology-Main Campus,2007,Georgia,0.63,0.45,9259,5831,2626,710,31
 139959,University of Georgia,2007,Georgia,0.58,0.55,15924,9214,5064,660,28
-145600,University of Illinois at Chicago,2007,Illinois,0.64,0.38,13595,8686,3291,NA,26
+145637,University of Illinois at Urbana-Champaign,2007,Illinois,0.71,0.45,21645,15361,6940,705,31
 147767,Northwestern University,2007,Illinois,0.3,0.38,18385,5434,2060,750,33
 151351,Indiana University-Bloomington,2007,Indiana,0.7,0.35,29059,20282,7197,630,28
 152080,University of Notre Dame,2007,Indiana,0.24,0.56,14503,3549,1991,755,34
@@ -468,7 +468,7 @@ unitid,school,year,state,admitRate,yield,applications,admissions,enrollments,avg
 135726,University of Miami,2008,Florida,0.39,0.24,21774,8411,2010,690,31
 139755,Georgia Institute of Technology-Main Campus,2008,Georgia,0.63,0.43,9664,6122,2628,710,31
 139959,University of Georgia,2008,Georgia,0.55,0.51,16871,9242,4721,655,29
-145600,University of Illinois at Chicago,2008,Illinois,0.6,0.35,14269,8567,2964,NA,26
+145637,University of Illinois at Urbana-Champaign,2008,Illinois,0.69,0.45,23240,16043,7287,705,31
 147767,Northwestern University,2008,Illinois,0.27,0.34,21930,5872,1981,760,34
 151351,Indiana University-Bloomington,2008,Indiana,0.71,0.34,31177,22039,7564,630,29
 152080,University of Notre Dame,2008,Indiana,0.27,0.54,13945,3727,2000,750,34
@@ -533,7 +533,7 @@ unitid,school,year,state,admitRate,yield,applications,admissions,enrollments,avg
 135726,University of Miami,2009,Florida,0.44,0.21,21845,9700,2006,690,31
 139755,Georgia Institute of Technology-Main Campus,2009,Georgia,0.61,0.42,10258,6248,2640,710,31
 139959,University of Georgia,2009,Georgia,0.56,0.51,17207,9569,4851,660,29
-145600,University of Illinois at Chicago,2009,Illinois,0.63,0.34,14661,9244,3147,645,26
+145637,University of Illinois at Urbana-Champaign,2009,Illinois,0.65,0.41,26057,17053,6984,715,31
 147767,Northwestern University,2009,Illinois,0.26,0.32,25013,6553,2078,765,33
 151351,Indiana University-Bloomington,2009,Indiana,0.73,0.31,33011,23975,7327,645,29
 152080,University of Notre Dame,2009,Indiana,0.29,0.5,14357,4113,2064,755,34
@@ -598,7 +598,7 @@ unitid,school,year,state,admitRate,yield,applications,admissions,enrollments,avg
 135726,University of Miami,2010,Florida,0.39,0.21,25899,10157,2132,690,32
 139755,Georgia Institute of Technology-Main Campus,2010,Georgia,0.59,0.4,11432,6721,2660,715,31
 139959,University of Georgia,2010,Georgia,0.54,0.49,17776,9557,4684,665,29
-145600,University of Illinois at Chicago,2010,Illinois,0.63,0.34,14889,9411,3204,635,26
+145637,University of Illinois at Urbana-Champaign,2010,Illinois,0.67,0.38,27310,18324,6929,715,31
 147767,Northwestern University,2010,Illinois,0.27,0.31,25369,6887,2128,765,33
 151351,Indiana University-Bloomington,2010,Indiana,0.69,0.28,36719,25391,7020,640,29
 152080,University of Notre Dame,2010,Indiana,0.29,0.49,14521,4177,2067,755,34
@@ -663,7 +663,7 @@ unitid,school,year,state,admitRate,yield,applications,admissions,enrollments,avg
 135726,University of Miami,2011,Florida,0.38,0.2,27747,10635,2172,700,32
 139755,Georgia Institute of Technology-Main Campus,2011,Georgia,0.52,0.39,13495,6976,2712,715,32
 139959,University of Georgia,2011,Georgia,0.59,0.45,17408,10318,4679,665,29
-145600,University of Illinois at Chicago,2011,Illinois,0.63,0.34,14564,9151,3115,625,26
+145637,University of Illinois at Urbana-Champaign,2011,Illinois,0.68,0.37,28751,19434,7252,720,31
 147767,Northwestern University,2011,Illinois,0.23,0.33,27528,6367,2127,765,33
 151351,Indiana University-Bloomington,2011,Indiana,0.72,0.29,35218,25455,7424,640,29
 152080,University of Notre Dame,2011,Indiana,0.24,0.5,16548,4019,2020,760,34
@@ -728,7 +728,7 @@ unitid,school,year,state,admitRate,yield,applications,admissions,enrollments,avg
 135726,University of Miami,2012,Florida,0.4,0.18,27757,11020,2012,710,32
 139755,Georgia Institute of Technology-Main Campus,2012,Georgia,0.51,0.37,14088,7210,2695,725,32
 139959,University of Georgia,2012,Georgia,0.63,0.5,17569,11062,5482,655,30
-145600,University of Illinois at Chicago,2012,Illinois,0.64,0.34,14380,9193,3123,635,26
+145637,University of Illinois at Urbana-Champaign,2012,Illinois,0.63,0.35,31454,19924,6921,735,31
 147767,Northwestern University,2012,Illinois,0.18,0.38,30926,5575,2107,770,34
 151351,Indiana University-Bloomington,2012,Indiana,0.74,0.29,35247,26228,7613,640,29
 152080,University of Notre Dame,2012,Indiana,0.23,0.51,16957,3947,2014,760,34
@@ -793,7 +793,7 @@ unitid,school,year,state,admitRate,yield,applications,admissions,enrollments,avg
 135726,University of Miami,2013,Florida,0.4,0.18,28907,11691,2140,710,32
 139755,Georgia Institute of Technology-Main Campus,2013,Georgia,0.55,0.38,14645,8045,3044,730,32
 139959,University of Georgia,2013,Georgia,0.56,0.48,18458,10352,4936,665,30
-145600,University of Illinois at Chicago,2013,Illinois,0.71,0.3,14603,10427,3104,620,26
+145637,University of Illinois at Urbana-Champaign,2013,Illinois,0.62,0.35,33203,20716,7329,725,31
 147767,Northwestern University,2013,Illinois,0.15,0.41,32060,4912,2037,775,34
 151351,Indiana University-Bloomington,2013,Indiana,0.72,0.28,37826,27300,7604,645,30
 152080,University of Notre Dame,2013,Indiana,0.22,0.53,17647,3936,2070,760,34
@@ -858,7 +858,7 @@ unitid,school,year,state,admitRate,yield,applications,admissions,enrollments,avg
 135726,University of Miami,2014,Florida,0.38,0.17,31613,12069,2078,710,32
 139755,Georgia Institute of Technology-Main Campus,2014,Georgia,0.33,0.33,25884,8641,2809,745,33
 139959,University of Georgia,2014,Georgia,0.56,0.45,20918,11655,5243,665,30
-145600,University of Illinois at Chicago,2014,Illinois,0.74,0.26,15560,11589,3030,625,27
+145637,University of Illinois at Urbana-Champaign,2014,Illinois,0.59,0.33,35822,21150,6937,740,32
 147767,Northwestern University,2014,Illinois,0.13,0.46,33674,4416,2043,780,34
 151351,Indiana University-Bloomington,2014,Indiana,0.76,0.28,36362,27668,7716,645,30
 152080,University of Notre Dame,2014,Indiana,0.21,0.53,17901,3785,2011,760,34
@@ -923,7 +923,7 @@ unitid,school,year,state,admitRate,yield,applications,admissions,enrollments,avg
 135726,University of Miami,2015,Florida,0.38,0.17,33420,12629,2084,695,32
 139755,Georgia Institute of Technology-Main Campus,2015,Georgia,0.32,0.35,27277,8775,3089,750,33
 139959,University of Georgia,2015,Georgia,0.53,0.45,21945,11604,5274,665,30
-145600,University of Illinois at Chicago,2015,Illinois,0.77,0.29,15664,12007,3485,630,26
+145637,University of Illinois at Urbana-Champaign,2015,Illinois,0.66,0.34,34277,22471,7562,735,31
 147767,Northwestern University,2015,Illinois,0.13,0.48,32122,4190,2018,780,34
 151351,Indiana University-Bloomington,2015,Indiana,0.78,0.29,34483,26892,7875,645,30
 152080,University of Notre Dame,2015,Indiana,0.2,0.56,18157,3595,2007,765,34
@@ -988,7 +988,7 @@ unitid,school,year,state,admitRate,yield,applications,admissions,enrollments,avg
 135726,University of Miami,2016,Florida,0.38,0.17,32528,12267,2066,695,32
 139755,Georgia Institute of Technology-Main Campus,2016,Georgia,0.26,0.37,30528,7868,2877,750,34
 139959,University of Georgia,2016,Georgia,0.54,0.44,22694,12232,5433,670,31
-145600,University of Illinois at Chicago,2016,Illinois,0.74,0.25,17931,13196,3307,617.5,27
+145637,University of Illinois at Urbana-Champaign,2016,Illinois,0.6,0.33,38093,22881,7592,740,32
 147767,Northwestern University,2016,Illinois,0.11,0.53,35100,3743,1985,780,34
 151351,Indiana University-Bloomington,2016,Indiana,0.79,0.28,34646,27272,7673,645,30
 152080,University of Notre Dame,2016,Indiana,0.19,0.56,19505,3654,2046,770,35
@@ -1053,7 +1053,7 @@ unitid,school,year,state,admitRate,yield,applications,admissions,enrollments,avg
 135726,University of Miami,2017,Florida,0.36,0.2,30638,10939,2212,710,32
 139755,Georgia Institute of Technology-Main Campus,2017,Georgia,0.23,0.39,31497,7369,2861,760,34
 139959,University of Georgia,2017,Georgia,0.54,0.45,24165,13052,5826,685,31
-145600,University of Illinois at Chicago,2017,Illinois,0.77,0.28,18768,14467,4051,665,26
+145637,University of Illinois at Urbana-Champaign,2017,Illinois,0.62,0.31,38965,23974,7518,750,32
 147767,Northwestern University,2017,Illinois,0.09,0.55,37259,3442,1903,780,34
 151351,Indiana University-Bloomington,2017,Indiana,0.76,0.25,41939,31878,8001,675,31
 152080,University of Notre Dame,2017,Indiana,0.19,0.55,19564,3702,2051,760,34
@@ -1118,7 +1118,7 @@ unitid,school,year,state,admitRate,yield,applications,admissions,enrollments,avg
 135726,University of Miami,2018,Florida,0.32,0.21,34281,11021,2367,715,32
 139755,Georgia Institute of Technology-Main Campus,2018,Georgia,0.22,0.41,35644,7673,3146,770,34
 139959,University of Georgia,2018,Georgia,0.49,0.45,26164,12723,5727,705,32
-145600,University of Illinois at Chicago,2018,Illinois,0.76,0.26,21106,15945,4159,610,27
+145637,University of Illinois at Urbana-Champaign,2018,Illinois,0.62,0.31,39406,24496,7609,730,32
 147767,Northwestern University,2018,Illinois,0.08,0.56,40425,3422,1931,775,35
 151351,Indiana University-Bloomington,2018,Indiana,0.77,0.24,44169,33970,8097,680,31
 152080,University of Notre Dame,2018,Indiana,0.18,0.57,20371,3608,2070,775,35
@@ -1183,7 +1183,7 @@ unitid,school,year,state,admitRate,yield,applications,admissions,enrollments,avg
 135726,University of Miami,2019,Florida,0.27,0.21,38920,10558,2204,720,32
 139755,Georgia Institute of Technology-Main Campus,2019,Georgia,0.21,0.41,36856,7584,3076,755,34
 139959,University of Georgia,2019,Georgia,0.45,0.41,29285,13265,5499,710,32
-145600,University of Illinois at Chicago,2019,Illinois,0.73,0.27,22696,16501,4407,630,28
+145637,University of Illinois at Urbana-Champaign,2019,Illinois,0.59,0.3,43509,25684,7665,735,32
 147767,Northwestern University,2019,Illinois,0.09,0.55,40585,3673,2006,775,35
 151351,Indiana University-Bloomington,2019,Indiana,0.78,0.25,42902,33425,8291,680,31
 152080,University of Notre Dame,2019,Indiana,0.16,0.58,22200,3515,2051,775,35

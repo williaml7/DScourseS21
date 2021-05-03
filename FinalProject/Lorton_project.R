@@ -85,9 +85,9 @@ for (yr in 1998:2013) {
 # df containing every P5 team's record from 1998 season through 2013 season
 df.bcs <- bind_rows(list.seasons.records)
 
-# save since it takes ~10 minutes to scrape this in the loops!
-save(df.bcs, file = "record_BCS.Rda")
-# load("record_BCS.Rda")
+# save df.bcs since it takes ~10 minutes to scrape this in the loops!
+# save(df.bcs, file = "record_BCS.Rda")
+load("record_BCS.Rda")
 
 # Remove variables I don't need.
 df.bcs <- df.bcs %>% select(year, team, total_wins, total_losses)
@@ -132,15 +132,14 @@ df.ap <- df.ap %>% filter(poll == "AP Top 25") %>% select(season, school, rank)
 colnames(df.bcs)[2] <- "school"
 colnames(df.ap)[1] <- "year"
 
-# Making the dummies in Excel is much easier considering the way we have the data frame formatted.
-#write_csv(df.ap, "ap_bcs.csv")
-#write_csv(df.bcs, "df_bcs.csv")
-# load the excel file below to get all of the steps for df.bcs that we've done above.
-df.bcs <- read_excel("df_bcs.xlsx")
-colnames(df.bcs)[1] <- "year"
-colnames(df.bcs)[2] <- "school"
-colnames(df.bcs)[6] <- "rank"
-df.bcs <- df.bcs %>% select(year, school, winpct, wontitle, rank, top15, top5)
+# Merge df.ap and df.bcs to make dummies for final AP ranking.
+df.bcs <- merge(x = df.bcs, y = df.ap, by = c("year", "school"), all.x = TRUE)
+# replace NA ranks ("unranked) with 1000
+df.bcs <- df.bcs %>% mutate_all(~replace(., is.na(.), 1000))
+# top15 dummy
+df.bcs <- df.bcs %>% mutate(top15 = ifelse(rank <= 15, 1, 0))
+# top5 dummy
+df.bcs <- df.bcs %>% mutate(top5 = ifelse(rank <= 5, 1, 0))
 
 ###### COLLEGE FOOTBALL DATA: PLAYOFF ERA ##########################################################################
 
@@ -221,15 +220,14 @@ df.ap <- df.ap %>% filter(poll == "AP Top 25") %>% select(season, school, rank)
 colnames(df.playoff)[2] <- "school"
 colnames(df.ap)[1] <- "year"
 
-# Making the dummies in Excel is much easier considering the way we have the data frame formatted.
-#write_csv(df.ap, "ap_playoff.csv")
-#write_csv(df.playoff, "df_playoff.csv")
-# load the excel file below to get all of the steps for df.playoff that we've done above.
-df.playoff <- read_excel("df_playoff.xlsx")
-colnames(df.playoff)[1] <- "year"
-colnames(df.playoff)[2] <- "school"
-colnames(df.playoff)[5] <- "rank"
-df.playoff <- df.playoff %>% select(year, school, winpct, rank, top15, top5, wontitle)
+# merge df.ap and df.playoff
+df.playoff <- merge(x = df.playoff, y = df.ap, by = c("year", "school"), all.x = TRUE)
+# replace NA ranks ("unranked) with 1000
+df.playoff <- df.playoff %>% mutate_all(~replace(., is.na(.), 1000))
+# top15 dummy
+df.playoff <- df.playoff %>% mutate(top15 = ifelse(rank <= 15, 1, 0))
+# top5 dummy
+df.playoff <- df.playoff %>% mutate(top5 = ifelse(rank <= 5, 1, 0))
 
 ###### IPEDS Data #################################################################################################
 
@@ -471,55 +469,110 @@ ipeds.2001 <- ipeds.2001 %>% select("unitid", "school", "year", "state", "admitR
                                     "admissions", "enrollments", "avgSAT75", 
                                     "ACTcomposite75")
 
+# Create full ipeds data set.
 ipeds.df <- bind_rows(ipeds.2001, ipeds.2002, ipeds.2003, ipeds.2004, ipeds.2005, ipeds.2006, ipeds.2007,
                    ipeds.2008, ipeds.2009, ipeds.2010, ipeds.2011, ipeds.2012, ipeds.2013, ipeds.2014,
                    ipeds.2015, ipeds.2016, ipeds.2017, ipeds.2018, ipeds.2019)
 
 # save this as csv file
-write_csv(ipeds.df, "ipeds_df.csv")
+# write_csv(ipeds.df, "ipeds_df.csv")
+ipeds.df <- read_csv("ipeds_df.csv")
 
 ########## MERGE CFB AND IPEDS DATA SETS ###################################################################################
 
 # Merge IPEDS with BCS CFB data
 
-# 2001 and beyond only due to ipeds data unavailability.
-df.bcs <- df.bcs %>% rowwise() %>% filter(year >= 2001)
-df.bcs <- df.bcs %>% ungroup()
+# # 2001 and beyond only due to ipeds data unavailability.
+# df.bcs <- df.bcs %>% rowwise() %>% filter(year >= 2001)
+# df.bcs <- df.bcs %>% ungroup()
+
 # Remove Maryland, Rutgers, and Louisville for BCS era (these aren't added to P5 until 2014).
 ipeds.df.bcs <- ipeds.df %>% filter(school != "University of Maryland, Baltimore" & school != "University of Louisville" & school != "Rutgers University-New Brunswick")
+# Remove years after 2013
+ipeds.df.bcs <- ipeds.df.bcs %>% filter(year <= 2013)
 
-# Rename schools in CFB data to the names used in ipeds.
+# Rename schools in CFB data to the names used in ipeds to prepare for merge.
 df.bcs$school <- as.factor(df.bcs$school)
-fct_recode(df.bcs$school, 
-           "The University of Alabama" = "Alabama", 
-           "University of Arizona" = "Arizona", 
-           "Arizona State University-Tempe" = "Arizona State",
-           "University of Arkansas" = "Arkansas",
-           "Auburn University" = "Auburn",
-           "Baylor University" = "Baylor",
-           "Boston College" = "Boston College",
-           "University of California-Berkeley" = "California",
-           "Clemson University" = "Clemson",
-           "University of Colorado Boulder" = "Colorado",
-           "Duke University" = "Duke",
-           "University of Florida" = "Florida",
-           "Florida State University" = "Florida State",
-           "University of Georgia" = "Georgia",
-           "Georgia Institute of Technology-Main Campus" = "Georgia Tech",
-           # FIX!!!!!! CHICAGO IS WRONG!
-           "University of Illinois at Urbana-Champaign" = "Illinois",
-           "Indiana University-Bloomington" = "Indiana",
-           "University of Iowa" = "Iowa",
-           "Iowa State University" = "Iowa State",
-           "University of Kansas" = "Kansas",
-           "Kansas State University" = "Kansas State",
-           "University of Kentucky" = "Kentucky",
-           "Louisiana State University and Agricultural & Mechanical College" = "LSU",
-           "University of Miami" = "Miami",
-           "University of Michigan-Ann Arbor" = "Michigan",
-           "Michigan State University" = "Michigan State",
-           "University of Minnesota-Twin Cities" = "Minnesota",
-           "Mississippi State University" = "Mississippi State",
-           "University of Missouri-Columbia" = "Missouri",
-           "North Carolina State University at Raleigh" = "NC State")
+df.bcs$school <- fct_recode(df.bcs$school, 
+                           "The University of Alabama" = "Alabama", 
+                           "University of Arizona" = "Arizona", 
+                           "Arizona State University-Tempe" = "Arizona State",
+                           "University of Arkansas" = "Arkansas",
+                           "Auburn University" = "Auburn",
+                           "Baylor University" = "Baylor",
+                           "Boston College" = "Boston College",
+                           "University of California-Berkeley" = "California",
+                           "Clemson University" = "Clemson",
+                           "University of Colorado Boulder" = "Colorado",
+                           "Duke University" = "Duke",
+                           "University of Florida" = "Florida",
+                           "Florida State University" = "Florida State",
+                           "University of Georgia" = "Georgia",
+                           "Georgia Institute of Technology-Main Campus" = "Georgia Tech",
+                           "University of Illinois at Urbana-Champaign" = "Illinois",
+                           "Indiana University-Bloomington" = "Indiana",
+                           "University of Iowa" = "Iowa",
+                           "Iowa State University" = "Iowa State",
+                           "University of Kansas" = "Kansas",
+                           "Kansas State University" = "Kansas State",
+                           "University of Kentucky" = "Kentucky",
+                           "Louisiana State University and Agricultural & Mechanical College" = "LSU",
+                           "University of Miami" = "Miami",
+                           "University of Michigan-Ann Arbor" = "Michigan",
+                           "Michigan State University" = "Michigan State",
+                           "University of Minnesota-Twin Cities" = "Minnesota",
+                           "Mississippi State University" = "Mississippi State",
+                           "University of Missouri-Columbia" = "Missouri",
+                           "North Carolina State University at Raleigh" = "NC State",
+                           "University of Nebraska-Lincoln" = "Nebraska",
+                           "University of North Carolina at Chapel Hill" = "North Carolina",
+                           "Northwestern University" = "Northwestern",
+                           "University of Notre Dame" = "Notre Dame",
+                           "Ohio State University-Main Campus" = "Ohio State",
+                           "University of Oklahoma-Norman Campus" = "Oklahoma",
+                           "Oklahoma State University-Main Campus" = "Oklahoma State",
+                           "University of Mississippi" = "Ole Miss",
+                           "University of Oregon" = "Oregon",
+                           "Oregon State University" = "Oregon State",
+                           "Pennsylvania State University-Main Campus" = "Penn State",
+                           "University of Pittsburgh-Pittsburgh Campus" = "Pittsburgh",
+                           "Purdue University-Main Campus" = "Purdue",
+                           "University of South Carolina-Columbia" = "South Carolina",
+                           "Stanford University" = "Stanford",
+                           "Syracuse University" = "Syracuse",
+                           "Texas Christian University" = "TCU",
+                           "The University of Tennessee-Knoxville" = "Tennessee",
+                           "The University of Texas at Austin" = "Texas",
+                           "Texas A & M University-College Station" = "Texas A&M",
+                           "Texas Tech University" = "Texas Tech",
+                           "University of California-Los Angeles" = "UCLA",
+                           "University of Southern California" = "USC",
+                           "University of Utah" = "Utah",
+                           "Vanderbilt University" = "Vanderbilt",
+                           "University of Virginia-Main Campus" = "Virginia",
+                           "Virginia Polytechnic Institute and State University" = "Virginia Tech",
+                           "Wake Forest University" = "Wake Forest",
+                           "University of Washington-Seattle Campus" = "Washington",
+                           "Washington State University" = "Washington State",
+                           "West Virginia University" = "West Virginia",
+                           "University of Wisconsin-Madison" = "Wisconsin")
+
+# merge ipeds and cfb for BCS era.
+df.bcs.merged <- merge(x = df.bcs, y = ipeds.df.bcs, by = c("year", "school"), all = TRUE)
+
+# make lagged CFB success variables.
+# 1 year ago results are always 62 rows back since there are 62 P5 teams in BCS era.
+# 2 years ago results are always 62*2 rows back.
+# 3 years ago results are always 62*3 rows back.
+
+# winpct lags
+df.bcs.merged <- df.bcs.merged %>% mutate(winpctLag1 = dplyr::lag(winpct, n=(62)))
+df.bcs.merged <- df.bcs.merged %>% mutate(winpctLag2 = dplyr::lag(winpct, n=(62*2)))
+df.bcs.merged <- df.bcs.merged %>% mutate(winpctLag3 = dplyr::lag(winpct, n=(62*3)))
+
+# wontitle lags
+
+# top15 lags
+
+# top5 lags
 
