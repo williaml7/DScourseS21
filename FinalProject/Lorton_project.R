@@ -476,5 +476,50 @@ ipeds.df <- bind_rows(ipeds.2001, ipeds.2002, ipeds.2003, ipeds.2004, ipeds.2005
                    ipeds.2015, ipeds.2016, ipeds.2017, ipeds.2018, ipeds.2019)
 
 # save this as csv file
-write_csv(ipeds.df, "ap_playoff.csv")
+write_csv(ipeds.df, "ipeds_df.csv")
+
+########## MERGE CFB AND IPEDS DATA SETS ###################################################################################
+
+# Merge IPEDS with BCS CFB data
+
+# 2001 and beyond only due to ipeds data unavailability.
+df.bcs <- df.bcs %>% rowwise() %>% filter(year >= 2001)
+df.bcs <- df.bcs %>% ungroup()
+# Remove Maryland, Rutgers, and Louisville for BCS era (these aren't added to P5 until 2014).
+ipeds.df.bcs <- ipeds.df %>% filter(school != "University of Maryland, Baltimore" & school != "University of Louisville" & school != "Rutgers University-New Brunswick")
+
+# Rename schools in CFB data to the names used in ipeds.
+df.bcs$school <- as.factor(df.bcs$school)
+fct_recode(df.bcs$school, 
+           "The University of Alabama" = "Alabama", 
+           "University of Arizona" = "Arizona", 
+           "Arizona State University-Tempe" = "Arizona State",
+           "University of Arkansas" = "Arkansas",
+           "Auburn University" = "Auburn",
+           "Baylor University" = "Baylor",
+           "Boston College" = "Boston College",
+           "University of California-Berkeley" = "California",
+           "Clemson University" = "Clemson",
+           "University of Colorado Boulder" = "Colorado",
+           "Duke University" = "Duke",
+           "University of Florida" = "Florida",
+           "Florida State University" = "Florida State",
+           "University of Georgia" = "Georgia",
+           "Georgia Institute of Technology-Main Campus" = "Georgia Tech",
+           # FIX!!!!!! CHICAGO IS WRONG!
+           "University of Illinois at Urbana-Champaign" = "Illinois",
+           "Indiana University-Bloomington" = "Indiana",
+           "University of Iowa" = "Iowa",
+           "Iowa State University" = "Iowa State",
+           "University of Kansas" = "Kansas",
+           "Kansas State University" = "Kansas State",
+           "University of Kentucky" = "Kentucky",
+           "Louisiana State University and Agricultural & Mechanical College" = "LSU",
+           "University of Miami" = "Miami",
+           "University of Michigan-Ann Arbor" = "Michigan",
+           "Michigan State University" = "Michigan State",
+           "University of Minnesota-Twin Cities" = "Minnesota",
+           "Mississippi State University" = "Mississippi State",
+           "University of Missouri-Columbia" = "Missouri",
+           "North Carolina State University at Raleigh" = "NC State")
 
