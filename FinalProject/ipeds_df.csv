@@ -24,7 +24,7 @@ unitid,school,year,state,admitRate,yield,applications,admissions,enrollments,avg
 157085,University of Kentucky,2001,Kentucky,0.81,0.44,8312,6696,2928,NA,27
 157289,University of Louisville,2001,Kentucky,0.89,0.65,4198,3741,2414,NA,25
 159391,Louisiana State University and Agricultural & Mechanical College,2001,Louisiana,0.78,0.67,9789,7588,5087,NA,26
-163259,"University of Maryland, Baltimore",2001,Maryland,NA,NA,0,0,0,NA,NA
+163286,University of Maryland-College Park,2001,Maryland,0.55,0.4,19647,10801,4374,675,NA
 164924,Boston College,2001,Massachusetts,0.34,0.33,19059,6401,2103,695,NA
 170976,University of Michigan-Ann Arbor,2001,Michigan,0.52,0.44,24141,12594,5540,701,30
 171100,Michigan State University,2001,Michigan,0.65,0.44,24391,15877,6914,625,27
@@ -89,7 +89,7 @@ unitid,school,year,state,admitRate,yield,applications,admissions,enrollments,avg
 157085,University of Kentucky,2002,Kentucky,0.82,0.45,8449,6914,3140,620,26
 157289,University of Louisville,2002,Kentucky,0.68,0.59,5814,3955,2331,600,25
 159391,Louisiana State University and Agricultural & Mechanical College,2002,Louisiana,0.79,0.64,10536,8336,5301,NA,26
-163259,"University of Maryland, Baltimore",2002,Maryland,NA,NA,0,0,0,NA,NA
+163286,University of Maryland-College Park,2002,Maryland,0.43,0.39,23117,10046,3912,685,NA
 164924,Boston College,2002,Massachusetts,0.32,0.34,21133,6850,2315,695,NA
 170976,University of Michigan-Ann Arbor,2002,Michigan,0.49,0.42,25108,12315,5187,695,30
 171100,Michigan State University,2002,Michigan,0.67,0.41,25210,16977,7000,625,27
@@ -154,7 +154,7 @@ unitid,school,year,state,admitRate,yield,applications,admissions,enrollments,avg
 157085,University of Kentucky,2003,Kentucky,0.82,0.51,8879,7250,3718,625,26
 157289,University of Louisville,2003,Kentucky,0.77,0.57,5306,4076,2318,NA,26
 159391,Louisiana State University and Agricultural & Mechanical College,2003,Louisiana,0.77,0.66,10376,7973,5262,NA,27
-163259,"University of Maryland, Baltimore",2003,Maryland,NA,NA,NA,NA,NA,NA,NA
+163286,University of Maryland-College Park,2003,Maryland,0.43,0.38,25028,10679,4063,685,NA
 164924,Boston College,2003,Massachusetts,0.31,0.32,22424,6896,2208,700,NA
 170976,University of Michigan-Ann Arbor,2003,Michigan,0.53,0.4,25943,13814,5553,705,30
 171100,Michigan State University,2003,Michigan,0.71,0.4,24973,17690,7122,635,27
@@ -219,7 +219,7 @@ unitid,school,year,state,admitRate,yield,applications,admissions,enrollments,avg
 157085,University of Kentucky,2004,Kentucky,0.81,0.49,9418,7603,3688,625,27
 157289,University of Louisville,2004,Kentucky,0.79,0.55,5284,4189,2307,605,26
 159391,Louisiana State University and Agricultural & Mechanical College,2004,Louisiana,0.81,0.66,10147,8171,5428,635,27
-163259,"University of Maryland, Baltimore",2004,Maryland,NA,NA,NA,NA,NA,NA,NA
+163286,University of Maryland-College Park,2004,Maryland,0.52,0.37,22292,11499,4200,685,NA
 164924,Boston College,2004,Massachusetts,0.32,0.32,22451,7178,2309,705,NA
 170976,University of Michigan-Ann Arbor,2004,Michigan,0.62,0.45,21293,13304,6040,720,31
 171100,Michigan State University,2004,Michigan,0.79,0.44,21834,17343,7607,635,27
@@ -284,7 +284,7 @@ unitid,school,year,state,admitRate,yield,applications,admissions,enrollments,avg
 157085,University of Kentucky,2005,Kentucky,0.79,0.47,10604,8353,3961,630,27
 157289,University of Louisville,2005,Kentucky,0.81,0.55,5335,4325,2358,615,26
 159391,Louisiana State University and Agricultural & Mechanical College,2005,Louisiana,0.78,0.66,11077,8660,5700,645,27
-163259,"University of Maryland, Baltimore",2005,Maryland,NA,NA,NA,NA,NA,NA,NA
+163286,University of Maryland-College Park,2005,Maryland,0.49,0.38,22427,11001,4212,685,NA
 164924,Boston College,2005,Massachusetts,0.31,0.3,23823,7302,2174,710,31
 170976,University of Michigan-Ann Arbor,2005,Michigan,0.57,0.45,23882,13610,6115,710,31
 171100,Michigan State University,2005,Michigan,0.76,0.45,21844,16686,7485,635,27
@@ -349,7 +349,7 @@ unitid,school,year,state,admitRate,yield,applications,admissions,enrollments,avg
 157085,University of Kentucky,2006,Kentucky,0.77,0.47,10516,8124,3835,635,27
 157289,University of Louisville,2006,Kentucky,0.79,0.51,5712,4515,2318,630,27
 159391,Louisiana State University and Agricultural & Mechanical College,2006,Louisiana,0.73,0.63,10825,7927,4970,650,27
-163259,"University of Maryland, Baltimore",2006,Maryland,NA,NA,NA,NA,NA,NA,NA
+163286,University of Maryland-College Park,2006,Maryland,0.44,0.38,23546,10470,3962,695,NA
 164924,Boston College,2006,Massachusetts,0.29,0.3,26584,7736,2284,710,31
 170976,University of Michigan-Ann Arbor,2006,Michigan,0.47,0.44,25806,12246,5386,710,31
 171100,Michigan State University,2006,Michigan,0.73,0.44,23247,17046,7440,645,27
@@ -414,7 +414,7 @@ unitid,school,year,state,admitRate,yield,applications,admissions,enrollments,avg
 157085,University of Kentucky,2007,Kentucky,0.81,0.52,10024,8073,4190,620,26
 157289,University of Louisville,2007,Kentucky,0.71,0.55,6323,4477,2443,635,27
 159391,Louisiana State University and Agricultural & Mechanical College,2007,Louisiana,0.74,0.6,10135,7455,4508,645,28
-163259,"University of Maryland, Baltimore",2007,Maryland,NA,NA,NA,NA,NA,NA,NA
+163286,University of Maryland-College Park,2007,Maryland,0.47,0.37,24172,11370,4236,690,NA
 164924,Boston College,2007,Massachusetts,0.27,0.29,28850,7869,2291,715,31
 170976,University of Michigan-Ann Arbor,2007,Michigan,0.5,0.43,27474,13826,5992,710,31
 171100,Michigan State University,2007,Michigan,0.74,0.42,24436,18040,7541,635,27
@@ -479,7 +479,7 @@ unitid,school,year,state,admitRate,yield,applications,admissions,enrollments,avg
 157085,University of Kentucky,2008,Kentucky,0.77,0.47,10619,8172,3865,620,27
 157289,University of Louisville,2008,Kentucky,0.7,0.5,7280,5109,2569,625,27
 159391,Louisiana State University and Agricultural & Mechanical College,2008,Louisiana,0.73,0.55,11452,8332,4596,642.5,28
-163259,"University of Maryland, Baltimore",2008,Maryland,NA,NA,NA,NA,NA,NA,NA
+163286,University of Maryland-College Park,2008,Maryland,0.39,0.36,28054,10888,3912,690,NA
 164924,Boston College,2008,Massachusetts,0.26,0.27,30845,8093,2167,715,32
 170976,University of Michigan-Ann Arbor,2008,Michigan,0.42,0.46,29814,12567,5783,715,31
 171100,Michigan State University,2008,Michigan,0.7,0.42,25589,17919,7555,640,27
@@ -544,7 +544,7 @@ unitid,school,year,state,admitRate,yield,applications,admissions,enrollments,avg
 157085,University of Kentucky,2009,Kentucky,0.79,0.47,11120,8757,4110,620,27
 157289,University of Louisville,2009,Kentucky,0.7,0.48,7861,5473,2609,630,27
 159391,Louisiana State University and Agricultural & Mechanical College,2009,Louisiana,0.73,0.46,15093,11092,5141,640,28
-163259,"University of Maryland, Baltimore",2009,Maryland,NA,NA,NA,NA,NA,NA,NA
+163286,University of Maryland-College Park,2009,Maryland,0.42,0.35,28331,11870,4202,695,NA
 164924,Boston College,2009,Massachusetts,0.3,0.25,29289,8804,2171,715,32
 170976,University of Michigan-Ann Arbor,2009,Michigan,0.5,0.41,29965,14970,6079,715,31
 171100,Michigan State University,2009,Michigan,0.72,0.4,25395,18392,7416,635,27
@@ -609,7 +609,7 @@ unitid,school,year,state,admitRate,yield,applications,admissions,enrollments,avg
 157085,University of Kentucky,2010,Kentucky,0.74,0.46,12195,8966,4153,625,28
 157289,University of Louisville,2010,Kentucky,0.73,0.44,7755,5625,2478,634,28
 159391,Louisiana State University and Agricultural & Mechanical College,2010,Louisiana,0.69,0.43,15917,11012,4789,640,28
-163259,"University of Maryland, Baltimore",2010,Maryland,NA,NA,NA,NA,NA,NA,NA
+163286,University of Maryland-College Park,2010,Maryland,0.45,0.34,26147,11671,3933,695,NA
 164924,Boston College,2010,Massachusetts,0.31,0.25,29933,9310,2359,715,32
 170976,University of Michigan-Ann Arbor,2010,Michigan,0.51,0.4,31613,16006,6481,720,31
 171100,Michigan State University,2010,Michigan,0.7,0.39,26907,18829,7375,640,28
@@ -674,7 +674,7 @@ unitid,school,year,state,admitRate,yield,applications,admissions,enrollments,avg
 157085,University of Kentucky,2011,Kentucky,0.69,0.47,13537,9275,4328,625,28
 157289,University of Louisville,2011,Kentucky,0.75,0.44,7749,5804,2561,635,27
 159391,Louisiana State University and Agricultural & Mechanical College,2011,Louisiana,0.72,0.42,18214,13148,5481,640,28
-163259,"University of Maryland, Baltimore",2011,Maryland,NA,NA,NA,NA,NA,NA,NA
+163286,University of Maryland-College Park,2011,Maryland,0.45,0.34,26372,11815,3994,695,NA
 164924,Boston College,2011,Massachusetts,0.28,0.25,32974,9227,2285,720,32
 170976,University of Michigan-Ann Arbor,2011,Michigan,0.41,0.39,39584,16073,6236,725,32
 171100,Michigan State University,2011,Michigan,0.73,0.39,28416,20728,7984,635,28
@@ -739,7 +739,7 @@ unitid,school,year,state,admitRate,yield,applications,admissions,enrollments,avg
 157085,University of Kentucky,2012,Kentucky,0.68,0.4,15153,10362,4139,620,28
 157289,University of Louisville,2012,Kentucky,0.73,0.45,7892,5738,2569,625,28
 159391,Louisiana State University and Agricultural & Mechanical College,2012,Louisiana,0.8,0.45,14818,11789,5290,620,28
-163259,"University of Maryland, Baltimore",2012,Maryland,NA,NA,NA,NA,NA,NA,NA
+163286,University of Maryland-College Park,2012,Maryland,0.47,0.33,25326,11889,3906,705,NA
 164924,Boston College,2012,Massachusetts,0.29,0.25,34061,9813,2405,725,32
 170976,University of Michigan-Ann Arbor,2012,Michigan,0.37,0.4,42544,15551,6148,730,32
 171100,Michigan State University,2012,Michigan,0.71,0.39,30224,21327,8354,630,28
@@ -804,7 +804,7 @@ unitid,school,year,state,admitRate,yield,applications,admissions,enrollments,avg
 157085,University of Kentucky,2013,Kentucky,0.69,0.35,19810,13592,4702,620,28
 157289,University of Louisville,2013,Kentucky,0.71,0.44,9166,6519,2857,595,28
 159391,Louisiana State University and Agricultural & Mechanical College,2013,Louisiana,0.76,0.46,16169,12326,5725,625,28
-163259,"University of Maryland, Baltimore",2013,Maryland,NA,NA,NA,NA,NA,NA,NA
+163286,University of Maryland-College Park,2013,Maryland,0.47,0.33,26247,12333,4020,710,NA
 164924,Boston College,2013,Massachusetts,0.32,0.28,24538,7905,2215,725,33
 170976,University of Michigan-Ann Arbor,2013,Michigan,0.33,0.4,46813,15570,6200,740,32
 171100,Michigan State University,2013,Michigan,0.69,0.37,31479,21610,8061,635,28
@@ -869,7 +869,7 @@ unitid,school,year,state,admitRate,yield,applications,admissions,enrollments,avg
 157085,University of Kentucky,2014,Kentucky,0.72,0.35,20677,14930,5185,630,28
 157289,University of Louisville,2014,Kentucky,0.74,0.37,10604,7832,2887,625,28
 159391,Louisiana State University and Agricultural & Mechanical College,2014,Louisiana,0.77,0.45,16580,12706,5655,615,28
-163259,"University of Maryland, Baltimore",2014,Maryland,NA,NA,NA,NA,NA,NA,NA
+163286,University of Maryland-College Park,2014,Maryland,0.48,0.33,26340,12624,4155,710,NA
 164924,Boston College,2014,Massachusetts,0.34,0.29,23223,7875,2288,730,33
 170976,University of Michigan-Ann Arbor,2014,Michigan,0.32,0.41,49776,16047,6505,740,33
 171100,Michigan State University,2014,Michigan,0.66,0.37,33211,21950,8055,635,28
@@ -934,7 +934,7 @@ unitid,school,year,state,admitRate,yield,applications,admissions,enrollments,avg
 157085,University of Kentucky,2015,Kentucky,0.89,0.31,18725,16685,5211,625,28
 157289,University of Louisville,2015,Kentucky,0.72,0.4,9685,6943,2797,620,29
 159391,Louisiana State University and Agricultural & Mechanical College,2015,Louisiana,0.77,0.42,17429,13480,5624,630,28
-163259,"University of Maryland, Baltimore",2015,Maryland,NA,NA,NA,NA,NA,NA,NA
+163286,University of Maryland-College Park,2015,Maryland,0.45,0.31,28434,12760,3959,710,NA
 164924,Boston College,2015,Massachusetts,0.29,0.26,29486,8405,2162,735,33
 170976,University of Michigan-Ann Arbor,2015,Michigan,0.26,0.45,51797,13611,6092,750,33
 171100,Michigan State University,2015,Michigan,0.66,0.35,35300,23397,8173,630,28
@@ -999,7 +999,7 @@ unitid,school,year,state,admitRate,yield,applications,admissions,enrollments,avg
 157085,University of Kentucky,2016,Kentucky,0.91,0.28,20480,18593,5117,625,29
 157289,University of Louisville,2016,Kentucky,0.73,0.38,10404,7550,2883,NA,29
 159391,Louisiana State University and Agricultural & Mechanical College,2016,Louisiana,0.76,0.4,18122,13843,5475,625,28
-163259,"University of Maryland, Baltimore",2016,Maryland,NA,NA,NA,NA,NA,NA,NA
+163286,University of Maryland-College Park,2016,Maryland,0.48,0.31,30291,14557,4551,710,33
 164924,Boston College,2016,Massachusetts,0.31,0.26,28956,9017,2359,730,33
 170976,University of Michigan-Ann Arbor,2016,Michigan,0.29,0.42,55504,15871,6689,750,33
 171100,Michigan State University,2016,Michigan,0.66,0.33,37480,24641,8190,630,29
@@ -1064,7 +1064,7 @@ unitid,school,year,state,admitRate,yield,applications,admissions,enrollments,avg
 157085,University of Kentucky,2017,Kentucky,0.96,0.27,18925,18125,4855,665,28
 157289,University of Louisville,2017,Kentucky,0.75,0.34,10987,8273,2796,645,28
 159391,Louisiana State University and Agricultural & Mechanical College,2017,Louisiana,0.74,0.37,17907,13236,4917,645,28
-163259,"University of Maryland, Baltimore",2017,Maryland,NA,NA,NA,NA,NA,NA,NA
+163286,University of Maryland-College Park,2017,Maryland,0.45,0.28,33922,15096,4156,735,33
 164924,Boston College,2017,Massachusetts,0.32,0.26,28454,9223,2412,745,33
 170976,University of Michigan-Ann Arbor,2017,Michigan,0.27,0.43,59886,15871,6879,750,33
 171100,Michigan State University,2017,Michigan,0.72,0.32,36143,25860,8366,660,28
@@ -1129,7 +1129,7 @@ unitid,school,year,state,admitRate,yield,applications,admissions,enrollments,avg
 157085,University of Kentucky,2018,Kentucky,0.94,0.28,19324,18258,5077,650,29
 157289,University of Louisville,2018,Kentucky,0.72,0.29,13851,10032,2932,645,29
 159391,Louisiana State University and Agricultural & Mechanical College,2018,Louisiana,0.74,0.32,24280,18024,5812,645,29
-163259,"University of Maryland, Baltimore",2018,Maryland,NA,NA,NA,NA,NA,NA,NA
+163286,University of Maryland-College Park,2018,Maryland,0.47,0.3,33497,15796,4748,735,33
 164924,Boston College,2018,Massachusetts,0.28,0.27,31084,8669,2327,745,34
 170976,University of Michigan-Ann Arbor,2018,Michigan,0.23,0.45,64917,14818,6695,755,34
 171100,Michigan State University,2018,Michigan,0.78,0.34,33129,25733,8688,655,29
@@ -1194,7 +1194,7 @@ unitid,school,year,state,admitRate,yield,applications,admissions,enrollments,avg
 157085,University of Kentucky,2019,Kentucky,0.96,0.3,18759,17981,5348,660,29
 157289,University of Louisville,2019,Kentucky,0.69,0.27,14760,10226,2803,645,29
 159391,Louisiana State University and Agricultural & Mechanical College,2019,Louisiana,0.75,0.34,24501,18272,6132,655,29
-163259,"University of Maryland, Baltimore",2019,Maryland,NA,NA,NA,NA,NA,NA,NA
+163286,University of Maryland-College Park,2019,Maryland,0.44,0.29,33012,14585,4279,735,34
 164924,Boston College,2019,Massachusetts,0.27,0.24,35552,9679,2297,750,34
 170976,University of Michigan-Ann Arbor,2019,Michigan,0.23,0.46,64972,14883,6830,765,34
 171100,Michigan State University,2019,Michigan,0.71,0.28,44322,31522,8801,660,29

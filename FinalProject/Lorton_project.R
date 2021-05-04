@@ -2,10 +2,15 @@
 # May 10, 2021
 # William Lorton
 
+library(lmtest)
+library(plm)
 library(tidyverse)
 library(rvest)
 library(cfbfastR)
 library(readxl)
+library(mice)
+library(modelsummary)
+library(stargazer)
 
 ##### Purpose #######################################################################################################
 # This script contains all data gathering/cleaning, data summary generation, and data analysis completed in support 
@@ -228,6 +233,8 @@ df.playoff <- df.playoff %>% mutate_all(~replace(., is.na(.), 1000))
 df.playoff <- df.playoff %>% mutate(top15 = ifelse(rank <= 15, 1, 0))
 # top5 dummy
 df.playoff <- df.playoff %>% mutate(top5 = ifelse(rank <= 5, 1, 0))
+# wontitle dummy
+df.playoff <- df.playoff %>% mutate(wontitle = ifelse(rank == 1, 1, 0))
 
 ###### IPEDS Data #################################################################################################
 
@@ -475,19 +482,15 @@ ipeds.df <- bind_rows(ipeds.2001, ipeds.2002, ipeds.2003, ipeds.2004, ipeds.2005
                    ipeds.2015, ipeds.2016, ipeds.2017, ipeds.2018, ipeds.2019)
 
 # save this as csv file
-# write_csv(ipeds.df, "ipeds_df.csv")
+#write_csv(ipeds.df, "ipeds_df.csv")
 ipeds.df <- read_csv("ipeds_df.csv")
 
 ########## MERGE CFB AND IPEDS DATA SETS ###################################################################################
 
-# Merge IPEDS with BCS CFB data
-
-# # 2001 and beyond only due to ipeds data unavailability.
-# df.bcs <- df.bcs %>% rowwise() %>% filter(year >= 2001)
-# df.bcs <- df.bcs %>% ungroup()
+# Prepare to merge IPEDS with BCS CFB data
 
 # Remove Maryland, Rutgers, and Louisville for BCS era (these aren't added to P5 until 2014).
-ipeds.df.bcs <- ipeds.df %>% filter(school != "University of Maryland, Baltimore" & school != "University of Louisville" & school != "Rutgers University-New Brunswick")
+ipeds.df.bcs <- ipeds.df %>% filter(school != "University of Maryland-College Park" & school != "University of Louisville" & school != "Rutgers University-New Brunswick")
 # Remove years after 2013
 ipeds.df.bcs <- ipeds.df.bcs %>% filter(year <= 2013)
 
@@ -571,8 +574,336 @@ df.bcs.merged <- df.bcs.merged %>% mutate(winpctLag2 = dplyr::lag(winpct, n=(62*
 df.bcs.merged <- df.bcs.merged %>% mutate(winpctLag3 = dplyr::lag(winpct, n=(62*3)))
 
 # wontitle lags
+df.bcs.merged <- df.bcs.merged %>% mutate(wontitleLag1 = dplyr::lag(wontitle, n=(62)))
+df.bcs.merged <- df.bcs.merged %>% mutate(wontitleLag2 = dplyr::lag(wontitle, n=(62*2)))
+df.bcs.merged <- df.bcs.merged %>% mutate(wontitleLag3 = dplyr::lag(wontitle, n=(62*3)))
 
 # top15 lags
+df.bcs.merged <- df.bcs.merged %>% mutate(top15Lag1 = dplyr::lag(top15, n=(62)))
+df.bcs.merged <- df.bcs.merged %>% mutate(top15Lag2 = dplyr::lag(top15, n=(62*2)))
+df.bcs.merged <- df.bcs.merged %>% mutate(top15Lag3 = dplyr::lag(top15, n=(62*3)))
 
 # top5 lags
+df.bcs.merged <- df.bcs.merged %>% mutate(top5Lag1 = dplyr::lag(top5, n=(62)))
+df.bcs.merged <- df.bcs.merged %>% mutate(top5Lag2 = dplyr::lag(top5, n=(62*2)))
+df.bcs.merged <- df.bcs.merged %>% mutate(top5Lag3 = dplyr::lag(top5, n=(62*3)))
+
+# Prepare to merge ipeds data with playoff era CFB data.
+
+ipeds.df.playoff <- ipeds.df %>% filter(year >= 2014)
+
+# Rename schools in CFB data to the names used in ipeds to prepare for merge.
+df.playoff$school <- as.factor(df.playoff$school)
+df.playoff$school <- fct_recode(df.playoff$school, 
+                            "The University of Alabama" = "Alabama", 
+                            "University of Arizona" = "Arizona", 
+                            "Arizona State University-Tempe" = "Arizona State",
+                            "University of Arkansas" = "Arkansas",
+                            "Auburn University" = "Auburn",
+                            "Baylor University" = "Baylor",
+                            "Boston College" = "Boston College",
+                            "University of California-Berkeley" = "California",
+                            "Clemson University" = "Clemson",
+                            "University of Colorado Boulder" = "Colorado",
+                            "Duke University" = "Duke",
+                            "University of Florida" = "Florida",
+                            "Florida State University" = "Florida State",
+                            "University of Georgia" = "Georgia",
+                            "Georgia Institute of Technology-Main Campus" = "Georgia Tech",
+                            "University of Illinois at Urbana-Champaign" = "Illinois",
+                            "Indiana University-Bloomington" = "Indiana",
+                            "University of Iowa" = "Iowa",
+                            "Iowa State University" = "Iowa State",
+                            "University of Kansas" = "Kansas",
+                            "Kansas State University" = "Kansas State",
+                            "University of Kentucky" = "Kentucky",
+                            "Louisiana State University and Agricultural & Mechanical College" = "LSU",
+                            "University of Miami" = "Miami",
+                            "University of Michigan-Ann Arbor" = "Michigan",
+                            "Michigan State University" = "Michigan State",
+                            "University of Minnesota-Twin Cities" = "Minnesota",
+                            "Mississippi State University" = "Mississippi State",
+                            "University of Missouri-Columbia" = "Missouri",
+                            "North Carolina State University at Raleigh" = "NC State",
+                            "University of Nebraska-Lincoln" = "Nebraska",
+                            "University of North Carolina at Chapel Hill" = "North Carolina",
+                            "Northwestern University" = "Northwestern",
+                            "University of Notre Dame" = "Notre Dame",
+                            "Ohio State University-Main Campus" = "Ohio State",
+                            "University of Oklahoma-Norman Campus" = "Oklahoma",
+                            "Oklahoma State University-Main Campus" = "Oklahoma State",
+                            "University of Mississippi" = "Ole Miss",
+                            "University of Oregon" = "Oregon",
+                            "Oregon State University" = "Oregon State",
+                            "Pennsylvania State University-Main Campus" = "Penn State",
+                            "University of Pittsburgh-Pittsburgh Campus" = "Pittsburgh",
+                            "Purdue University-Main Campus" = "Purdue",
+                            "University of South Carolina-Columbia" = "South Carolina",
+                            "Stanford University" = "Stanford",
+                            "Syracuse University" = "Syracuse",
+                            "Texas Christian University" = "TCU",
+                            "The University of Tennessee-Knoxville" = "Tennessee",
+                            "The University of Texas at Austin" = "Texas",
+                            "Texas A & M University-College Station" = "Texas A&M",
+                            "Texas Tech University" = "Texas Tech",
+                            "University of California-Los Angeles" = "UCLA",
+                            "University of Southern California" = "USC",
+                            "University of Utah" = "Utah",
+                            "Vanderbilt University" = "Vanderbilt",
+                            "University of Virginia-Main Campus" = "Virginia",
+                            "Virginia Polytechnic Institute and State University" = "Virginia Tech",
+                            "Wake Forest University" = "Wake Forest",
+                            "University of Washington-Seattle Campus" = "Washington",
+                            "Washington State University" = "Washington State",
+                            "West Virginia University" = "West Virginia",
+                            "University of Wisconsin-Madison" = "Wisconsin",
+                            "University of Maryland-College Park" = "Maryland",
+                            "Rutgers University-New Brunswick" = "Rutgers",
+                            "University of Louisville" = "Louisville")
+
+# merge ipeds and cfb for playoff era.
+df.playoff.merged <- merge(x = df.playoff, y = ipeds.df.playoff, by = c("year", "school"), all = TRUE)
+# Get rid of 2020 since there is no ipeds data yet.
+df.playoff.merged <- df.playoff.merged %>% filter(year != 2020)
+
+# make lagged CFB success variables.
+# Only do one lag for this period since there isn't very much data.
+# 1 year ago results are always 65 rows back since there are 65 P5 teams in playoff era.
+
+# winpct lags
+df.playoff.merged  <- df.playoff.merged  %>% mutate(winpctLag1 = dplyr::lag(winpct, n=(65)))
+
+# wontitle lags
+df.playoff.merged  <- df.playoff.merged  %>% mutate(wontitleLag1 = dplyr::lag(wontitle, n=(65)))
+
+# top15 lags
+df.playoff.merged  <- df.playoff.merged  %>% mutate(top15Lag1 = dplyr::lag(top15, n=(65)))
+
+# top5 lags
+df.playoff.merged  <- df.playoff.merged  %>% mutate(top5Lag1 = dplyr::lag(top5, n=(65)))
+
+########## GET HIGH SCOOL GRADUATE & MEDIAN HH INCOME DATA ###################################################################################
+
+# Number of public high school graduates by state 1998-2019
+
+hsgradsHHincome.df <- read_csv("hsgradsHHincome.csv")
+# drop DC
+hsgradsHHincome.df <- hsgradsHHincome.df %>% filter(state != "District Of Columbia")
+
+# merge state grad and income data with BCS and ipeds
+df.bcs.merged <- merge(x = df.bcs.merged, y = hsgradsHHincome.df, by = c("year", "state"), all.x = TRUE)
+
+# merge state grad and income data with playoff and ipeds
+df.playoff.merged <- merge(x = df.playoff.merged, y = hsgradsHHincome.df, by = c("year", "state"), all.x = TRUE)
+
+########## FINAL PREPARATIONS AND ANALYSIS ###################################################################################
+
+# filter to the years that have all the lags we want in both data sets.
+# 3 lags in BCS data set
+df.bcs.merged <- df.bcs.merged %>% filter(year >= 2001)
+# only 1 lag in playoff data set since there isn't much data
+df.playoff.merged <- df.playoff.merged %>% filter(year >= 2015)
+
+# Convert variables to proper type in both data sets.
+
+df.bcs.merged$year <- as.factor(df.bcs.merged$year)
+df.bcs.merged$state <- as.factor(df.bcs.merged$state)
+df.bcs.merged$wontitle <- as.factor(df.bcs.merged$wontitle)
+df.bcs.merged$wontitleLag1 <- as.factor(df.bcs.merged$wontitleLag1)
+df.bcs.merged$wontitleLag2 <- as.factor(df.bcs.merged$wontitleLag2)
+df.bcs.merged$wontitleLag3 <- as.factor(df.bcs.merged$wontitleLag3)
+df.bcs.merged$rank <- as.factor(df.bcs.merged$rank)
+df.bcs.merged$top5 <- as.factor(df.bcs.merged$top5)
+df.bcs.merged$top5Lag1 <- as.factor(df.bcs.merged$top5Lag1)
+df.bcs.merged$top5Lag2 <- as.factor(df.bcs.merged$top5Lag2)
+df.bcs.merged$top5Lag3 <- as.factor(df.bcs.merged$top5Lag3)
+df.bcs.merged$top15 <- as.factor(df.bcs.merged$top15)
+df.bcs.merged$top15Lag1 <- as.factor(df.bcs.merged$top15Lag1)
+df.bcs.merged$top15Lag2 <- as.factor(df.bcs.merged$top15Lag2)
+df.bcs.merged$top15Lag3 <- as.factor(df.bcs.merged$top15Lag3)
+df.bcs.merged$unitid <- as.factor(df.bcs.merged$unitid)
+
+df.playoff.merged$year <- as.factor(df.playoff.merged$year)
+df.playoff.merged$state <- as.factor(df.playoff.merged$state)
+df.playoff.merged$wontitle <- as.factor(df.playoff.merged$wontitle)
+df.playoff.merged$wontitleLag1 <- as.factor(df.playoff.merged$wontitleLag1)
+df.playoff.merged$rank <- as.factor(df.playoff.merged$rank)
+df.playoff.merged$top5 <- as.factor(df.playoff.merged$top5)
+df.playoff.merged$top5Lag1 <- as.factor(df.playoff.merged$top5Lag1)
+df.playoff.merged$top15 <- as.factor(df.playoff.merged$top15)
+df.playoff.merged$top15Lag1 <- as.factor(df.playoff.merged$top15Lag1)
+df.playoff.merged$unitid <- as.factor(df.playoff.merged$unitid)
+
+# Imputing missing values for playoff data set
+
+# 21 rows with missing avgSAT75 observations; 
+# U Kansas, U Arizona, Kansas State, Wake Forest, Louisville, and Mississippi State have at least one missing for this
+# variable; about half are due to Kansas State and U Kansas.
+
+# Using mice package to perform multiple imputation.
+# impute 20 times; later estimate the model with the 20 different imputation attempts and consolidate.
+# Use regression/classification trees (cart) since there is a problem with linear relationships among the columns of the df.
+df.playoff.merged.mice <- mice(data = df.playoff.merged, m = 7, set.seed = 7, method = "cart")
+
+# We take the log of a number of our variables since they exhibit a log-normal distribution (continuous, strictly
+# positive, many observations around a relatively small value, and strongly right-skewed). Taking the log
+# can also be helpful for interpretation (e.g. consider a percentage increase in applications rather than
+# an increase in the number of applications). Taking the log on variables like applications and enrollment
+# can also help avoid overweighting the larger schools in the sample. See the histograms and comments below.
+
+# Quite right-skewed and will be helpful to log for interpretation and balancing reasons.
+hist(df.playoff.merged$applications)
+hist(df.bcs.merged$applications)
+# Not terribly right-skewed, but will be helpful to log for interpretation and balancing reasons.
+hist(df.playoff.merged$enrollments)
+hist(df.bcs.merged$enrollments)
+# Should be fine to leave as level (not going to interpret this coefficient anyway).
+hist(df.playoff.merged$medianHHincome)
+hist(df.bcs.merged$medianHHincome)
+# Leave as level.
+hist(df.playoff.merged$avgSAT75)
+hist(df.bcs.merged$avgSAT75)
+# Strongly right-skewed, so take log.
+hist(df.playoff.merged$numHSgrads)
+hist(df.bcs.merged$numHSgrads)
+
+# Estimating models for playoff era.
+
+# Another way to do this, using PLM, but I couldn't figure out how to make mice work with it.
+# The results are practically the exact same even if you don't impute the values for this first model at least.
+# # dependent variable log applications
+# test <- plm(log(applications) ~ wontitleLag1 + top15Lag1 + top5Lag1 + winpctLag1 + log(numHSgrads) + medianHHincome,
+#                                 data = df.playoff.merged,
+#                                 # Control for school characteristics that are constant over
+#                                 # time, but vary between schools (same as OLS with a school dummy)
+#                                 # and control for a time effect that varies but is constant across
+#                                 # schools, i.e., affects all in same way (same as OLS with a year dummy).
+#                                 index = c("school", "year"),
+#                                 effect = "twoways",
+#                                 # Specify fixed effects model.
+#                                 model = "within")
+# coeftest(test, vcov = vcovHC, type = "HC1")
+
+# dependent variable log applications.
+est.playoff.mice.applications <- with(df.playoff.merged.mice, 
+                                 lm(log(applications) ~ wontitleLag1 + top15Lag1 + top5Lag1 + winpctLag1 + log(numHSgrads) + medianHHincome + school + year))
+# consolidate estimates across mice imputations.
+est.playoff.mice.applications <- mice::pool(est.playoff.mice.applications)
+
+# dependent variable acceptance rate.
+est.playoff.mice.admitRate <- with(df.playoff.merged.mice, 
+                              lm(admitRate ~ wontitleLag1 + top15Lag1 + top5Lag1 + winpctLag1 + log(numHSgrads) + medianHHincome + school + year))
+# consolidate estimates across mice imputations.
+est.playoff.mice.admitRate  <- mice::pool(est.playoff.mice.admitRate)
+
+# dependent variable yield.
+est.playoff.mice.yield <- with(df.playoff.merged.mice, 
+                          lm(yield ~ wontitleLag1 + top15Lag1 + top5Lag1 + winpctLag1 + log(numHSgrads) + medianHHincome + school + year))
+# consolidate estimates across mice imputations.
+est.playoff.mice.yield  <- mice::pool(est.playoff.mice.yield)
+
+# dependent variable avgSAT75.
+est.playoff.mice.avgSAT75 <- with(df.playoff.merged.mice, 
+                             lm(avgSAT75 ~ wontitleLag1 + top15Lag1 + top5Lag1 + winpctLag1 + log(numHSgrads) + medianHHincome + school + year))
+# consolidate estimates across mice imputations.
+est.playoff.mice.avgSAT75  <- mice::pool(est.playoff.mice.avgSAT75)
+
+
+# Display results for playoff era.
+modelsummary(list("log(applications)" = est.playoff.mice.applications, 
+                  "admitRate" = est.playoff.mice.admitRate,
+                  "yield" = est.playoff.mice.yield,
+                  "avgSAT75" = est.playoff.mice.avgSAT75), 
+             vcov = "HC1", cluster = "school", output = "markdown", stars = TRUE,
+             statistic = c("(p = {p.value})", "(s.e. = {std.error})"), coef_map = cm, 
+             notes = list('Year/school dummy coefficients and constant not displayed.'),
+             title = 'Playoff Era (2014-2019)')
+
+modelsummary(list("log(applications)" = est.playoff.mice.applications, 
+                  "admitRate" = est.playoff.mice.admitRate,
+                  "yield" = est.playoff.mice.yield,
+                  "avgSAT75" = est.playoff.mice.avgSAT75), 
+             vcov = "HC1", cluster = "school", output = "latex", stars = TRUE,
+             statistic = c("(p = {p.value})", "(s.e. = {std.error})"), coef_map = cm, 
+             notes = list('Year/school dummy coefficients and constant not displayed.'),
+             title = 'Playoff Era (2014-2019)')
+
+cm <- c('wontitleLag11' = 'wontitleLag1',
+        'top15Lag11'    = 'top15Lag1',
+        'top5Lag11'    = 'top5Lag1',
+        'winpctLag1'    = 'winpctLag1',
+        'log(numHSgrads)'  = 'log(numHSgrads)',
+        'medianHHincome'  = 'medianHHincome')
+
+# Imputing missing values for BCS data set
+
+# 1 row missing for admitRate, yield, test scores (Duke). Duke also has applications, admissions, and enrollment set
+# to zero in this row; we need to change this to NA.
+df.bcs.merged[39,12:14] <- c(NA, NA, NA)
+# Various rows missing avgSAT75 in early years (2001-2003), but usually have an ACT score.
+
+# Using mice package to perform multiple imputation.
+# impute 20 times; later estimate the model with the 20 different imputation attempts and consolidate.
+# Use regression/classification trees (cart) since there is a problem with linear relationships among the columns of the df.
+df.bcs.merged.mice <- mice(data = df.bcs.merged, m = 7, set.seed = 7, method = "cart")
+
+# dependent variable log applications.
+est.bcs.mice.applications <- with(df.bcs.merged.mice, 
+                             lm(log(applications) ~ wontitleLag1 + wontitleLag2 + wontitleLag3 + top15Lag1 + top15Lag2 + top15Lag3 + top5Lag1 + top5Lag2 + top5Lag3 + winpctLag1 + winpctLag2 + winpctLag3 + log(numHSgrads) + medianHHincome + school + year))
+# consolidate estimates across mice imputations.
+est.bcs.mice.applications <- mice::pool(est.bcs.mice.applications)
+
+# dependent variable acceptance rate.
+est.bcs.mice.admitRate <- with(df.bcs.merged.mice, 
+                          lm(admitRate ~ wontitleLag1 + wontitleLag2 + wontitleLag3 + top15Lag1 + top15Lag2 + top15Lag3 + top5Lag1 + top5Lag2 + top5Lag3 + winpctLag1 + winpctLag2 + winpctLag3 + log(numHSgrads) + medianHHincome + school + year))
+# consolidate estimates across mice imputations.
+est.bcs.mice.admitRate  <- mice::pool(est.bcs.mice.admitRate)
+
+# dependent variable yield.
+est.bcs.mice.yield <- with(df.bcs.merged.mice, 
+                      lm(yield ~ wontitleLag1 + wontitleLag2 + wontitleLag3 + top15Lag1 + top15Lag2 + top15Lag3 + top5Lag1 + top5Lag2 + top5Lag3 + winpctLag1 + winpctLag2 + winpctLag3 + log(numHSgrads) + medianHHincome + school + year))
+# consolidate estimates across mice imputations.
+est.bcs.mice.admitRate  <- mice::pool(est.bcs.mice.yield)
+
+# dependent variable avgSAT75.
+est.bcs.mice.avgSAT75 <- with(df.bcs.merged.mice, 
+                         lm(avgSAT75 ~ wontitleLag1 + wontitleLag2 + wontitleLag3 + top15Lag1 + top15Lag2 + top15Lag3 + top5Lag1 + top5Lag2 + top5Lag3 + winpctLag1 + winpctLag2 + winpctLag3 + log(numHSgrads) + medianHHincome + school + year))
+# consolidate estimates across mice imputations.
+est.bcs.mice.avgSAT75  <- mice::pool(est.bcs.mice.avgSAT75)
+
+
+# Display results for playoff era.
+modelsummary(list("log(applications)" = est.bcs.mice.applications, 
+                  "admitRate" = est.bcs.mice.admitRate,
+                  "yield" = est.bcs.mice.admitRate,
+                  "avgSAT75" = est.bcs.mice.avgSAT75), 
+             vcov = "HC1", cluster = "school", output = "markdown", stars = TRUE,
+             statistic = c("(p = {p.value})", "(s.e. = {std.error})"), coef_map = cm, 
+             notes = list('Year/school dummy coefficients and constant not displayed.'),
+             title = 'BCS Era (1998-2013)')
+
+modelsummary(list("log(applications)" = est.bcs.mice.applications, 
+                  "admitRate" = est.bcs.mice.admitRate,
+                  "yield" = est.bcs.mice.admitRate,
+                  "avgSAT75" = est.bcs.mice.avgSAT75), 
+             vcov = "HC1", cluster = "school", output = "latex", stars = TRUE,
+             statistic = c("(p = {p.value})", "(s.e. = {std.error})"), coef_map = cm, 
+             notes = list('Year/school dummy coefficients and constant not displayed.'),
+             title = 'BCS Era (1998-2013)')
+
+cm <- c('wontitleLag11' = 'wontitleLag1',
+        'wontitleLag21' = 'wontitleLag2',
+        'wontitleLag31' = 'wontitleLag3',
+        'top15Lag11'    = 'top15Lag1',
+        'top15Lag21'    = 'top15Lag2',
+        'top15Lag31'    = 'top15Lag3',
+        'top5Lag11'    = 'top5Lag1',
+        'top5Lag21'    = 'top5Lag2',
+        'top5Lag31'    = 'top5Lag3',
+        'winpctLag1'    = 'winpctLag1',
+        'winpctLag2'    = 'winpctLag2',
+        'winpctLag3'    = 'winpctLag3',
+        'log(numHSgrads)'  = 'log(numHSgrads)',
+        'medianHHincome'  = 'medianHHincome')
+
 
