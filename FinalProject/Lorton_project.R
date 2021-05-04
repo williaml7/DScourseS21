@@ -769,10 +769,10 @@ hist(df.bcs.merged$numHSgrads)
 
 # Estimating models for playoff era.
 
-# Another way to do this, using PLM, but I couldn't figure out how to make mice work with it.
-# The results are practically the exact same even if you don't impute the values for this first model at least.
-# # dependent variable log applications
-# test <- plm(log(applications) ~ wontitleLag1 + top15Lag1 + top5Lag1 + winpctLag1 + log(numHSgrads) + medianHHincome,
+# # Another way to do this, using PLM, but I couldn't figure out how to make mice work with it.
+# # The results are practically the exact same even if you don't impute the values for this first model at least.
+# # # dependent variable log applications
+# test <- plm(avgSAT75 ~ wontitleLag1 + top15Lag1 + top5Lag1 + winpctLag1 + log(numHSgrads) + medianHHincome,
 #                                 data = df.playoff.merged,
 #                                 # Control for school characteristics that are constant over
 #                                 # time, but vary between schools (same as OLS with a school dummy)
@@ -782,7 +782,9 @@ hist(df.bcs.merged$numHSgrads)
 #                                 effect = "twoways",
 #                                 # Specify fixed effects model.
 #                                 model = "within")
-# coeftest(test, vcov = vcovHC, type = "HC1")
+# #coeftest(test, vcov = vcovHC, type = "HC1")
+# modelsummary(test, output = "markdown", statistic = c("(p = {p.value})", "(s.e. = {std.error})"), 
+#              stars = TRUE, vcov = ~school)
 
 # dependent variable log applications.
 est.playoff.mice.applications <- with(df.playoff.merged.mice, 
@@ -814,7 +816,7 @@ modelsummary(list("log(applications)" = est.playoff.mice.applications,
                   "admitRate" = est.playoff.mice.admitRate,
                   "yield" = est.playoff.mice.yield,
                   "avgSAT75" = est.playoff.mice.avgSAT75), 
-             vcov = "HC1", cluster = "school", output = "markdown", stars = TRUE,
+             vcov = ~school, output = "markdown", stars = TRUE,
              statistic = c("(p = {p.value})", "(s.e. = {std.error})"), coef_map = cm, 
              notes = list('Year/school dummy coefficients and constant not displayed.'),
              title = 'Playoff Era (2014-2019)')
@@ -863,7 +865,7 @@ est.bcs.mice.admitRate  <- mice::pool(est.bcs.mice.admitRate)
 est.bcs.mice.yield <- with(df.bcs.merged.mice, 
                       lm(yield ~ wontitleLag1 + wontitleLag2 + wontitleLag3 + top15Lag1 + top15Lag2 + top15Lag3 + top5Lag1 + top5Lag2 + top5Lag3 + winpctLag1 + winpctLag2 + winpctLag3 + log(numHSgrads) + medianHHincome + school + year))
 # consolidate estimates across mice imputations.
-est.bcs.mice.admitRate  <- mice::pool(est.bcs.mice.yield)
+est.bcs.mice.yield  <- mice::pool(est.bcs.mice.yield)
 
 # dependent variable avgSAT75.
 est.bcs.mice.avgSAT75 <- with(df.bcs.merged.mice, 
@@ -875,7 +877,7 @@ est.bcs.mice.avgSAT75  <- mice::pool(est.bcs.mice.avgSAT75)
 # Display results for playoff era.
 modelsummary(list("log(applications)" = est.bcs.mice.applications, 
                   "admitRate" = est.bcs.mice.admitRate,
-                  "yield" = est.bcs.mice.admitRate,
+                  "yield" = est.bcs.mice.yield,
                   "avgSAT75" = est.bcs.mice.avgSAT75), 
              vcov = "HC1", cluster = "school", output = "markdown", stars = TRUE,
              statistic = c("(p = {p.value})", "(s.e. = {std.error})"), coef_map = cm, 
@@ -884,7 +886,7 @@ modelsummary(list("log(applications)" = est.bcs.mice.applications,
 
 modelsummary(list("log(applications)" = est.bcs.mice.applications, 
                   "admitRate" = est.bcs.mice.admitRate,
-                  "yield" = est.bcs.mice.admitRate,
+                  "yield" = est.bcs.mice.yield,
                   "avgSAT75" = est.bcs.mice.avgSAT75), 
              vcov = "HC1", cluster = "school", output = "latex", stars = TRUE,
              statistic = c("(p = {p.value})", "(s.e. = {std.error})"), coef_map = cm, 
