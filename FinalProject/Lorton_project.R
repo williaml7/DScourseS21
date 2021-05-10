@@ -2,15 +2,10 @@
 # May 10, 2021
 # William Lorton
 
-library(lmtest)
-library(plm)
 library(tidyverse)
 library(rvest)
 library(cfbfastR)
 library(readxl)
-library(mice)
-library(modelsummary)
-library(stargazer)
 
 ##### Purpose #######################################################################################################
 # This script contains all data gathering/cleaning, data summary generation, and data analysis completed in support 
@@ -64,10 +59,10 @@ rm(p5.schools)
 ## National title winner dummy (through BCS selection system).
 ## School name (to control for time-invariant school characteristics in the fixed effects model).
 
-# Getting data on team records from 1998 season through 2013 season:
-# Note that "PAC" refers to the Pac-12 (from 2011 onwards) and "Pac-10" refers to the Pacific 10 (prior to 2011).
-# The Pacific conference added Utah and Colorado in 2011 to make 12 teams in the league.
-# "Ind" is used to get Notre Dame.
+# Getting data on team records from 1998 season through 2013 season on the 62 teams that were P5 by 2013:
+# Warning: this loop can take ~10 minutes to complete; it is recommended to load the df that will result
+# below. 
+
 iter <- 1
 for (yr in 1998:2013) {
   
@@ -89,9 +84,8 @@ for (yr in 1998:2013) {
 
 # df containing every P5 team's record from 1998 season through 2013 season
 df.bcs <- bind_rows(list.seasons.records)
-
-# save df.bcs since it takes ~10 minutes to scrape this in the loops!
-# save(df.bcs, file = "record_BCS.Rda")
+# save df.bcs since it takes ~10 minutes to scrape this in the loops above!
+# save(df.bcs, file = "record_BCS.Rda"); load this data frame directly below.
 load("record_BCS.Rda")
 
 # Remove variables I don't need.
@@ -101,18 +95,22 @@ df.bcs <- df.bcs %>% mutate(winpct = total_wins / (total_losses + total_wins))
 df.bcs <- df.bcs %>% select(year, team, winpct)
 
 # Make national title winner dummy variable.
+# Read in df of champions 1998-2013 and clean up.
 bcs.champs <- read.csv("bcs_champs.csv", header = F)
 bcs.champs <- bcs.champs %>% select(V1, V2)
 bcs.champs$V2 <- gsub(pattern = "\\s*\\([^\\)]+\\)", replacement = "", bcs.champs$V2)
+# LSU was the champion via BCS in 2003, though UCS was voted #1 in two final season polls.
 bcs.champs$V2[11] <- "LSU"
 bcs.champs <- bcs.champs %>% select(V2) %>% slice(rep(1:n(), each = 62))
 bcs.champs <- bcs.champs %>% map_df(rev)
-
+# put the name of the title winner in each year along the rows of df.bcs and set wontitle
+# equal to 1 if the name of the champion matches the team name in the row; 0 else.
 df.bcs$champ <- bcs.champs$V2
 df.bcs <- df.bcs %>% rowwise() %>% mutate(wontitle = ifelse(champ == team, 1, 0))
 df.bcs <- df.bcs %>% select(year, team, winpct, wontitle)
 
-# Make dummy variables for top 15 in final AP poll and top 5 in final AP poll
+# Make dummy variables for top 15 in final AP poll and top 5 in final AP poll.
+# First get historical data on final rankings.
 iter <- 1
 for (yr in 1998:2013) {
   
@@ -134,6 +132,7 @@ for (yr in 1998:2013) {
 df.ap <- bind_rows(list.seasons.AP)
 df.ap <- df.ap %>% filter(poll == "AP Top 25") %>% select(season, school, rank)
 
+# prepare for merge of ranking and other football data already gathered.
 colnames(df.bcs)[2] <- "school"
 colnames(df.ap)[1] <- "year"
 
@@ -166,6 +165,8 @@ df.bcs <- df.bcs %>% mutate(top5 = ifelse(rank <= 5, 1, 0))
 ## School name (to control for time-invariant school characteristics in the fixed effects model).
 
 # Getting data on team records from 2014 season through 2020 season:
+# Names in string vector below refer to conference affiliation. "Ind" refers to independent teams and is used for the 
+# purpose of getting info on Notre Dame.
 iter <- 1
 for (yr in 2014:2020) {
   
@@ -198,9 +199,9 @@ df.playoff <- df.playoff %>% mutate(winpct = total_wins / (total_losses + total_
 df.playoff <- df.playoff %>% select(year, team, winpct)
 
 # Make national title winner dummy variable.
-# All post-season AP #1 teams were national title winners, so we'll make our dummy based upon that.
-
-# Make dummy variables for top 15 in final AP poll and top 5 in final AP poll
+# All post-season AP #1 teams were national title winners, so we'll make our dummy based upon that this time.
+# Make dummy variables for top 15 in final AP poll and top 5 in final AP poll below as well.
+# First, get data on final AP rankings for this time period.
 iter <- 1
 for (yr in 2014:2020) {
   
@@ -222,9 +223,9 @@ for (yr in 2014:2020) {
 df.ap <- bind_rows(list.seasons.AP)
 df.ap <- df.ap %>% filter(poll == "AP Top 25") %>% select(season, school, rank)
 
+# Prepare df.playoff and df.ap for merge.
 colnames(df.playoff)[2] <- "school"
 colnames(df.ap)[1] <- "year"
-
 # merge df.ap and df.playoff
 df.playoff <- merge(x = df.playoff, y = df.ap, by = c("year", "school"), all.x = TRUE)
 # replace NA ranks ("unranked) with 1000
@@ -233,12 +234,14 @@ df.playoff <- df.playoff %>% mutate_all(~replace(., is.na(.), 1000))
 df.playoff <- df.playoff %>% mutate(top15 = ifelse(rank <= 15, 1, 0))
 # top5 dummy
 df.playoff <- df.playoff %>% mutate(top5 = ifelse(rank <= 5, 1, 0))
-# wontitle dummy
+# wontitle dummy; all final AP #1 teams won the title in this period.
 df.playoff <- df.playoff %>% mutate(wontitle = ifelse(rank == 1, 1, 0))
 
 ###### IPEDS Data #################################################################################################
 
 # Data from Integrated Postsecondary Education Data System (IPEDS).
+# See https://nces.ed.gov/ipeds/datacenter/InstitutionByName.aspx?goToReportId=5
+# Select the appropriate institutions (those that we just got CFB data on) and variables as described below.
 
 # Variables:
 
@@ -264,8 +267,8 @@ df.playoff <- df.playoff %>% mutate(wontitle = ifelse(rank == 1, 1, 0))
 
 # Data for test scores are only available starting in 2001, thus our data set must begin here instead of 1998. The SAT
 # changed format several times over the period of this analysis. There was one period where a relatively large number of
-# schools were not submitting writing section scores; the average SAT variable is computed using only the math and reading
-# section scores in this period.
+# schools were not submitting writing section scores; the average SAT variable is computed using only the math and 
+# reading section scores in this period.
 
 ipeds.2019 <- read_csv("2019.csv")
 colnames(ipeds.2019)[2] <- "school"
@@ -481,15 +484,15 @@ ipeds.df <- bind_rows(ipeds.2001, ipeds.2002, ipeds.2003, ipeds.2004, ipeds.2005
                    ipeds.2008, ipeds.2009, ipeds.2010, ipeds.2011, ipeds.2012, ipeds.2013, ipeds.2014,
                    ipeds.2015, ipeds.2016, ipeds.2017, ipeds.2018, ipeds.2019)
 
-# save this as csv file
-#write_csv(ipeds.df, "ipeds_df.csv")
+# save ipeds.df csv file
+# write_csv(ipeds.df, "ipeds_df.csv")
 ipeds.df <- read_csv("ipeds_df.csv")
 
-########## MERGE CFB AND IPEDS DATA SETS ###################################################################################
+########## MERGE CFB AND IPEDS DATA SETS AND CREATE LAGGED FOOTBALL SUCCESS VARIABLES ##################################################
 
 # Prepare to merge IPEDS with BCS CFB data
 
-# Remove Maryland, Rutgers, and Louisville for BCS era (these aren't added to P5 until 2014).
+# Remove Maryland, Rutgers, and Louisville for BCS era (as said before, these aren't added to P5 until 2014).
 ipeds.df.bcs <- ipeds.df %>% filter(school != "University of Maryland-College Park" & school != "University of Louisville" & school != "Rutgers University-New Brunswick")
 # Remove years after 2013
 ipeds.df.bcs <- ipeds.df.bcs %>% filter(year <= 2013)
@@ -560,10 +563,10 @@ df.bcs$school <- fct_recode(df.bcs$school,
                            "West Virginia University" = "West Virginia",
                            "University of Wisconsin-Madison" = "Wisconsin")
 
-# merge ipeds and cfb for BCS era.
+# Merge IPEDS and cfb data frames for BCS era.
 df.bcs.merged <- merge(x = df.bcs, y = ipeds.df.bcs, by = c("year", "school"), all = TRUE)
 
-# make lagged CFB success variables.
+# Make lagged CFB success variables.
 # 1 year ago results are always 62 rows back since there are 62 P5 teams in BCS era.
 # 2 years ago results are always 62*2 rows back.
 # 3 years ago results are always 62*3 rows back.
@@ -588,11 +591,11 @@ df.bcs.merged <- df.bcs.merged %>% mutate(top5Lag1 = dplyr::lag(top5, n=(62)))
 df.bcs.merged <- df.bcs.merged %>% mutate(top5Lag2 = dplyr::lag(top5, n=(62*2)))
 df.bcs.merged <- df.bcs.merged %>% mutate(top5Lag3 = dplyr::lag(top5, n=(62*3)))
 
-# Prepare to merge ipeds data with playoff era CFB data.
+# Prepare to merge IPEDS data with playoff era CFB data.
 
 ipeds.df.playoff <- ipeds.df %>% filter(year >= 2014)
 
-# Rename schools in CFB data to the names used in ipeds to prepare for merge.
+# Rename schools in CFB data to the names used in IPEDS to prepare for merge.
 df.playoff$school <- as.factor(df.playoff$school)
 df.playoff$school <- fct_recode(df.playoff$school, 
                             "The University of Alabama" = "Alabama", 
@@ -661,9 +664,9 @@ df.playoff$school <- fct_recode(df.playoff$school,
                             "Rutgers University-New Brunswick" = "Rutgers",
                             "University of Louisville" = "Louisville")
 
-# merge ipeds and cfb for playoff era.
+# merge IPEDS and cfb for playoff era.
 df.playoff.merged <- merge(x = df.playoff, y = ipeds.df.playoff, by = c("year", "school"), all = TRUE)
-# Get rid of 2020 since there is no ipeds data yet.
+# Get rid of 2020 since there is no IPEDS data yet.
 df.playoff.merged <- df.playoff.merged %>% filter(year != 2020)
 
 # make lagged CFB success variables.
@@ -684,24 +687,27 @@ df.playoff.merged  <- df.playoff.merged  %>% mutate(top5Lag1 = dplyr::lag(top5, 
 
 ########## GET HIGH SCOOL GRADUATE & MEDIAN HH INCOME DATA ###################################################################################
 
-# Number of public high school graduates by state 1998-2019
+# Number of public high school graduates by state 1998-2019 from NCES. 
+# See https://nces.ed.gov/programs/digest/d16/tables/dt16_219.20.asp and other tables.
+# Median HH income from Census Bureau. See Table H-8 at https://www.census.gov/data/tables/time-series/demo/income-poverty/historical-income-households.html.
 
+# CSV file contains a data set that I combined in Excel from the above websites.
 hsgradsHHincome.df <- read_csv("hsgradsHHincome.csv")
-# drop DC
+# drop DC.
 hsgradsHHincome.df <- hsgradsHHincome.df %>% filter(state != "District Of Columbia")
 
-# merge state grad and income data with BCS and ipeds
+# merge state grad and income data df with df.bcs.merged.
 df.bcs.merged <- merge(x = df.bcs.merged, y = hsgradsHHincome.df, by = c("year", "state"), all.x = TRUE)
 
-# merge state grad and income data with playoff and ipeds
+# merge state grad and income data df with df.playoff.merged
 df.playoff.merged <- merge(x = df.playoff.merged, y = hsgradsHHincome.df, by = c("year", "state"), all.x = TRUE)
 
-########## FINAL PREPARATIONS AND ANALYSIS ###################################################################################
+########## FINAL PREPARATIONS AND SAVE ###################################################################################
 
 # filter to the years that have all the lags we want in both data sets.
-# 3 lags in BCS data set
+# 3 lags in BCS data set; full data starts in 2001.
 df.bcs.merged <- df.bcs.merged %>% filter(year >= 2001)
-# only 1 lag in playoff data set since there isn't much data
+# only 1 lag in playoff data set since there isn't much data; full data starts in 2015.
 df.playoff.merged <- df.playoff.merged %>% filter(year >= 2015)
 
 # Convert variables to proper type in both data sets.
@@ -734,178 +740,12 @@ df.playoff.merged$top15 <- as.factor(df.playoff.merged$top15)
 df.playoff.merged$top15Lag1 <- as.factor(df.playoff.merged$top15Lag1)
 df.playoff.merged$unitid <- as.factor(df.playoff.merged$unitid)
 
-# Imputing missing values for playoff data set
+# Save these two data frames; NOTE: IMPUTATION HAS NOT BEEN PERFORMED ON THESE DATA SETS.
+# df.bcs.merged contains the panel data set for the BCS era (includes P5 CFB data, institutional data,
+# and state income and high school graduate data).
+save(df.bcs.merged, file = "bcs_merged_noImpute.Rda")
+# df.playoff.merged contains the panel data set for the Playoff era (includes P5 CFB data, institutional data,
+# and state income and high school graduate data).
+save(df.playoff.merged, file = "playoff_merged_noImpute.Rda")
 
-# 21 rows with missing avgSAT75 observations; 
-# U Kansas, U Arizona, Kansas State, Wake Forest, Louisville, and Mississippi State have at least one missing for this
-# variable; about half are due to Kansas State and U Kansas.
-
-# Using mice package to perform multiple imputation.
-# impute 20 times; later estimate the model with the 20 different imputation attempts and consolidate.
-# Use regression/classification trees (cart) since there is a problem with linear relationships among the columns of the df.
-df.playoff.merged.mice <- mice(data = df.playoff.merged, m = 7, set.seed = 7, method = "cart")
-
-# We take the log of a number of our variables since they exhibit a log-normal distribution (continuous, strictly
-# positive, many observations around a relatively small value, and strongly right-skewed). Taking the log
-# can also be helpful for interpretation (e.g. consider a percentage increase in applications rather than
-# an increase in the number of applications). Taking the log on variables like applications and enrollment
-# can also help avoid overweighting the larger schools in the sample. See the histograms and comments below.
-
-# Quite right-skewed and will be helpful to log for interpretation and balancing reasons.
-hist(df.playoff.merged$applications)
-hist(df.bcs.merged$applications)
-# Not terribly right-skewed, but will be helpful to log for interpretation and balancing reasons.
-hist(df.playoff.merged$enrollments)
-hist(df.bcs.merged$enrollments)
-# Should be fine to leave as level (not going to interpret this coefficient anyway).
-hist(df.playoff.merged$medianHHincome)
-hist(df.bcs.merged$medianHHincome)
-# Leave as level.
-hist(df.playoff.merged$avgSAT75)
-hist(df.bcs.merged$avgSAT75)
-# Strongly right-skewed, so take log.
-hist(df.playoff.merged$numHSgrads)
-hist(df.bcs.merged$numHSgrads)
-
-# Estimating models for playoff era.
-
-# # Another way to do this, using PLM, but I couldn't figure out how to make mice work with it.
-# # The results are practically the exact same even if you don't impute the values for this first model at least.
-# # # dependent variable log applications
-# test <- plm(avgSAT75 ~ wontitleLag1 + top15Lag1 + top5Lag1 + winpctLag1 + log(numHSgrads) + medianHHincome,
-#                                 data = df.playoff.merged,
-#                                 # Control for school characteristics that are constant over
-#                                 # time, but vary between schools (same as OLS with a school dummy)
-#                                 # and control for a time effect that varies but is constant across
-#                                 # schools, i.e., affects all in same way (same as OLS with a year dummy).
-#                                 index = c("school", "year"),
-#                                 effect = "twoways",
-#                                 # Specify fixed effects model.
-#                                 model = "within")
-# #coeftest(test, vcov = vcovHC, type = "HC1")
-# modelsummary(test, output = "markdown", statistic = c("(p = {p.value})", "(s.e. = {std.error})"), 
-#              stars = TRUE, vcov = ~school)
-
-# dependent variable log applications.
-est.playoff.mice.applications <- with(df.playoff.merged.mice, 
-                                 lm(log(applications) ~ wontitleLag1 + top15Lag1 + top5Lag1 + winpctLag1 + log(numHSgrads) + medianHHincome + school + year))
-# consolidate estimates across mice imputations.
-est.playoff.mice.applications <- mice::pool(est.playoff.mice.applications)
-
-# dependent variable acceptance rate.
-est.playoff.mice.admitRate <- with(df.playoff.merged.mice, 
-                              lm(admitRate ~ wontitleLag1 + top15Lag1 + top5Lag1 + winpctLag1 + log(numHSgrads) + medianHHincome + school + year))
-# consolidate estimates across mice imputations.
-est.playoff.mice.admitRate  <- mice::pool(est.playoff.mice.admitRate)
-
-# dependent variable yield.
-est.playoff.mice.yield <- with(df.playoff.merged.mice, 
-                          lm(yield ~ wontitleLag1 + top15Lag1 + top5Lag1 + winpctLag1 + log(numHSgrads) + medianHHincome + school + year))
-# consolidate estimates across mice imputations.
-est.playoff.mice.yield  <- mice::pool(est.playoff.mice.yield)
-
-# dependent variable avgSAT75.
-est.playoff.mice.avgSAT75 <- with(df.playoff.merged.mice, 
-                             lm(avgSAT75 ~ wontitleLag1 + top15Lag1 + top5Lag1 + winpctLag1 + log(numHSgrads) + medianHHincome + school + year))
-# consolidate estimates across mice imputations.
-est.playoff.mice.avgSAT75  <- mice::pool(est.playoff.mice.avgSAT75)
-
-
-# Display results for playoff era.
-modelsummary(list("log(applications)" = est.playoff.mice.applications, 
-                  "admitRate" = est.playoff.mice.admitRate,
-                  "yield" = est.playoff.mice.yield,
-                  "avgSAT75" = est.playoff.mice.avgSAT75), 
-             vcov = ~school, output = "markdown", stars = TRUE,
-             statistic = c("(p = {p.value})", "(s.e. = {std.error})"), coef_map = cm, 
-             notes = list('Year/school dummy coefficients and constant not displayed.'),
-             title = 'Playoff Era (2014-2019)')
-
-modelsummary(list("log(applications)" = est.playoff.mice.applications, 
-                  "admitRate" = est.playoff.mice.admitRate,
-                  "yield" = est.playoff.mice.yield,
-                  "avgSAT75" = est.playoff.mice.avgSAT75), 
-             vcov = "HC1", cluster = "school", output = "latex", stars = TRUE,
-             statistic = c("(p = {p.value})", "(s.e. = {std.error})"), coef_map = cm, 
-             notes = list('Year/school dummy coefficients and constant not displayed.'),
-             title = 'Playoff Era (2014-2019)')
-
-cm <- c('wontitleLag11' = 'wontitleLag1',
-        'top15Lag11'    = 'top15Lag1',
-        'top5Lag11'    = 'top5Lag1',
-        'winpctLag1'    = 'winpctLag1',
-        'log(numHSgrads)'  = 'log(numHSgrads)',
-        'medianHHincome'  = 'medianHHincome')
-
-# Imputing missing values for BCS data set
-
-# 1 row missing for admitRate, yield, test scores (Duke). Duke also has applications, admissions, and enrollment set
-# to zero in this row; we need to change this to NA.
-df.bcs.merged[39,12:14] <- c(NA, NA, NA)
-# Various rows missing avgSAT75 in early years (2001-2003), but usually have an ACT score.
-
-# Using mice package to perform multiple imputation.
-# impute 20 times; later estimate the model with the 20 different imputation attempts and consolidate.
-# Use regression/classification trees (cart) since there is a problem with linear relationships among the columns of the df.
-df.bcs.merged.mice <- mice(data = df.bcs.merged, m = 7, set.seed = 7, method = "cart")
-
-# dependent variable log applications.
-est.bcs.mice.applications <- with(df.bcs.merged.mice, 
-                             lm(log(applications) ~ wontitleLag1 + wontitleLag2 + wontitleLag3 + top15Lag1 + top15Lag2 + top15Lag3 + top5Lag1 + top5Lag2 + top5Lag3 + winpctLag1 + winpctLag2 + winpctLag3 + log(numHSgrads) + medianHHincome + school + year))
-# consolidate estimates across mice imputations.
-est.bcs.mice.applications <- mice::pool(est.bcs.mice.applications)
-
-# dependent variable acceptance rate.
-est.bcs.mice.admitRate <- with(df.bcs.merged.mice, 
-                          lm(admitRate ~ wontitleLag1 + wontitleLag2 + wontitleLag3 + top15Lag1 + top15Lag2 + top15Lag3 + top5Lag1 + top5Lag2 + top5Lag3 + winpctLag1 + winpctLag2 + winpctLag3 + log(numHSgrads) + medianHHincome + school + year))
-# consolidate estimates across mice imputations.
-est.bcs.mice.admitRate  <- mice::pool(est.bcs.mice.admitRate)
-
-# dependent variable yield.
-est.bcs.mice.yield <- with(df.bcs.merged.mice, 
-                      lm(yield ~ wontitleLag1 + wontitleLag2 + wontitleLag3 + top15Lag1 + top15Lag2 + top15Lag3 + top5Lag1 + top5Lag2 + top5Lag3 + winpctLag1 + winpctLag2 + winpctLag3 + log(numHSgrads) + medianHHincome + school + year))
-# consolidate estimates across mice imputations.
-est.bcs.mice.yield  <- mice::pool(est.bcs.mice.yield)
-
-# dependent variable avgSAT75.
-est.bcs.mice.avgSAT75 <- with(df.bcs.merged.mice, 
-                         lm(avgSAT75 ~ wontitleLag1 + wontitleLag2 + wontitleLag3 + top15Lag1 + top15Lag2 + top15Lag3 + top5Lag1 + top5Lag2 + top5Lag3 + winpctLag1 + winpctLag2 + winpctLag3 + log(numHSgrads) + medianHHincome + school + year))
-# consolidate estimates across mice imputations.
-est.bcs.mice.avgSAT75  <- mice::pool(est.bcs.mice.avgSAT75)
-
-
-# Display results for playoff era.
-modelsummary(list("log(applications)" = est.bcs.mice.applications, 
-                  "admitRate" = est.bcs.mice.admitRate,
-                  "yield" = est.bcs.mice.yield,
-                  "avgSAT75" = est.bcs.mice.avgSAT75), 
-             vcov = "HC1", cluster = "school", output = "markdown", stars = TRUE,
-             statistic = c("(p = {p.value})", "(s.e. = {std.error})"), coef_map = cm, 
-             notes = list('Year/school dummy coefficients and constant not displayed.'),
-             title = 'BCS Era (1998-2013)')
-
-modelsummary(list("log(applications)" = est.bcs.mice.applications, 
-                  "admitRate" = est.bcs.mice.admitRate,
-                  "yield" = est.bcs.mice.yield,
-                  "avgSAT75" = est.bcs.mice.avgSAT75), 
-             vcov = "HC1", cluster = "school", output = "latex", stars = TRUE,
-             statistic = c("(p = {p.value})", "(s.e. = {std.error})"), coef_map = cm, 
-             notes = list('Year/school dummy coefficients and constant not displayed.'),
-             title = 'BCS Era (1998-2013)')
-
-cm <- c('wontitleLag11' = 'wontitleLag1',
-        'wontitleLag21' = 'wontitleLag2',
-        'wontitleLag31' = 'wontitleLag3',
-        'top15Lag11'    = 'top15Lag1',
-        'top15Lag21'    = 'top15Lag2',
-        'top15Lag31'    = 'top15Lag3',
-        'top5Lag11'    = 'top5Lag1',
-        'top5Lag21'    = 'top5Lag2',
-        'top5Lag31'    = 'top5Lag3',
-        'winpctLag1'    = 'winpctLag1',
-        'winpctLag2'    = 'winpctLag2',
-        'winpctLag3'    = 'winpctLag3',
-        'log(numHSgrads)'  = 'log(numHSgrads)',
-        'medianHHincome'  = 'medianHHincome')
-
-
+# Please see the script named Lorton_project_reproduce.R for data imputation and analysis.
